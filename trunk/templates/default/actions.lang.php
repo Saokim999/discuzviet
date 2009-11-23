@@ -1,87 +1,87 @@
 <?php
 
 // Action Pack for Discuz! Version 1.0.0
-// Created by Crossday
+// Created by Crossday - Translated by DiscuzViet Group
 
 $actioncode = array
 (
-	0 => '回到论坛',
+	0 => 'Trở về diễn đàn',
 
-	1 => '浏览论坛首页',
-	2 => '浏览论坛版块',
-	3 => '浏览帖子',
-	5 => '注册为新会员',
-	6 => '登录论坛',
-	7 => '使用控制面板',
-	8 => '我的',
+	1 => 'Xem trang chính',
+	2 => 'Xem mục diễn đàn',
+	3 => 'Xem bài viết',
+	5 => 'Đã đăng ký',
+	6 => 'Đăng nhập',
+	7 => 'Sử dụng bảng điều khiển',
+	8 => 'Của tôi',
 
-	11 => '发新话题',
-	12 => '回复主题',
-	13 => '编辑帖子',
-	14 => '下载附件',
-	15 => 'X-Space导入论坛',
+	11 => 'Viết bài mới',
+	12 => 'Trả lời',
+	13 => 'Chỉnh sửa bài viết',
+	14 => 'Tải file đính kèm',
+	15 => 'X-Space cho forum',
 
-	21 => '查看论坛公告',
+	21 => 'Xem thông báo diễn đàn',
 
-	31 => '查看在线用户',
+	31 => 'Đang xem người trực tuyến',
 
-	41 => '查看会员列表',
+	41 => 'Đang xem danh sách thành viên',
 
-	51 => '查看使用帮助',
+	51 => 'Đang xem trợ giúp',
 
-	61 => '查看用户资料',
-	62 => '查看信用评价',
+	61 => 'Đang xem thông tin thành viên',
+	62 => 'Xem bảng điểm hệ thống',
 
-	71 => '评分',
-	72 => '查看评分记录',
-	73 => '查看警告记录',
+	71 => 'Chấm điểm',
+	72 => 'Xem nhật ký điểm chấm',
+	73 => 'Xem nhật ký cảnh báo',
 
-	81 => '购买主题',
-	82 => '查看主题购买记录',
+	81 => 'Đang mua chủ đề',
+	82 => 'Đang xem nhật ký mua chủ đề',
 
-	101 => '收发短消息',
-	102 => '查看通知',
-	111 => '论坛搜索',
+	101 => 'Tin nhắn',
+	102 => 'Xem thông báo',
+	111 => 'Tìm kiếm',
 
-	121 => '推荐给朋友',
-	122 => '向版主反映帖子',
-	123 => '加入/移除 文集',
+	121 => 'Giới thiệu cho bạn bè',
+	122 => 'Báo cáo bài viết sai',
+	123 => 'Nhập/Xóa blog',
 
-	131 => '查看论坛统计数据',
+	131 => 'Xem số liệu thống kê',
 
-	141 => '取回密码',
+	141 => 'Lấy lại mật khẩu',
 
-	150 => '个人空间',
-	151 => '文集',
-	161 => '悬赏',
+	150 => 'Khu vực riêng',
+	151 => 'Blog',
+	161 => 'Thưởng',
 
-	170 => '道具商店',
-	171 => '我的道具箱',
-	172 => '道具市场',
-	173 => '道具日志',
+	170 => 'Cửa hàng công cụ',
+	171 => 'Hộp công cụ của mình',
+	172 => 'Chợ công cụ',
+	173 => 'Nhật ký công cụ',
 
-	180 => '论坛任务',
+	180 => 'Nhiệm vụ Diễn đàn',
 
-	191 => 'WAP - 浏览首页',
-	192 => 'WAP - 浏览论坛版块',
-	193 => 'WAP - 浏览帖子',
-	194 => 'WAP - 工具箱',
-	195 => 'WAP - 发新话题',
-	196 => 'WAP - 回复主题',
-	197 => 'WAP - 短消息',
+	191 => 'WAP - Xem trang chủ',
+	192 => 'WAP - Xem mục',
+	193 => 'WAP - Xem bài viết',
+	194 => 'WAP - Xem công cụ',
+	195 => 'WAP - Gửi chủ đề mới',
+	196 => 'WAP - Trả lời',
+	197 => 'WAP - Tin nhắn',
 
-	201 => '使用版主权限',
+	201 => 'Trong quản lý quyền hạn',
 
-	210 => '访问管理面板',
-	211 => '访问管理中心',
+	210 => 'Ở bảng cấu hình hệ thống',
+	211 => 'Trong bảng cấu hình hệ thống',
 
-	254 => '无效的越权访问',
+	254 => 'Vượt quá quyền hạn',
 
-	255 => '提示信息/页面跳转'
+	255 => 'Thông tin gợi ý/Trang chuyển sang',
 );
 
 $language = array
 (
-	'guest' => '游客'
+	'guest' => 'Lữ khách',
 );
 ?>
