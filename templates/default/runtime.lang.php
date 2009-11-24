@@ -1,9 +1,10 @@
-<?php
+﻿<?php
+// Translated by Saokim999 www.traitimyenbai.net YH:yenbai_net
 
 $dlang = array
 (
-	'nextpage' => '下一页',
-	'date' => '前,天,昨天,前天,小时,半,分钟,秒,刚才'
+	'nextpage' => 'Tiếp',
+	'date' => ' Lúc, Hôm nay, Hôm qua, Hôm kia, giờ, nửa, phút, giây, bây giờ'
 );
 
 ?>
