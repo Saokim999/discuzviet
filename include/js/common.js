@@ -258,7 +258,7 @@ function setCopy(text, msg){
 			showDialog(msg, 'notice');
 		}
 	} else {
-		var msg = '<div style="text-decoration:underline;">点此复制到剪贴板</div>' +
+		var msg = '<div style="text-decoration:underline;">Click để lưu vào ClipBoard</div>' +
 			AC_FL_RunContent('id', 'clipboardswf', 'name', 'clipboardswf', 'devicefont', 'false', 'width', '120', 'height', '40', 'src', 'images/common/clipboard.swf', 'menu', 'false',  'allowScriptAccess', 'sameDomain', 'swLiveConnect', 'true', 'wmode', 'transparent', 'style' , 'margin-top:-20px');
 		showDialog(msg, 'info');
 		text = text.replace(/[\xA0]/g, ' ');
@@ -757,7 +757,7 @@ function showPrompt(ctrlid, evt, msg, timeout, negligible) {
 		} else {
 			msg = negligible ? msg : '<span style="font-style: normal;">' + msg + '</span>';
 			msg = '<table cellspacing="0" cellpadding="0" class="popupcredit"><tr><td class="pc_l">&nbsp;</td><td class="pc_c"><div class="pc_inner">' + msg +
-				(negligible ? '<a class="pc_btn" href="javascript:;" onclick="display(\'ntcwin\');setcookie(\'discuz_creditnoticedisable\', 1, 31536000);" title="不要再提示我"><img src="' + IMGDIR + '/popupcredit_btn.gif" alt="不要再提示我" /></a>' : '') +
+				(negligible ? '<a class="pc_btn" href="javascript:;" onclick="display(\'ntcwin\');setcookie(\'discuz_creditnoticedisable\', 1, 31536000);" title="Không tính điểm cho tôi"><img src="' + IMGDIR + '/popupcredit_btn.gif" alt="Không tính điểm cho tôi" /></a>' : '') +
 				'</td><td class="pc_r">&nbsp;</td></tr></table>';
 		}
 		div.innerHTML = msg;
@@ -815,15 +815,15 @@ function showDialog(msg, mode, t, func, cover) {
 	menuObj.id = menuid;
 	$('append_parent').appendChild(menuObj);
 	var s = '<table cellpadding="0" cellspacing="0" class="fwin"><tr><td class="t_l"></td><td class="t_c"></td><td class="t_r"></td></tr><tr><td class="m_l"></td><td class="m_c"><div class="fcontent' + (mode == 'info' ? '' : ' alert_win') + '"><h3 class="float_ctrl"><em>';
-	s += t ? t : '提示信息';
+	s += t ? t : 'Tips';
 	s += '</em><span><a href="javascript:;" class="float_close" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" title="关闭">关闭</a></span></h3>';
 	if(mode == 'info') {
 		s += msg ? msg : '';
 	} else {
 		s += '<hr class="shadowline" />';
 		s += '<div class="postbox"><div class="' + (mode == 'alert' ? 'alert_error' : 'alert_info') + '"><p>' + msg + '</p></div>';
-		s += '<div class="alert_btn"><input type="button" id="fwin_dialog_submit" value="&nbsp;确定&nbsp;" />';
-		s += mode == 'confirm' ? '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" value="&nbsp;取消&nbsp;" />' : '';
+		s += '<div class="alert_btn"><input type="button" id="fwin_dialog_submit" value="&nbsp;Ok&nbsp;" />';
+		s += mode == 'confirm' ? '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" value="&nbsp;Hủy&nbsp;" />' : '';
 		s += '</div></div>';
 	}
 	s += '</div></td><td class="m_r"></td></tr><tr><td class="b_l"></td><td class="b_c"></td><td class="b_r"></td></tr></table>';
@@ -857,7 +857,7 @@ function showWindow(k, url, mode, cache) {
 			menuObj.act = $(url).action;
 			ajaxpost(url, 'fwin_content_' + k, '', '', '', function() {initMenu();show();});
 		}
-		showDialog('', 'info', '<img src="' + IMGDIR + '/loading.gif"> 加载中...');
+		showDialog('', 'info', '<img src="' + IMGDIR + '/loading.gif"> Loading...');
 	};
 	var initMenu = function() {
 		var objs = menuObj.getElementsByTagName('*');
@@ -1290,7 +1290,7 @@ function stringxor(s1, s2) {
 
 function showloading(display, waiting) {
 	var display = display ? display : 'block';
-	var waiting = waiting ? waiting : '页面加载中...';
+	var waiting = waiting ? waiting : 'Trang đang tải...';
 	$('ajaxwaitid').innerHTML = waiting;
 	$('ajaxwaitid').style.display = display;
 }
@@ -1417,7 +1417,7 @@ function AC_FL_RunContent() {
 			str += '></embed>';
 		}
 	} else {
-		str = '此内容需要 Adobe Flash Player 9.0.124 或更高版本<br /><a href="http://www.adobe.com/go/getflashplayer/" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="下载 Flash Player" /></a>';
+		str = 'Yêu cầu cài đặt Adobe Flash Player 9.0.124 <br /><a href="http://www.adobe.com/go/getflashplayer/" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Tải Flash Player" /></a>';
 	}
 	return str;
 }
@@ -1565,27 +1565,27 @@ function showselect(obj, inpid, t, rettype) {
 		$('append_parent').appendChild(div);
 		s = '';
 		if(!t) {
-			s += showselect_row(inpid, '一天', 1, 0, rettype);
-			s += showselect_row(inpid, '一周', 7, 0, rettype);
-			s += showselect_row(inpid, '一个月', 30, 0, rettype);
-			s += showselect_row(inpid, '三个月', 90, 0, rettype);
-			s += showselect_row(inpid, '自定义', -2);
+			s += showselect_row(inpid, 'Ngày', 1, 0, rettype);
+			s += showselect_row(inpid, 'Tuần', 7, 0, rettype);
+			s += showselect_row(inpid, 'Tháng', 30, 0, rettype);
+			s += showselect_row(inpid, 'Quý', 90, 0, rettype);
+			s += showselect_row(inpid, 'Tùy chọn', -2);
 		} else {
 			if($(t)) {
 				var lis = $(t).getElementsByTagName('LI');
 				for(i = 0;i < lis.length;i++) {
 					s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = this.innerHTML">' + lis[i].innerHTML + '</a><br />';
 				}
-				s += showselect_row(inpid, '自定义', -1);
+				s += showselect_row(inpid, 'Tùy chọn', -1);
 			} else {
-				s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = \'0\'">永久</a><br />';
-				s += showselect_row(inpid, '7 天', 7, 1, rettype);
-				s += showselect_row(inpid, '14 天', 14, 1, rettype);
-				s += showselect_row(inpid, '一个月', 30, 1, rettype);
-				s += showselect_row(inpid, '三个月', 90, 1, rettype);
-				s += showselect_row(inpid, '半年', 182, 1, rettype);
-				s += showselect_row(inpid, '一年', 365, 1, rettype);
-				s += showselect_row(inpid, '自定义', -1);
+				s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = \'0\'">Vĩnh viễn</a><br />';
+				s += showselect_row(inpid, '7 ngày', 7, 1, rettype);
+				s += showselect_row(inpid, '14 ngày', 14, 1, rettype);
+				s += showselect_row(inpid, 'Tháng', 30, 1, rettype);
+				s += showselect_row(inpid, 'Quý', 90, 1, rettype);
+				s += showselect_row(inpid, 'Nửa năm', 182, 1, rettype);
+				s += showselect_row(inpid, 'Năm', 365, 1, rettype);
+				s += showselect_row(inpid, 'Tùy chọn', -1);
 			}
 		}
 		$(div.id).innerHTML = s;
@@ -1684,7 +1684,7 @@ function announcement() {
 }
 
 function removeindexheats() {
-	return confirm('您确认要把此主题从热点主题中移除么？');
+	return confirm('Bạn có xác nhận xóa khỏi Chủ đề nóng');
 }
 
 function smilies_show(id, smcols, seditorkey) {
@@ -1767,8 +1767,8 @@ function smilies_switch(id, smcols, type, page, seditorkey) {
 	if(smilies_array[type].length > 2) {
 		prevpage = ((prevpage = parseInt(page) - 1) < 1) ? smilies_array[type].length - 1 : prevpage;
 		nextpage = ((nextpage = parseInt(page) + 1) == smilies_array[type].length) ? 1 : nextpage;
-		smiliespage = '<div class="pags_act"><a href="javascript:;" onclick="smilies_switch(\'' + id + '\', \'' + smcols + '\', ' + type + ', ' + prevpage + ', \'' + seditorkey + '\');doane(event);">上页</a>' +
-			'<a href="javascript:;" onclick="smilies_switch(\'' + id + '\', \'' + smcols + '\', ' + type + ', ' + nextpage + ', \'' + seditorkey + '\');doane(event);">下页</a></div>' +
+		smiliespage = '<div class="pags_act"><a href="javascript:;" onclick="smilies_switch(\'' + id + '\', \'' + smcols + '\', ' + type + ', ' + prevpage + ', \'' + seditorkey + '\');doane(event);">Previous</a>' +
+			'<a href="javascript:;" onclick="smilies_switch(\'' + id + '\', \'' + smcols + '\', ' + type + ', ' + nextpage + ', \'' + seditorkey + '\');doane(event);">Next</a></div>' +
 			page + '/' + (smilies_array[type].length - 1);
 	}
 	$(id + '_data').innerHTML = smiliesdata;
@@ -1860,7 +1860,7 @@ function pmchecknew() {
 }
 
 function showimmestatus(imme) {
-	var lang = {'Online':'MSN 在线','Busy':'MSN 忙碌','Away':'MSN 离开','Offline':'MSN 脱机'};
+	var lang = {'Online':'MSN Online','Busy':'MSN Busy','Away':'MSN Leave','Offline':'MSN Offline'};
 	$('imme_status_' + imme.id.substr(0, imme.id.indexOf('@'))).innerHTML = lang[imme.statusText];
 }
 
