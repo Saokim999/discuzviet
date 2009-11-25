@@ -11,7 +11,7 @@ $lang = array(
 	'EN_ISO' => 'ENGLISH ISO',
 	'EN_UTF8' => 'ENGLIST UTF-8',
 
-	'title_install' => SOFT_NAME.' Tiến trình cài đặt Discuz 7.1 Việt',
+	'title_install' => SOFT_NAME.' Tiến trình cài đặt Discuz 7.2 Việt Hóa',
 	'agreement_yes' => 'Đồng ý',
 	'agreement_no' => 'Bỏ qua',
 	'notset' => 'Không giới hạn',
@@ -143,11 +143,11 @@ $lang = array(
 	'admin_invalid' => '您的信息管理员信息没有填写完整，请仔细填写每个项目',
 	'admin_exist_password_error' => '该用户已经存在，如果您要设置此用户为论坛的管理员，请正确输入该用户的密码，或者请更换论坛管理员的名字',
 
-	'tagtemplates_subject' => '标题',
-	'tagtemplates_uid' => '用户 ID',
-	'tagtemplates_username' => '发帖者',
-	'tagtemplates_dateline' => '日期',
-	'tagtemplates_url' => '主题地址',
+	'tagtemplates_subject' => 'Tiêu đề', 
+	'tagtemplates_uid' => 'User ID', 
+	'tagtemplates_username' => 'Gửi bởi', 
+	'tagtemplates_dateline' => 'Ngày', 
+	'tagtemplates_url' => 'Địa chỉ Theme', 
 
 	'uc_version_incorrect' => '您的 UCenter 服务端版本过低，请升级 UCenter 服务端到最新版本，并且升级，下载地址：http://www.comsenz.com/ 。',
 	'config_unwriteable' => '安装向导无法写入配置文件, 请设置 config.inc.php 程序属性为可写状态(777)',
@@ -159,22 +159,22 @@ $lang = array(
 	'init_credits_karma' => '威望',
 	'init_credits_money' => '金钱',
 
-	'init_group_0' => '会员',
-	'init_group_1' => '管理员',
-	'init_group_2' => '超级版主',
-	'init_group_3' => '版主',
-	'init_group_4' => '禁止发言',
-	'init_group_5' => '禁止访问',
-	'init_group_6' => '禁止 IP',
-	'init_group_7' => '游客',
-	'init_group_8' => '等待验证会员',
-	'init_group_9' => '乞丐',
-	'init_group_10' => '新手上路',
-	'init_group_11' => '注册会员',
-	'init_group_12' => '中级会员',
-	'init_group_13' => '高级会员',
-	'init_group_14' => '金牌会员',
-	'init_group_15' => '论坛元老',
+	'init_group_0' => 'member', 
+	'init_group_1' => 'Administrator', 
+	'init_group_2' => 'Super Moderator', 
+	'init_group_3' => 'Moderators', 
+	'init_group_4' => 'prevented from speaking', 
+	'init_group_5' => 'No Access', 
+	'init_group_6' => 'ban IP', 
+	'init_group_7' => 'Visitor', 
+	'init_group_8' => 'pending validation member', 
+	'init_group_9' => 'beggars', 
+	'init_group_10' => 'novice Sheung', 
+	'init_group_11' => 'registered members', 
+	'init_group_12' => 'middle member', 
+	'init_group_13' => 'senior member', 
+	'init_group_14' => 'Gold Member', 
+	'init_group_15' => 'forum for veterans',
 
 	'init_rank_1' => '新生入学',
 	'init_rank_2' => '小试牛刀',
@@ -205,8 +205,8 @@ $lang = array(
 	'init_qihoo_searchboxtxt' =>'输入关键词,快速搜索本论坛',
 	'init_threadsticky' =>'全局置顶,分类置顶,本版置顶',
 
-	'init_default_style' => '默认风格',
-	'init_default_forum' => '默认版块',
+	'init_default_style' => 'Default Style', 
+	'init_default_forum' => 'Diễn đàn mặc định', 
 	'init_default_template' => '默认模板套系',
 	'init_default_template_copyright' => '康盛创想（北京）科技有限公司',
 
@@ -215,115 +215,114 @@ $lang = array(
 	'init_link' => 'Discuz! 官方论坛',
 	'init_link_note' => '提供最新 Discuz! 产品新闻、软件下载与技术交流',
 
-	'license' => '<div class="license"><h1>中文版授权协议 适用于中文用户</h1>
+	'license' => '<center><div class="license"><h1>Điều khoản sử dụng và bản quyền của Comsenz</h1>
 
-<p>版权所有 (c) 2001-2009，康盛创想（北京）科技有限公司保留所有权利。</p>
+<p> Translate by Saokim999 - Discuz Viet Group </ p> 
 
-<p>感谢您选择 Discuz! 论坛产品。希望我们的努力能为您提供一个高效快速和强大的社区论坛解决方案。</p>
+<p> Copyright (c) 2001-2009, Comsenz (Beijing) Technology Co., Ltd. All rights reserved. </ p> 
 
-<p>Discuz! 英文全称为 Crossday Discuz! Board，中文全称为 Discuz! 论坛，以下简称 Discuz!。</p>
+<p> Thank you for choosing Discuz! forum product. We hope that our efforts can provide you with an efficient, fast and powerful community forum solution. </ p> 
 
-<p>康盛创想（北京）科技有限公司为 Discuz! 产品的开发商，依法独立拥有 Discuz! 产品著作权（中国国家版权局著作权登记号 2006SR11895）。康盛创想（北京）科技有限公司网址为 http://www.comsenz.com，Discuz! 官方网站网址为 http://www.discuz.com，Discuz! 官方讨论区网址为 http://www.discuz.net。</p>
+<p> Discuz! English called the Crossday Discuz! Board, the Chinese called the Discuz! Forum, hereinafter referred to as Discuz!. </ p> 
 
-<p>Discuz! 著作权已在中华人民共和国国家版权局注册，著作权受到法律和国际公约保护。使用者：无论个人或组织、盈利与否、用途如何（包括以学习和研究为目的），均需仔细阅读本协议，在理解、同意、并遵守本协议的全部条款后，方可开始使用 Discuz! 软件。</p>
+<p> Comsenz (Beijing) Technology Co., Ltd. for Discuz! product developers, according to the law independently owned Discuz! Products Copyright (China National Copyright Administration of copyright registration number 2006SR11895). Comsenz (Beijing) Technology Co., Ltd. website http://www.comsenz.com, Discuz! Official website at http://www.discuz.com, Discuz! Official discussion forum at http://www . discuz.net. </ p> 
 
-<p>本授权协议适用且仅适用于 Discuz! 7.x.x 版本，康盛创想（北京）科技有限公司拥有对本授权协议的最终解释权。</p>
+<p> Discuz! copyright has been registered in The People Republic of China State Copyright Bureau, copyright protection under the law and international conventions. Users: Whether an individual or organization, profit or not, use (including such as to study and research purposes), are required to carefully read this agreement, understand, agree and comply with all the terms of this Agreement only after the start using Discuz ! software. </ p> 
 
-<h3>I. 协议许可的权利</h3>
-<ol>
-<li>您可以在完全遵守本最终用户授权协议的基础上，将本软件应用于非商业用途，而不必支付软件版权授权费用。</li>
-<li>您可以在协议规定的约束和限制范围内修改 Discuz! 源代码(如果被提供的话)或界面风格以适应您的网站要求。</li>
-<li>您拥有使用本软件构建的论坛中全部会员资料、文章及相关信息的所有权，并独立承担与文章内容的相关法律义务。</li>
-<li>获得商业授权之后，您可以将本软件应用于商业用途，同时依据所购买的授权类型中确定的技术支持期限、技术支持方式和技术支持内容，自购买时刻起，在技术支持期限内拥有通过指定的方式获得指定范围内的技术支持服务。商业授权用户享有反映和提出意见的权力，相关意见将被作为首要考虑，但没有一定被采纳的承诺或保证。</li>
+<p> This License Agreement applies and only applies Discuz! 7.xx version Comsenz (Beijing) Technology Co., Ltd. has the power of final interpretation of this license agreement. </ p> 
+
+<h1> I. licensing agreement the right to </h1> 
+<ol> 
+<li> you can fully comply with the end-user license agreement, based on the software used in the present non-commercial purposes, without having to pay for software copyright licensing fees. </ li> 
+<li> you bound by the provisions in the agreement and amendments within the limits Discuz! source code (if available) or interface styles to suit your site requirements. </ li> 
+<li> you have to use this software to build the forum all the members of the information, articles and related information of ownership, and independent take on the article content relevant legal obligations. </ li> 
+<li> a commercial license, you can use this software for commercial applications, while based on the type purchased by the authority identified in the period of technical support, technical support, methods and technical support content, from the moment of purchase, in the period of technical support owned by specifying that the acquisition within a specified range of technical support services. Business authorized users to enjoy the power to reflect and to express their views, the relevant views will be a primary consideration, but did not must have been adopted promises or guarantees. </ li> 
+</ol> 
+
+<h1> II. According to the agreement of the constraints and limitations </h1> 
+<ol> 
+<li> without authorization before the business may not be the software for commercial purposes (including but not limited to corporate sites, business web sites in order to profit for the head or the achievement of profit website). Purchase of commercial license, please visit http://www.discuz.com refer to the instructions, you can also call 8610-51657885 for more information. </ li> 
+<li> may not associated with this software, or a commercial license to lease, sell, mortgage or sub-license distribution. </ li> 
+<li> In any case, that is, no matter how used, whether modified or landscaping, changes to what extent, as long as the use of Discuz! the whole or any part thereof, without the written permission of the Forum page footer Department Discuz! name and Comsenz (Beijing) Technology Co., Ltd. affiliated Web site (http://www.comsenz.com, http://www.discuz.com or http://www.discuz.net) the link must be retained, but not removed or modified . </ li> 
+<li> prohibited Discuz! of the whole or any part of the basis for the development of any derivative version, modified version or third-party versions for re-distribution. </ li> 
+<li> if you fail to comply with the terms of this Agreement, your license will be terminated, the licensee rights will be withdrawn, and bear the corresponding legal responsibility. </ li> 
 </ol>
 
-<h3>II. 协议规定的约束和限制</h3>
-<ol>
-<li>未获商业授权之前，不得将本软件用于商业用途（包括但不限于企业网站、经营性网站、以营利为目或实现盈利的网站）。购买商业授权请登陆http://www.discuz.com参考相关说明，也可以致电8610-51657885了解详情。</li>
-<li>不得对本软件或与之关联的商业授权进行出租、出售、抵押或发放子许可证。</li>
-<li>无论如何，即无论用途如何、是否经过修改或美化、修改程度如何，只要使用 Discuz! 的整体或任何部分，未经书面许可，论坛页面页脚处的 Discuz! 名称和康盛创想（北京）科技有限公司下属网站（http://www.comsenz.com、http://www.discuz.com 或 http://www.discuz.net） 的链接都必须保留，而不能清除或修改。</li>
-<li>禁止在 Discuz! 的整体或任何部分基础上以发展任何派生版本、修改版本或第三方版本用于重新分发。</li>
-<li>如果您未能遵守本协议的条款，您的授权将被终止，所被许可的权利将被收回，并承担相应法律责任。</li>
+<h1> III. LIMITED WARRANTY AND DISCLAIMER </h1> 
+<ol> 
+<li> The software and the accompanying documents, as does not provide any explicit or implied, or guarantee of compensation provided in the form of. </ li> 
+<li> user voluntarily to use this software, you must understand the risks of using this software, in the absence of technical services to purchase products, we are not committed to providing any form of technical support, the use of guarantees, nor assume any use of this software give rise to problems related to responsibility. </ li> 
+<li> Comsenz (Beijing) Technology Co., Ltd. does not use the software to build a forum in the article or information responsibility. </ li> 
 </ol>
+</center>
+<p> about Discuz! end-user license agreement, business license and technical services to the details by Discuz! official website exclusive. Comsenz (Beijing) Technology Co., Ltd has, without prior notice, the revised license agreement and services price list of the powers of the amended agreement or price list from the right to change the date of entry into force of the new authorized users. </ p> 
 
-<h3>III. 有限担保和免责声明</h3>
-<ol>
-<li>本软件及所附带的文件是作为不提供任何明确的或隐含的赔偿或担保的形式提供的。</li>
-<li>用户出于自愿而使用本软件，您必须了解使用本软件的风险，在尚未购买产品技术服务之前，我们不承诺提供任何形式的技术支持、使用担保，也不承担任何因使用本软件而产生问题的相关责任。</li>
-<li>康盛创想（北京）科技有限公司不对使用本软件构建的论坛中的文章或信息承担责任。</li>
-</ol>
-
-<p>有关 Discuz! 最终用户授权协议、商业授权与技术服务的详细内容，均由 Discuz! 官方网站独家提供。康盛创想（北京）科技有限公司拥有在不事先通知的情况下，修改授权协议和服务价目表的权力，修改后的协议或价目表对自改变之日起的新授权用户生效。</p>
-
-<p>电子文本形式的授权协议如同双方书面签署的协议一样，具有完全的和等同的法律效力。您一旦开始安装 Discuz!，即被视为完全理解并接受本协议的各项条款，在享有上述条款授予的权力的同时，受到相关的约束和限制。协议许可范围以外的行为，将直接违反本授权协议并构成侵权，我们有权随时终止授权，责令停止损害，并保留追究相关责任的权力。</p></div>',
+<p> electronic text form of license agreement as a written agreement signed by both parties as a complete and equivalent legal effect. Once you start the installation Discuz!, Shall be deemed to fully understand and accept the terms of this Agreement, in the enjoyment of the powers conferred by these provisions, while subject to the constraints and limitations related. Permitted acts outside the scope of the agreement will be a direct violation of the licensing agreement and constitutes infringement, we have the right at any time terminate the authorization, shall be ordered to stop damage, and reserves the power to hold related responsibilities. </ p> </ div> ', 
 
 	'uc_installed' => '您已经安装过 UCenter，如果需要重新安装，请删除 data/install.lock 文件',
 	'i_agree' => '我已仔细阅读，并同意上述条款中的所有内容',
-	'supportted' => '支持',
-	'unsupportted' => '不支持',
+	'supportted' => 'Hỗ trợ',
+	'unsupportted' => 'Ko hỗ trợ',
 	'max_size' => '支持/最大尺寸',
-	'project' => '项目',
-	'ucenter_required' => 'Discuz! 所需配置',
-	'ucenter_best' => 'Discuz! 最佳',
-	'curr_server' => '当前服务器',
-	'env_check' => '环境检查',
-	'os' => '操作系统',
-	'php' => 'PHP 版本',
-	'attachmentupload' => '附件上传',
-	'unlimit' => '不限制',
-	'version' => '版本',
-	'gdversion' => 'GD 库',
-	'allow' => '允许',
-	'unix' => '类Unix',
-	'diskspace' => '磁盘空间',
-	'priv_check' => '目录、文件权限检查',
-	'func_depend' => '函数依赖性检查',
-	'func_name' => '函数名称',
-	'check_result' => '检查结果',
-	'suggestion' => '建议',
+	'project' => 'Dự án',
+	'ucenter_required' => 'Có thể cài',
+	'ucenter_best' => 'Đề xuất',
+	'curr_server' => 'Hiện thời',
+	'env_check' => 'Kiểm tra môi trường cài đặt', 
+	'os' => 'Máy chủ', 
+	'php' => 'PHP Version', 
+	'attachmentupload' => 'Giới hạn Upload', 
+	'unlimit' => 'Ko giới hạn', 
+	'version' => 'Version', 
+	'gdversion' => 'GD Version', 
+	'allow' => 'Cho phép',
+	'unix' => 'Unix',
+	'diskspace' => 'Dung lượng',
+	'priv_check' => 'Kiểm tra quyền file và thư mục', 
+	'func_depend' => 'Kiểm tra hàm để cho phép cài đặt', 
+	'func_name' => 'Têm hàm', 
+	'check_result' => 'Kết quả test', 
+	'suggestion' => 'Đề nghị', 
 	'advice_mysql' => '请检查 mysql 模块是否正确加载',
 	'advice_fopen' => '该函数需要 php.ini 中 allow_url_fopen 选项开启。请联系空间商，确定开启了此项功能',
 	'advice_file_get_contents' => '该函数需要 php.ini 中 allow_url_fopen 选项开启。请联系空间商，确定开启了此项功能',
 	'advice_xml' => '该函数需要 PHP 支持 XML。请联系空间商，确定开启了此项功能',
-	'none' => '无',
+	'none' => 'No',
 
-	'dbhost' => '数据库服务器',
-	'dbuser' => '数据库用户名',
-	'dbpw' => '数据库密码',
-	'dbname' => '数据库名',
-	'tablepre' => '数据表前缀',
+	'dbhost' => 'localhost', 
+	'dbuser' => 'Data UserName', 
+	'dbpw' => 'Mật khẩu Data', 
+	'dbname' => 'Tên Data', 
+	'tablepre' => 'Table prefix',
 
-	'ucfounderpw' => '创始人密码',
-	'ucfounderpw2' => '重复创始人密码',
+	'ucfounderpw' => 'Mật khẩu Admin', 
+	'ucfounderpw2' => 'Nhập lại',
 
 	'init_log' => '初始化记录',
-	'clear_dir' => '清空目录',
-	'select_db' => '选择数据库',
-	'create_table' => '建立数据表',
-	'succeed' => '成功',
+	'clear_dir' => 'Empty directory',
+	'select_db' => 'Chọn CSDL', 
+	'create_table' => 'Tạo Table', 
+	'succeed' => 'Thành công',
 
-	'testdata' => '安装测试数据',
-	'testdata_check_label' => '是',
-	'install_test_data' => '正在安装测试数据',
+	'testdata' => 'Cài đặt và kiểm tra dữ liệu',
+	'testdata_check_label' => 'Là',
+	'install_test_data' => 'Kiểm tra dữ liệu đang được cài đặt',
 
 	'method_undefined' => '未定义方法',
 	'database_nonexistence' => '数据库操作对象不存在',
-	'founder_contact' => '<h4>关于《康盛改善计划》的说明</h4>
+	'founder_contact' => '<h4>Liên hệ Admin</h4>
 
-	为了不断改进产品质量，改善用户体验，Discuz!7.2《康盛改善计划》，该系统有利于我们分析用户在论坛的操作习惯，进而帮助我们在未来的版本中对产品进行改进，设计出更符合用户需求的新功能。
-
-	该系统不会收集站点敏感信息，不收集用户资料，不存在安全风险，并且经过实际测试不会影响论坛的运行效率。
-
-	您安装使用本版本表示您同意加入《康盛改善计划》，Discuz!运营部门会通过对站点的分析为您提供运营指导建议，我们将提示您如何根据站点运行情况开启论坛功能，如何进行合理的功能配置，以及提供其他的一些运营经验等。
-
-	为了方便我们和您沟通运营策略，请您留下常用的网络联系方式',
-	'skip_current' => '跳过本步',
+	Để tiếp tục nâng cao chất lượng sản phẩm, nâng cao kinh nghiệm của người sử dụng, Discuz 7,1 "Sing Chương trình cải thiện", hệ thống sẽ giúp chúng tôi phân tích hoạt động của người sử dụng thói quen diễn đàn để giúp chúng tôi trong các phiên bản tương lai của các cải tiến sản phẩm, thiết kế chi tiết phù hợp với! nhu cầu của người sử dụng các tính năng mới.
+	Hệ thống không thu thập thông tin nhạy cảm của trang web này không thu thập thông tin người sử dụng, không có nguy cơ bảo mật, và thông qua các bài kiểm tra thực tế sẽ không ảnh hưởng đến hiệu quả hoạt động của diễn đàn này.
+	Sử dụng phiên bản này bạn đã cài đặt, bạn đồng ý gia nhập "Sing Chương trình cải thiện", Discuz hoạt động thông qua việc phân tích của trang web để cung cấp hoạt động hướng dẫn cho các đề xuất của bạn, chúng tôi sẽ nhắc bạn làm thế nào để mở diễn đàn theo chức năng hoạt động của trang web, làm thế nào để hợp lý chức năng cấu hình, và để cung cấp một số kinh nghiệm điều hành khác.
+	Để tạo thuận lợi cho giao tiếp giữa chúng tôi và bạn chiến lược hoạt động, xin vui lòng để lại liên lạc của bạn thường được sử dụng mạng',
+	'skip_current' => 'Giữ và tiếp tục',
 
 );
 
 $msglang = array(
 
-	'config_nonexistence' => '您的 config.inc.php 不存在, 无法继续安装, 请用 FTP 将该文件上传后再试。',
+	'config_nonexistence' => 'Your config.inc.php does not exist, can not continue with the installation, please use the FTP upload the file and try again. ',
 );
 
 $optionlist = array (
