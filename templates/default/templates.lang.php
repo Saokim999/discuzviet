@@ -2385,7 +2385,7 @@ $language = array
 	'hotthreads_forum' => 'Diễn đàn có bài HOT', 
 	'readmore' => 'Chi tiết', 
 
-	'removeindexheats_confirm' => 'Bạn có chắc rằng chủ đề này nên gỡ bỏ từ chủ đề nóng ?'
+	'removeindexheats_confirm' => 'Bạn có chắc rằng chủ đề này nên gỡ bỏ từ chủ đề nóng ?',
 
 	'hiddenreplies' => 'Bài này chỉ có tác giả đọc được',
 	'rushreply' => 'Trả lời nhanh',
