@@ -335,11 +335,11 @@ $lang = array
 	'nav_updatecache_verify' => 'Bắt đầu',
 	'nav_updatecache_completed' => 'Kết quả cập nhật',
 
-	'login_tips' => 'Our Forums translated by <a href="http://http://code.google.com/p/discuzviet/" target="_blank">DiscuzViet Group</a>.',
+	'login_tips' => 'Our Forums translated by <a href="http://code.google.com/p/discuzviet/" target="_blank">DiscuzViet Group</a>.',
 	'login_nosecques' => 'Bạn chưa thiết lập câu hỏi bảo mật. Hãy <a href="memcp.php?action=profile&typeid=1" target="_blank">click vào đây</a> để thiết lập câu hỏi',
 
 	'home' => 'Trang chủ',
-	'home_welcome' => 'Welcome to Admin CP - translate by <a href="http://http://code.google.com/p/discuzviet/" target="_blank"><b>DiscuzViet Group</b></a>',
+	'home_welcome' => 'Welcome to Admin CP - translate by <a href="http://code.google.com/p/discuzviet/" target="_blank"><b>DiscuzViet Group</b></a>',
 	'home_security_tips' => 'Gợi ý bảo mật',
 	'home_secques_invalid' => '<li> Dịch và phát triển bởi <a href="http://code.google.com/p/discuzviet/" target="_blank">DiscuzViet Group</a>',
 	'home_security_nofounder' => '<li>Bạn vẫn chưa đặt  <u>Người sáng lập diễn đàn</u>. Người sáng lập diễn đàn có vài chức năng khống chế các quản trị viên khác. Xin chỉnh sửa tại tập tin config.inc.php.',
