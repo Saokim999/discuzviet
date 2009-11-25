@@ -1,7 +1,7 @@
 <?php
 
 // Admins' CP Language Pack for Discuz! Version 1.0.0
-// VietNamese – Develop, translate and support by JaJa nktshop.com
+// VietNamese – translate and support by JaJa and Saokim999
 
 $lang = array
 (
@@ -1227,17 +1227,17 @@ $lang = array
 	'settings_wap_mps_comment' => 'Xin mời bạn đặt lớn hơn 0. Kiến nghị từ 300 đến 3000 ',
 
 	'settings_dzfeed' => 'Cấu hình hoạt động của diễn đàn',
-	'settings_dzfeed_thread_replies' => 'Bài trả lời tạo đánh giá nhất định',
+	'settings_dzfeed_thread_replies' => 'Số bài trả lời được xem là chủ đề nóng',
 	'settings_dzfeed_thread_replies_comment' => 'Có thể đặt nhiều giá trị, sử dụng một dấu phẩy (,) Khi số lượng đạt tới mức thiết lập sẽ hiện chủ đề năng động. Đặt 0 để bỏ chức năng này',
-	'settings_dzfeed_thread_views' => 'Số View để coi là chủ đề nóng',
+	'settings_dzfeed_thread_views' => 'Số lần đọc được xem là chủ đề nóng',
 	'settings_dzfeed_thread_views_comment' => 'Có thể đặt nhiều giá trị, sử dụng một dấu phẩy (,) Khi giá trị đạt tới giá trị thiết lập thì sẽ thành chủ đề nóng. Đặt 0 để tắt chức năng này',
-	'settings_dzfeed_thread_rate' => 'Chủ đề đạt tới số Rate ( Cho điểm) nhất định sẽ thành chủ đề nóng',
+	'settings_dzfeed_thread_rate' => 'Chủ đề đạt tới số lượng Rate (cho điểm) chỉ định sẽ thành chủ đề nóng',
 	'settings_dzfeed_thread_rate_comment' => 'Có thể đặt nhiều giá trị, sử dụng một dấu phẩy (,) Khi giá trị đạt tới giá trị thiết lập thì sẽ thành chủ đề nóng. Đặt 0 để tắt chức năng này',
-	'settings_dzfeed_post_rate' => 'Bài được rate ( Cho điểm) tới một mức độ nhất định sẽ thành chủ đề nóng',
+	'settings_dzfeed_post_rate' => 'Bài viết được Rate (cho điểm) tới mức chỉ định sẽ thành chủ đề nóng',
 	'settings_dzfeed_post_rate_comment' => 'Có thể đặt nhiều giá trị, sử dụng một dấu phẩy (,) Khi giá trị đạt tới giá trị thiết lập thì sẽ thành chủ đề nóng. Đặt 0 để tắt chức năng này',
-	'settings_dzfeed_user_usergroup' => 'Nâng cấp gửi tới nhóm năng động',
+	'settings_dzfeed_user_usergroup' => 'Nâng cấp lên nhóm mới',
 	'settings_dzfeed_user_usergroup_comment' => 'Thành viên có thể tùy chọn nâng cấp, All do not choose not to send such a dynamic',
-	'settings_dzfeed_user_credit' => 'Số điểm đạt được để thành viên có thể đánh giá Năng động/Hot',
+	'settings_dzfeed_user_credit' => 'Số điểm đạt được để thành viên có thể đánh giá độ nóng (HOT)',
 	'settings_dzfeed_user_credit_comment' => 'Có thể đặt nhiều giá trị, sử dụng một dấu phẩy (,) Khi giá trị đạt tới giá trị thiết lập thì sẽ thành chủ đề nóng. Đặt 0 để tắt chức năng này',
 	'settings_dzfeed_user_threads' => 'The number of users reaches a certain value keynote Send News',
 	'settings_dzfeed_user_threads_comment' => 'Có thể đặt nhiều giá trị, sử dụng một dấu phẩy (,) Khi giá trị đạt tới giá trị thiết lập thì sẽ thành chủ đề nóng. Đặt 0 để tắt chức năng này',
