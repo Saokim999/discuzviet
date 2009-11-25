@@ -62,44 +62,44 @@ $requestlang = array
 
 	'feed_name' => 'UCHome Feed',
 	'feed_desc' => 'Hiển thị các hoạt động của người dùng từ UCHome',
-	'feed_title' => '模块标题',
-	'feed_title_comment' => '模块在侧边栏显示的标题',
-	'feed_title_value' => '最新成员',
-	'feed_uids' => '指定用户 UID',
-	'feed_uids_comment' => '多个 UID 请用半角逗号 "," 隔开',
-	'feed_friend' => '动态类型',
-	'feed_friend_nolimit' => '不限制',
-	'feed_friend_friendonly' => '只获取好友',
-	'feed_start' => '起始数据行数',
-	'feed_start_comment' => '如需设定起始的数据行数，请输入具体数值，0 为从第一行开始，以此类推',
-	'feed_limit' => '显示数据条数',
-	'feed_limit_comment' => '设置一次显示的主题条目数，请设置为大于 0 的整数',
-	'feed_template' => '单条显示模板',
+	'feed_title' => 'Tiêu đề',
+	'feed_title_comment' => 'Nội dung tiêu đề sẽ xuất hiện trên Sidebar',
+	'feed_title_value' => 'Thành viên mới',
+	'feed_uids' => 'Chỉ định UID',
+	'feed_uids_comment' => 'Muốn nhiều UID thì sử dụng dấu "," để phân cách',
+	'feed_friend' => 'Kiểu hoạt động',
+	'feed_friend_nolimit' => 'Không giới hạn',
+	'feed_friend_friendonly' => 'Chỉ lấy Friend list',
+	'feed_start' => 'Số dòng để bắt đầu',
+	'feed_start_comment' => 'Thiết lập số bắt đầu từ dòng nào, VD: nhập giá trị 0 bắt đầu từ dòng đầu tiên',
+	'feed_limit' => 'Số lượng hoạt động',
+	'feed_limit_comment' => 'Số lượng các hoạt động được hiển thị, thiết lập một số nguyên lớn hơn 0',
+	'feed_template' => 'Hiển thị template độc lập',
 	'feed_template_comment' => '<div class="extcredits">
-		<a href="###" onclick="insertunit(\'{iconurl}\', \'parameter[settings][template]\')">{iconurl}</a>代表 动态类型图标
-		<a href="###" onclick="insertunit(\'{username}\', \'parameter[settings][template]\')">{username}</a>代表 用户名<br />
-		<a href="###" onclick="insertunit(\'{photo}\', \'parameter[settings][template]\')">{photo}</a>代表 用户头像地址<br />
-		<a href="###" onclick="insertunit(\'{title_template}\', \'parameter[settings][template]\')">{title_template}</a>代表 动态标题
-		<a href="###" onclick="insertunit(\'{userlink}\', \'parameter[settings][template]\')">{userlink}</a>代表 用户个人主页地址<br />
-		<a href="###" onclick="insertunit(\'{body_template}\', \'parameter[settings][template]\')">{body_template}</a>代表 动态内容
-		<a href="###" onclick="insertunit(\'{dateline}\', \'parameter[settings][template]\')">{dateline}</a>代表 创建时间<br />
+		<a href="###" onclick="insertunit(\'{iconurl}\', \'parameter[settings][template]\')">{iconurl}</a>Đại diện Icon của hoạt động
+		<a href="###" onclick="insertunit(\'{username}\', \'parameter[settings][template]\')">{username}</a>Đại diện Tên đăng nhập<br />
+		<a href="###" onclick="insertunit(\'{photo}\', \'parameter[settings][template]\')">{photo}</a>Đại diện Avatar<br />
+		<a href="###" onclick="insertunit(\'{title_template}\', \'parameter[settings][template]\')">{title_template}</a>Đại diện tiêu đề feed
+		<a href="###" onclick="insertunit(\'{userlink}\', \'parameter[settings][template]\')">{userlink}</a>Đại diện website của user<br />
+		<a href="###" onclick="insertunit(\'{body_template}\', \'parameter[settings][template]\')">{body_template}</a>Đại diện nội dung feed
+		<a href="###" onclick="insertunit(\'{dateline}\', \'parameter[settings][template]\')">{dateline}</a>Đại diện thời gian feed<br />
 		</div>',
 
-	'doing_name' => 'UCHome 记录调用模块',
-	'doing_desc' => '调用 UCHome 中的记录',
-	'doing_title' => '模块标题',
-	'doing_title_comment' => '模块在侧边栏显示的标题',
-	'doing_title_value' => '最新记录',
-	'doing_uids' => '指定用户 UID',
-	'doing_uids_comment' => '多个 UID 请用半角逗号 "," 隔开',
-	'doing_mood' => '记录类型',
-	'doing_mood_nolimit' => '不限制',
-	'doing_mood_moodonly' => '只获取心情记录',
-	'doing_start' => '起始数据行数',
-	'doing_start_comment' => '如需设定起始的数据行数，请输入具体数值，0 为从第一行开始，以此类推',
-	'doing_limit' => '显示数据条数',
-	'doing_limit_comment' => '设置一次显示的主题条目数，请设置为大于 0 的整数',
-	'doing_template' => '单条显示模板',
+	'doing_name' => 'Doing Module',
+	'doing_desc' => 'Đây là hoạt động ghi chú (doing) từ UCHome',
+	'doing_title' => 'Tiêu đề',
+	'doing_title_comment' => 'Được hiển thị trên Sidebar',
+	'doing_title_value' => 'Ghi chú mới nhất',
+	'doing_uids' => 'Chỉ định UID',
+	'doing_uids_comment' => 'Muốn nhiều UID thì sử dụng dấu "," để phân cách',
+	'doing_mood' => 'Kiểu ghi chú',
+	'doing_mood_nolimit' => 'Không giới hạn',
+	'doing_mood_moodonly' => 'Chỉ bản ghi cảm nhận',
+	'doing_start' => 'Số dòng bắt đầu',
+	'doing_start_comment' => 'Thiết lập số bắt đầu từ dòng nào, VD: nhập giá trị 0 là bắt đầu từ dòng đầu tiên',
+	'doing_limit' => 'Số lượng ghi chú',
+	'doing_limit_comment' => 'Số lượng hoạt động ghi chú được hiển thị, thiết lập một số nguyên lớn hơn 0',
+	'doing_template' => 'Hiển thị template độc lập',
 	'doing_template_comment' => '<div class="extcredits">
 		<a href="###" onclick="insertunit(\'{username}\', \'parameter[settings][template]\')">{username}</a>代表 用户名
 		<a href="###" onclick="insertunit(\'{photo}\', \'parameter[settings][template]\')">{photo}</a>代表 用户头像地址<br />
