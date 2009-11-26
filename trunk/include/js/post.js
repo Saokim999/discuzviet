@@ -12,7 +12,7 @@ var UPLOADFAILED = UPLOADCOMPLETE = AUTOPOST =  0;
 var CURRENTATTACH = '0';
 var FAILEDATTACHS = '';
 var UPLOADWINRECALL = null;
-var STATUSMSG = {'-1' : '内部服务器错误', '0' : '上传成功', '1' : '不支持此类扩展名', '2' : '附件大小为 0', '3' : '附件大小超限', '4' : '不支持此类扩展名', '5' : '附件大小超限', '6' : '附件总大小超限', '7' : '图片附件不合法', '8' : '附件文件无法保存', '9' : '没有合法的文件被上传', '10' : '非法操作'};
+var STATUSMSG = {'-1' : 'Internal Server Error', '0' : 'Tải lên thành công', '1' : 'Kiểu file không được phép', '2' : 'Attach size 0', '3' : 'File lớn hơn cho phép', '4' : 'Đuôi mở rộng không hợp lệ', '5' : 'Kích thước file đính kèm quá lớn', '6' : 'Tổng dung lượng đính kèm', '7' : 'Hình đính kèm không hợp lệ', '8' : 'File đính kèm không thể lưu', '9' : 'Không có file hợp lệ được tải lên', '10' : 'Thao tác không hợp lệ'};
 
 function checkFocus() {
 	var obj = wysiwyg ? editwin : textobj;
@@ -38,7 +38,7 @@ function ctlent(event) {
 
 function checklength(theform) {
 	var message = wysiwyg ? html2bbcode(getEditorContents()) : (!theform.parseurloff.checked ? parseurl(theform.message.value) : theform.message.value);
-	showDialog('当前长度: ' + mb_strlen(message) + ' 字节，' + (postmaxchars != 0 ? '系统限制: ' + postminchars + ' 到 ' + postmaxchars + ' 字节。' : ''), 'notice', '字数检查');
+	showDialog('Độ dài hiện có: ' + mb_strlen(message) + ' ký tự，' + (postmaxchars != 0 ? 'Diễn đàn giới hạn: ' + postminchars + ' tới ' + postmaxchars + ' ký tự' : ''), 'notice', 'Kiểm tra độ dài bài viết');
 }
 
 if(!tradepost) {
@@ -48,50 +48,50 @@ if(!tradepost) {
 function validate(theform) {
 	var message = trim(wysiwyg ? html2bbcode(getEditorContents()) : (!theform.parseurloff.checked ? parseurl(theform.message.value) : theform.message.value));
 	if(($('postsubmit').name != 'replysubmit' && !($('postsubmit').name == 'editsubmit' && !isfirstpost) && theform.subject.value == "") || !sortid && !special && message == "") {
-		showDialog('请完成标题或内容栏。');
+		showDialog('Bạn chưa điền nội dung bài viết');
 		return false;
-	} else if(mb_strlen(theform.subject.value) > 80) {
-		showDialog('您的标题超过 80 个字符的限制。');
+	} else if(mb_strlen(theform.subject.value) > 160) {
+		showDialog('Tiêu đề bài không dài hơn 160 ký tự');
 		return false;
 	}
 	if(tradepost) {
 		if(theform.item_name.value == '') {
-			showDialog('对不起，请输入商品名称。');
+			showDialog('Có lỗi, vui lòng nhập tên sản phẩm');
 			return false;
 		} else if(theform.item_price.value == '') {
-			showDialog('对不起，请输入商品现价。');
+			showDialog('Có lỗi, vui lòng nhập mức giá');
 			return false;
 		} else if(!parseInt(theform.item_price.value)) {
-			showDialog('对不起，商品现价必须为有效数字。');
+			showDialog('Có lỗi, giá hàng phải là số nguyên');
 			return false;
 		} else if(theform.item_costprice.value != '' && !parseInt(theform.item_costprice.value)) {
-			showDialog('对不起，商品原价必须为有效数字。');
+			showDialog('Có lỗi, giá hàng ban đầu phải là số');
 			return false;
 		} else if(theform.item_number.value != '0' && !parseInt(theform.item_number.value)) {
-			showDialog('对不起，商品数量必须为数字。');
+			showDialog('Có lỗi, Bạn chưa điền số bán ra');
 			theform.item_number.focus();
 			return false;
 		}
 	}
 	if(in_array($('postsubmit').name, ['topicsubmit', 'editsubmit'])) {
 		if(theform.typeid && (theform.typeid.options && theform.typeid.options[theform.typeid.selectedIndex].value == 0) && typerequired) {
-			showDialog('请选择主题对应的分类。');
+			showDialog('Hãy chọn một thể loại chủ đề tương ứng');
 			return false;
 		}
 		if(special == 3 && isfirstpost) {
 			if(theform.rewardprice.value == "") {
-				showDialog('对不起，请输入悬赏积分。');
+				showDialog('Có lỗi, vui lòng nhập điểm thưởng');
 				return false;
 			}
 		} else if(special == 4 && isfirstpost) {
 			if(theform.activityclass.value == "") {
-				showDialog('对不起，请输入活动所属类别。');
+				showDialog('Vui lòng nhập các mục tương ứng của sự kiện');
 				return false;
 			} else if($('starttimefrom_0').value == "" && $('starttimefrom_1').value == "") {
-				showDialog('对不起，请输入活动开始时间。');
+				showDialog('Có lỗi, hãy nhập thời gian bắt đầu sự kiện');
 				return false;
 			} else if(theform.activityplace.value == "") {
-				showDialog('对不起，请输入活动地点。');
+				showDialog('Có lỗi, nhập nơi hoạt động');
 				return false;
 			}
 		}
@@ -101,15 +101,15 @@ function validate(theform) {
 	}
 
 	if(!disablepostctrl && !sortid && !special && ((postminchars != 0 && mb_strlen(message) < postminchars) || (postmaxchars != 0 && mb_strlen(message) > postmaxchars))) {
-		showDialog('您的帖子长度不符合要求。\n\n当前长度: ' + mb_strlen(message) + ' 字节\n系统限制: ' + postminchars + ' 到 ' + postmaxchars + ' 字节');
+		showDialog('Chiều dài bài viết không hợp lệ\n\nĐộ dài hiện có: ' + mb_strlen(message) + ' ký tự\nHệ thống yêu cầu: ' + postminchars + ' tới ' + postmaxchars + ' ký tự');
 		return false;
 	}
 	if(UPLOADSTATUS == 0) {
-		if(!confirm('您有等待上传的附件，确认不上传这些附件吗？')) {
+		if(!confirm('Bạn cần đợi để tải lên tập tin đính kèm,  xác nhận không tải lên ?')) {
 			return false;
 		}
 	} else if(UPLOADSTATUS == 1) {
-		showDialog('您有正在上传的附件，请稍候，上传完成后帖子将会自动发表...', 'notice');
+		showDialog('File đính kèm đang tải lên, Hãy chờ sau khi tải xong bài viết sẽ tự hiển thị...', 'notice');
 		AUTOPOST = 1;
 		return false;
 	}
@@ -186,12 +186,12 @@ function loadData(quiet) {
 
 	if(in_array((data = trim(data)), ['', 'null', 'false', null, false])) {
 		if(!quiet) {
-			showDialog('没有可以恢复的数据！');
+			showDialog('Không có dữ liệu để phục hồi');
 		}
 		return;
 	}
 
-	if(!quiet && !confirm('此操作将覆盖当前帖子内容，确定要恢复数据吗？')) {
+	if(!quiet && !confirm('Thao tác này sẽ ghi đè lên nội dung đang có. Bạn có chắc muốn khôi phục dữ liệu')) {
 		return;
 	}
 
@@ -422,7 +422,7 @@ function setEditorEvents() {
 			menu.style.zIndex = '999';
 			menu.className = 'popupmenu_popup popupfix simple_menu';
 			menu.style.width = '80px';
-			menu.innerHTML = '<div class="popupmenu_option" unselectable="on"><ul unselectable="on"><li id="' + menuid + '_left" unselectable="on">图片居左混排</li><li id="' + menuid + '_right" unselectable="on">图片居右混排</li></ul></div>';
+			menu.innerHTML = '<div class="popupmenu_option" unselectable="on"><ul unselectable="on"><li id="' + menuid + '_left" unselectable="on">Căn lề trái</li><li id="' + menuid + '_right" unselectable="on">Căn lề phải</li></ul></div>';
 			$('append_parent').appendChild(menu);
 			$(menuid + '_left').onclick = function(e) {discuzcode('floatleft', obj.id);menu.style.display='none';doane(e)};
 			$(menuid + '_right').onclick = function(e) {discuzcode('floatright', obj.id);menu.style.display='none';doane(e)};
@@ -635,7 +635,7 @@ function discuzcode(cmd, arg) {
 		} else {
 			insertText(opentag + closetag, opentag.length, closetag.length);
 
-			while(listvalue = prompt('输入一个列表项目.\r\n留空或者点击取消完成此列表.', '')) {
+			while(listvalue = prompt('Nhập một danh sách.\r\nĐể trống hoặc nhấn Hủy để kết thúc.', '')) {
 				if(BROWSER.opera > 8) {
 					listvalue = '\n' + '[*]' + listvalue;
 					insertText(listvalue, strlen(listvalue) + 1, 0);
@@ -712,8 +712,8 @@ function showEditorMenu(tag, params) {
 	} else {
 		switch(tag) {
 			case 'createlink':
-				str = '请输入链接的地址:<br /><input type="text" id="' + ctrlid + '_param_1" style="width: 98%" value="" class="txt" />'+
-					(selection ? '' : '<br />请输入链接的文字:<br /><input type="text" id="' + ctrlid + '_param_2" style="width: 98%" value="" class="txt" />');
+				str = 'Nhập địa chỉ URL:<br /><input type="text" id="' + ctrlid + '_param_1" style="width: 98%" value="" class="txt" />'+
+					(selection ? '' : '<br />Nhập tên mô tả:<br /><input type="text" id="' + ctrlid + '_param_2" style="width: 98%" value="" class="txt" />');
 				break;
 			case 'forecolor':
 				showColorBox(ctrlid, 1);
@@ -725,21 +725,21 @@ function showEditorMenu(tag, params) {
 				if(selection) {
 					return insertText((opentag + selection + closetag), strlen(opentag), strlen(closetag), true, sel);
 				}
-				var lang = {'quote' : '请输入要插入的引用', 'code' : '请输入要插入的代码', 'hide' : '请输入要插入的隐藏内容', 'free' : '请输入要插入的免费信息'};
+				var lang = {'quote' : 'Nhập nội dung trích dẫn', 'code' : 'Nhập code để chèn', 'hide' : 'Nhập nội dung ẩn', 'free' : 'Nhập nội dung miễn phí'};
 				str += lang[tag] + ':<br /><textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea>' +
-					(tag == 'hide' ? '<br /><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_1" class="txt" checked="checked" />只有当浏览者回复本帖时才显示<br /><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_2" class="txt" />只有当浏览者积分高于 <input type="text" size="3" id="' + ctrlid + '_param_2" class="txt" /> 时才显示' : '');
+					(tag == 'hide' ? '<br /><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_1" class="txt" checked="checked" />Chỉ hiện khi trả lời<br /><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_2" class="txt" />Hiện khi có điểm cao hơn <input type="text" size="3" id="' + ctrlid + '_param_2" class="txt" /> điểm' : '');
 				break;
 			case 'table':
-				str = '表格行数: <input type="text" id="' + ctrlid + '_param_1" size="2" value="2" class="txt" /> &nbsp; 表格列数: <input type="text" id="' + ctrlid + '_param_2" size="2" value="2" class="txt" /><br />表格宽度: <input type="text" id="' + ctrlid + '_param_3" size="2" value="" class="txt" /> &nbsp; 背景颜色: <input type="text" id="' + ctrlid + '_param_4" size="2" class="txt" onclick="showColorBox(this.id, 2)" />';
+				str = 'Số dòng: <input type="text" id="' + ctrlid + '_param_1" size="2" value="2" class="txt" /> &nbsp; Số cột: <input type="text" id="' + ctrlid + '_param_2" size="2" value="2" class="txt" /><br />Khung rộng: <input type="text" id="' + ctrlid + '_param_3" size="2" value="" class="txt" /> &nbsp; Màu nền: <input type="text" id="' + ctrlid + '_param_4" size="2" class="txt" onclick="showColorBox(this.id, 2)" />';
 				break;
 			case 'audio':
-				str = '请输入音乐文件地址:<br /><input type="text" id="' + ctrlid + '_param_1" class="txt" value="" style="width: 245px;" />';
+				str = 'Nhập địa chỉ file nhạc:<br /><input type="text" id="' + ctrlid + '_param_1" class="txt" value="" style="width: 245px;" />';
 				break;
 			case 'video':
-				str = '请输入视频地址:<br /><input type="text" value="" id="' + ctrlid + '_param_1" style="width: 245px;" class="txt" /><br />宽: <input id="' + ctrlid + '_param_2" size="5" value="400" class="txt" /> &nbsp; 高: <input id="' + ctrlid + '_param_3" size="5" value="300" class="txt" />';
+				str = 'Nhập địa chỉ file video:<br /><input type="text" value="" id="' + ctrlid + '_param_1" style="width: 245px;" class="txt" /><br />Rộng: <input id="' + ctrlid + '_param_2" size="5" value="400" class="txt" /> &nbsp; Cao: <input id="' + ctrlid + '_param_3" size="5" value="300" class="txt" />';
 				break;
 			case 'flash':
-				str = '请输入 Flash 文件地址:<br /><input type="text" id="' + ctrlid + '_param_1" class="txt" value="" style="width: 245px;" />';
+				str = 'Nhập link file Flash:<br /><input type="text" id="' + ctrlid + '_param_1" class="txt" value="" style="width: 245px;" />';
 				break;
 			default:
 				var haveSel = selection == null || selection == false || in_array(trim(selection), ['', 'null', 'undefined', 'false']) ? 0 : 1;
@@ -749,7 +749,7 @@ function showEditorMenu(tag, params) {
 				var promptlang = custombbcodes[tag]['prompt'].split("\t");
 				for(var i = 1; i <= params; i++) {
 					if(i != params || !haveSel) {
-						str += (promptlang[i - 1] ? promptlang[i - 1] : '请输入第 ' + i + ' 个参数:') + '<br /><input type="text" id="' + ctrlid + '_param_' + i + '" style="width: 98%" value="" class="txt" />' + (i < params ? '<br />' : '');
+						str += (promptlang[i - 1] ? promptlang[i - 1] : 'Vui lòng nhập ' + i + ' Tham số:') + '<br /><input type="text" id="' + ctrlid + '_param_' + i + '" style="width: 98%" value="" class="txt" />' + (i < params ? '<br />' : '');
 					}
 				}
 				break;
@@ -761,7 +761,7 @@ function showEditorMenu(tag, params) {
 		menu.className = 'popupmenu_popup popupfix';
 		menu.style.width = (tag == 'table' ? 192 : 250) + 'px';
 		$(editorid + '_controls').appendChild(menu);
-		menu.innerHTML = '<div class="popupmenu_option">' + str + '<br /><center><input type="button" id="' + ctrlid + '_submit" value="提交" /> &nbsp; <input type="button" onClick="hideMenu()" value="取消" /></center></div>';
+		menu.innerHTML = '<div class="popupmenu_option">' + str + '<br /><center><input type="button" id="' + ctrlid + '_submit" value="OK" /> &nbsp; <input type="button" onClick="hideMenu()" value="Hủy" /></center></div>';
 		showMenu({'ctrlid':ctrlid,'evt':'click','duration':3,'cache':0,'drag':1});
 	}
 
@@ -1263,7 +1263,7 @@ function uploadAttach(curId, statusid, prefix) {
 			if(prefix == 'img') updateImageList();
 			else updateAttachList();
 			if(UPLOADFAILED > 0) {
-				showDialog('附件上传完成！成功 ' + UPLOADCOMPLETE + ' 个，失败 ' + UPLOADFAILED + ' 个:' + FAILEDATTACHS);
+				showDialog('Upload hoàn tất! ' + UPLOADCOMPLETE + ' file，Thất bại ' + UPLOADFAILED + ' file:' + FAILEDATTACHS);
 				FAILEDATTACHS = '';
 			}
 			UPLOADSTATUS = 2;
@@ -1278,7 +1278,7 @@ function uploadAttach(curId, statusid, prefix) {
 				hideMenu();
 				validate($('postform'));
 			} else if(UPLOADFAILED == 0 && ((prefix == 'img' && $(editorid + '_cmd_image_menu').style.display == 'none') || (prefix == '' && $(editorid + '_cmd_attach_menu').style.display == 'none'))) {
-				showDialog('附件上传完成！', 'notice');
+				showDialog('Upload hoàn tất', 'notice');
 			}
 			UPLOADFAILED = UPLOADCOMPLETE = 0;
 			CURRENTATTACH = '0';
@@ -1289,7 +1289,7 @@ function uploadAttach(curId, statusid, prefix) {
 		$(prefix + 'uploadbtn').style.display = 'none';
 		$(prefix + 'uploading').style.display = '';
 	}
-	$(prefix + 'cpdel_' + nextId).innerHTML = '<img src="' + IMGDIR + '/loading.gif" alt="上传中..." />';
+	$(prefix + 'cpdel_' + nextId).innerHTML = '<img src="' + IMGDIR + '/loading.gif" alt="Loading..." />';
 	UPLOADSTATUS = 1;
 	$(prefix + 'attachform_' + nextId).submit();
 }
@@ -1350,16 +1350,16 @@ function insertAttach(prefix, id) {
 	}
 	if(extensions != '' && (re.exec(extensions) == null || ext == '')) {
 		reAddAttach(prefix, id);
-		showDialog('对不起，不支持上传此类扩展名的附件。');
+		showDialog('Không hỗ trợ kiểu file này');
 		return;
 	}
 	if(prefix == 'img' && imgexts.indexOf(ext) == -1) {
 		reAddAttach(prefix, id);
-		showDialog('请选择图片文件(' + imgexts + ')');
+		showDialog('Hãy chọn tập tin ảnh (' + imgexts + ')');
 		return;
 	}
 
-	$(prefix + 'cpdel_' + id).innerHTML = '<a href="###" class="deloption" onclick="reAddAttach(\'' + prefix + '\', ' + id + ')">删除</a>';
+	$(prefix + 'cpdel_' + id).innerHTML = '<a href="###" class="deloption" onclick="reAddAttach(\'' + prefix + '\', ' + id + ')">Loại bỏ</a>';
 	$(prefix + 'localfile_' + id).innerHTML = '<span>' + filename + '</span>';
 	$(prefix + 'attachnew_' + id).style.display = 'none';
 	$(prefix + 'deschidden_' + id).style.display = '';
@@ -1405,7 +1405,7 @@ function updateAttach(aid) {
 	obj = $('attach' + aid);
 	if(!objupdate.innerHTML) {
 		obj.style.display = 'none';
-		objupdate.innerHTML = '<input type="file" name="attachupdate[paid' + aid + ']"><a href="javascript:;" onclick="updateAttach(' + aid + ')">取消</a>';
+		objupdate.innerHTML = '<input type="file" name="attachupdate[paid' + aid + ']"><a href="javascript:;" onclick="updateAttach(' + aid + ')">Hủy</a>';
 	} else {
 		obj.style.display = '';
 		objupdate.innerHTML = '';
@@ -1417,10 +1417,10 @@ function updateattachnum(type) {
 	ATTACHNUM[type + 'unused'] = ATTACHNUM[type + 'unused'] >= 0 ? ATTACHNUM[type + 'unused'] : 0;
 	var num = ATTACHNUM[type + 'used'] + ATTACHNUM[type + 'unused'];
 	if(num) {
-		$(editorid + '_cmd_' + type).title = '包含 ' + num + (type == 'image' ? ' 个图片附件' : ' 个附件');
+		$(editorid + '_cmd_' + type).title = 'Chứa ' + num + (type == 'image' ? ' hình ảnh' : ' đính kèm');
 		$(editorid + '_cmd_' + type + '_notice').style.display = '';
 	} else {
-		$(editorid + '_cmd_' + type).title = type == 'image' ? '图片' : '附件';
+		$(editorid + '_cmd_' + type).title = type == 'image' ? 'Hình' : 'đính kèm';
 		$(editorid + '_cmd_' + type + '_notice').style.display = 'none';
 	}
 }
@@ -1476,7 +1476,7 @@ function uploadWindowload() {
 		UPLOADWINRECALL(arr[3], arr[5]);
 		hideWindow('upload');
 	} else {
-		showDialog('上传失败:' + STATUSMSG[arr[2]]);
+		showDialog('Upload thất bại:' + STATUSMSG[arr[2]]);
 	}
 }
 
