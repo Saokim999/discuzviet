@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: forums.inc.php 21168 2009-11-19 01:46:47Z monkey $
+	$Id: forums.inc.php 21219 2009-11-20 08:22:28Z liulanbo $
 */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -626,7 +626,7 @@ var rowtypedata = [
 				$forum['threadsorts'] = unserialize($forum['threadsorts']);
 				$forum['threadsorts']['status'] = 1;
 			} else {
-				$forum['threadsorts'] = array('status' => 0, 'required' => 0, 'listable' => 0, 'prefix' => 0, 'options' => array());
+				$forum['threadsorts'] = array('status' => 0, 'required' => 0, 'prefix' => 0, 'options' => array());
 			}
 
 			if($forum['threadplugin']) {
@@ -921,7 +921,6 @@ EOT;
 				), TRUE), $forum['threadsorts']['status'], 'mradio');
 				showtagheader('tbody', 'threadsorts_config', $forum['threadsorts']['status']);
 				showsetting('forums_edit_threadtypes_required', 'threadsortsnew[required]', $forum['threadsorts']['required'], 'radio');
-				showsetting('forums_edit_threadtypes_listable', 'threadsortsnew[listable]', $forum['threadsorts']['listable'], 'radio');
 				showsetting('forums_edit_threadtypes_prefix', 'threadsortsnew[prefix]', $forum['threadsorts']['prefix'], 'radio');
 				showsetting('forums_edit_threadsorts_default', 'threadsortsnew[default]', $forum['threadsorts']['default'], 'radio');
 				if($typemodelshow) {
@@ -1324,7 +1323,6 @@ EOT;
 					$threadsortsnew = $threadsortsnew['types'] ? addslashes(serialize(array
 						(
 						'required' => (bool)$threadsortsnew['required'],
-						'listable' => (bool)$threadsortsnew['listable'],
 						'prefix' => (bool)$threadsortsnew['prefix'],
 						'types' => $threadsortsnew['types'],
 						'selectbox' => $threadsortsnew['selectbox'],
@@ -1401,10 +1399,12 @@ EOT;
 				}
 				if($forumdomains) {
 					$binddomains = array_flip($forumdomains);
-					$db->query("REPLACE INTO {$tablepre}settings (variable, value) VALUES ('forumdomains', '".(addslashes(serialize($forumdomains)))."')");
-					$db->query("REPLACE INTO {$tablepre}settings (variable, value) VALUES ('binddomains', '".(addslashes(serialize($binddomains)))."')");
-					$update_setting_cache = true;
+				} else {
+					$binddomains = array();
 				}
+				$db->query("REPLACE INTO {$tablepre}settings (variable, value) VALUES ('forumdomains', '".(addslashes(serialize($forumdomains)))."')");
+				$db->query("REPLACE INTO {$tablepre}settings (variable, value) VALUES ('binddomains', '".(addslashes(serialize($binddomains)))."')");
+				$update_setting_cache = true;
 			}
 
 			if($foruminfosidestatus) {
@@ -1544,7 +1544,7 @@ EOT;
 
 	$delfields = array(
 		'forums'	=> array('fid', 'fup', 'type', 'name', 'status', 'displayorder', 'threads', 'posts', 'todayposts', 'lastpost', 'modworks', 'icon'),
-		'forumfields'	=> array('description', 'password', 'redirect', 'moderators', 'rules', 'threadtypes', 'threadsorts', 'typemodels', 'tradetypes', 'threadplugin'),
+		'forumfields'	=> array('description', 'password', 'redirect', 'moderators', 'rules', 'threadsorts', 'typemodels', 'tradetypes', 'threadplugin'),
 	);
 	$fields = array(
 		'forums' 	=> fetch_table_struct('forums'),

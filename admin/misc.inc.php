@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: misc.inc.php 21052 2009-11-09 10:12:34Z monkey $
+	$Id: misc.inc.php 21184 2009-11-19 07:00:04Z monkey $
 */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -530,15 +530,23 @@ var rowtypedata = [
 		$tselect = '<select><option value="0">'.lang('none').'</option><option value="1">'.lang('misc_stamp_option_stick').'</option><option value="2">'.lang('misc_stamp_option_digest').'</option><option value="3">'.lang('misc_stamp_option_recommend').'</option></select>';
 		$query = $db->query("SELECT * FROM {$tablepre}smilies WHERE type='stamp' ORDER BY displayorder");
 		while($smiley =	$db->fetch_array($query)) {
+			$s = $r = array();
+			$s[] = '<select>';
+			$r[] = '<select name="typeidnew['.$smiley['id'].']">';
+			if($smiley['typeid']) {
+				$s[] = '<option value="'.$smiley['typeid'].'">';
+				$r[] = '<option value="'.$smiley['typeid'].'" selected="selected">';
+				$s[] = '<option value="0">';
+				$r[] = '<option value="-1">';
+			}
+			$tselectrow = str_replace($s, $r, $tselect);
 			showtablerow('', array('class="td25"', 'class="td28 td24"', 'class="td23"'), array(
 				"<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$smiley[id]\">",
 				"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayorder[$smiley[id]]\" value=\"$smiley[displayorder]\">",
 				"<input type=\"text\" class=\"txt\" size=\"2\" name=\"code[$smiley[id]]\" value=\"$smiley[code]\">",
 				"<img src=\"images/stamps/$smiley[url]\">",
 				$smiley['url'],
-				str_replace(array('<option value="'.$smiley['typeid'].'">', '<select>'),
-					array('<option value="'.$smiley['typeid'].'" selected="selected">', '<select name="typeidnew['.$smiley['id'].']">'),
-				$tselect),
+				$tselectrow,
 			));
 			$imgfilter[] = $smiley['url'];
 		}
@@ -591,6 +599,7 @@ var rowtypedata = [
 				if($displayorder[$id] >= 0 && $displayorder[$id] < 100) {
 					$typeidadd = '';
 					if($typeidnew[$id] && !isset($typeidset[$typeidnew[$id]])) {
+						$typeidnew[$id] = $typeidnew[$id] > 0 ? $typeidnew[$id] : 0;
 						$typeidadd = ",typeid='$typeidnew[$id]'";
 						$typeidset[$typeidnew[$id]] = TRUE;
 					}

@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: threads.inc.php 21105 2009-11-16 01:38:34Z cnteacher $
+	$Id: threads.inc.php 21266 2009-11-24 05:35:06Z liulanbo $
 */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -353,20 +353,32 @@ EOT;
 		}
 
 		if(!$donotupdatemember) {
-			$tuidarray = $ruidarray = array();
-			$query = $db->query("SELECT first, authorid FROM {$tablepre}posts WHERE $tidsadd");
+			$query = $db->query("SELECT fid, first, authorid FROM {$tablepre}posts WHERE $tidsadd");
 			while($post = $db->fetch_array($query)) {
-				if($post['first']) {
-					$tuidarray[] = $post['authorid'];
-				} else {
-					$ruidarray[] = $post['authorid'];
+				$forumposts[$post['fid']][] = $post;
+			}
+			foreach($forumposts as $fid => $postarray) {
+				$query = $db->query("SELECT postcredits, replycredits FROM {$tablepre}forumfields WHERE fid='$fid'");
+				if($forum = $db->fetch_array($query)) {
+					$forum['postcredits'] = !empty($forum['postcredits']) ? unserialize($forum['postcredits']) : array();
+					$forum['replycredits'] = !empty($forum['replycredits']) ? unserialize($forum['replycredits']) : array();
 				}
-			}
-			if($tuidarray) {
-				updatepostcredits('-', $tuidarray, $creditspolicy['post']);
-			}
-			if($ruidarray) {
-				updatepostcredits('-', $ruidarray, $creditspolicy['reply']);
+				$postcredits = $forum['postcredits'] ? $forum['postcredits'] : $creditspolicy['post'];
+				$replycredits = $forum['replycredits'] ? $forum['replycredits'] : $creditspolicy['reply'];
+				$tuidarray = $ruidarray = array();
+				foreach($postarray as $post) {
+					if($post['first']) {
+						$tuidarray[] = $post['authorid'];
+					} else {
+						$ruidarray[] = $post['authorid'];
+					}
+				}
+				if($tuidarray) {
+					updatepostcredits('-', $tuidarray, $postcredits);
+				}
+				if($ruidarray) {
+					updatepostcredits('-', $ruidarray, $replycredits);
+				}				
 			}
 		}
 
@@ -507,8 +519,8 @@ EOT;
 				}
 				$db->query("UPDATE {$tablepre}threads SET displayorder='0' WHERE tid IN ($del_tids)");
 			} elseif($do == 'add') {
-				if(preg_match('/tid=(\d+)|thread-(\d+)-/i', $forumstick_url, $matches)) {
-					$forumstick_tid = $matches[1];
+				if(preg_match('/(tid=|thread-)(\d+)/i', $forumstick_url, $matches)) {
+					$forumstick_tid = $matches[2];
 				} else {
 					cpmsg('threads_forumstick_url_invalid', "$BASESCRIPT?action=threads&operation=forumstick&do=add", 'error');
 				}

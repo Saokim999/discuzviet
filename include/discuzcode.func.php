@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: discuzcode.func.php 21128 2009-11-16 07:44:40Z monkey $
+	$Id: discuzcode.func.php 21257 2009-11-23 08:21:38Z monkey $
 */
 
 if(!defined('IN_DISCUZ')) {
@@ -103,10 +103,7 @@ function discuzcode($message, $smileyoff, $bbcodeoff, $htmlon = 0, $allowsmilies
 
 	$msglower = strtolower($message);
 
-	$htmlrule = 0;
-	if($htmlrule) {
-		$htmlon = $htmlon && $allowhtml ? 1 : 0;
-	}
+	//$htmlon = $htmlon && $allowhtml ? 1 : 0;
 
 	if(!$htmlon) {
 		$message = $jammer ? preg_replace("/\r\n|\n|\r/e", "jammer()", dhtmlspecialchars($message)) : dhtmlspecialchars($message);

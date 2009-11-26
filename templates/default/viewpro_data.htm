@@ -1,6 +1,6 @@
 {subtemplate header}
 
-<!--{block subtitle}-->$member[username]<!--{if empty($item) || $item == 'threads'}-->的主题<!--{elseif $item == 'posts'}-->的回复<!--{/if}--><!--{/block}-->
+<!--{block subtitle}-->$member[username]<!--{if empty($item) || $item == 'threads'}-->{lang member_threads}<!--{elseif $item == 'posts'}-->{lang member_replys}<!--{/if}--><!--{/block}-->
 <div id="nav">
 	<a href="$indexname">$bbname</a> &raquo; $subtitle
 </div>

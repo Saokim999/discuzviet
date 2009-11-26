@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: post.func.php 21112 2009-11-16 04:24:22Z zhaoxiongfei $
+	$Id: post.func.php 21285 2009-11-25 01:13:17Z zhaoxiongfei $
 */
 
 if(!defined('IN_DISCUZ')) {
@@ -360,7 +360,7 @@ function getattach($posttime = 0) {
 
 function parseattachmedia($attach) {
 	$attachurl = 'attach://'.$attach['aid'].'.'.$attach['ext'];
-	switch($attach['ext']) {
+	switch(strtolower($attach['ext'])) {
 		case 'mp3':
 		case 'wma':
 		case 'ra':
@@ -785,7 +785,9 @@ function postfeed($feed) {
 
 function messagecutstr($str, $length) {
 	global $language, $_DCACHE;
-	include_once language('misc');
+	if(empty($language['post_edit_regexp']) || empty($language['post_hidden'])) {
+		include language('misc');
+	}
 	include_once DISCUZ_ROOT.'./forumdata/cache/cache_post.php';
 	$bbcodes = 'b|i|u|p|color|size|font|align|list|indent|float';
 	$bbcodesclear = 'url|email|code|free|table|tr|td|img|swf|flash|attach|media|audio|payto'.($_DCACHE['bbcodes_display'] ? '|'.implode('|', array_keys($_DCACHE['bbcodes_display'])) : '');

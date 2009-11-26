@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: global.func.php 21120 2009-11-16 06:42:56Z zhaoxiongfei $
+	$Id: global.func.php 21306 2009-11-26 00:56:50Z monkey $
 */
 
 if(!defined('IN_DISCUZ')) {
@@ -462,7 +462,7 @@ function formulaperm($formula, $type = 0, $wap = FALSE) {
 		}
 	}
 	$formula = $formula[1];
-	if(!$type && (!$formula || $_DSESSION['adminid'] == 1 || $forum['ismoderator']) || $type && !$formula) {
+	if(!$type && ($_DSESSION['adminid'] == 1 || $forum['ismoderator'])) {
 		return FALSE;
 	}
 	if(!$type && $permusers) {
@@ -472,7 +472,10 @@ function formulaperm($formula, $type = 0, $wap = FALSE) {
 			showmessage('forum_permforum_disallow', NULL, 'NOPERM');
 		}
 	}
-	if(!$type && strexists($formula, '$memberformula[')) {
+	if(!$formula) {
+		return FALSE;
+	}
+	if(strexists($formula, '$memberformula[')) {
 		preg_match_all("/\\\$memberformula\['(\w+?)'\]/", $formula, $a);
 		$fields = $profilefields = array();
 		$mfadd = '';
@@ -807,15 +810,16 @@ function output() {
 
 		if($binddomains && $forumdomains) {
 			$bindsearcharray = $bindreplacearray = array();
+			$indexname = basename($indexname);
 			foreach($forumdomains as $fid => $domain) {
 				$bindsearcharray[] = "href=\"forumdisplay.php?fid=$fid&amp;";
-				$bindreplacearray[] = "href=\"http://$domain/{$indexname}?";
+				$bindreplacearray[] = 'href="http://'.$domain.'/'.$indexname.'?';
 				$bindsearcharray[] = "href=\"forumdisplay.php?fid=$fid";
-				$bindreplacearray[] = "href=\"http://$domain/{$indexname}";
+				$bindreplacearray[] = 'href="http://'.$domain.'/'.$indexname;
 			}
 			$content = str_replace($bindsearcharray, $bindreplacearray, $content);
 		}
-		
+
 		if($rewritestatus) {
 			$searcharray = $replacearray = array();
 			if($rewritestatus & 1) {
@@ -836,7 +840,7 @@ function output() {
 			}
 			$content = preg_replace($searcharray, $replacearray, $content);
 		}
-		
+
 		ob_end_clean();
 		$GLOBALS['gzipcompress'] ? ob_start('ob_gzhandler') : ob_start();
 

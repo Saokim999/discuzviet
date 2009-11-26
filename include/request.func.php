@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: request.func.php 20942 2009-11-02 04:12:16Z monkey $
+	$Id: request.func.php 21221 2009-11-22 00:23:57Z monkey $
 */
 
 if(!defined('IN_DISCUZ')) {
@@ -92,7 +92,7 @@ function parse_request($requestdata, $cachefile, $mode, $specialfid = 0, $key = 
 }
 
 function updaterequest($requestdata, $requesttemplatebody, $requesttemplate, $specialfid, $mode, $key, &$nocache) {
-	global $db, $tablepre, $timestamp, $boardurl, $dateformat, $timeformat, $rewritestatus, $uc, $_DCACHE;
+	global $db, $tablepre, $timestamp, $dateformat, $timeformat, $rewritestatus, $uc, $_DCACHE;
 
 	$function = $requestdata['function'];
 	$fids = isset($requestdata['fids']) ? $requestdata['fids'] : NULL;
@@ -103,7 +103,7 @@ function updaterequest($requestdata, $requesttemplatebody, $requesttemplate, $sp
 	$newwindow = isset($requestdata['newwindow']) ? $requestdata['newwindow'] : 1;
 	$LinkTarget = $newwindow == 1 ? " target='_blank'" : ($newwindow == 2 ? " target='main'" : NULL);
 	$sidestatus = !empty($requestdata['sidestatus']) ? 1 : 0;
-	$boardurl = empty($requestdata['boardurl']) ? ($mode ? $boardurl : '') : $requestdata['boardurl'].'/';
+	$boardurl = empty($requestdata['boardurl']) ? ($mode ? $GLOBALS['boardurl'] : '') : $requestdata['boardurl'].'/';
 
 	if($function == 'threads') {
 		$orderby = isset($requestdata['orderby']) ? (in_array($requestdata['orderby'],array('lastpost','dateline','replies','views','heats','recommends','hourviews','todayviews','weekviews','monthviews')) ? $requestdata['orderby'] : 'lastpost') : 'lastpost';

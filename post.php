@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: post.php 21102 2009-11-14 02:45:06Z monkey $
+	$Id: post.php 21295 2009-11-25 09:16:34Z monkey $
 */
 
 define('CURSCRIPT', 'post');
@@ -115,11 +115,11 @@ if($attachextensions) {
 } else {
 	$imgexts = 'jpg, jpeg, gif, png, bmp';
 }
+$allowuploadnum = TRUE;
 if($allowpostattach) {
 	if($maxattachnum) {
 		$allowuploadnum = $maxattachnum - $db->result_first("SELECT count(*) FROM {$tablepre}attachments WHERE uid='$discuz_uid' AND dateline>'$timestamp'-86400");
 		$allowuploadnum = $allowuploadnum < 0 ? 0 : $allowuploadnum;
-		$allowpostattach = $allowuploadnum ? $allowuploadnum : 0;
 	}
 	if($maxsizeperday) {
 		$allowuploadsize = $maxsizeperday - intval($db->result_first("SELECT SUM(filesize) FROM {$tablepre}attachments WHERE uid='$discuz_uid' AND dateline>'$timestamp'-86400"));
@@ -127,6 +127,7 @@ if($allowpostattach) {
 		$allowuploadsize = $allowuploadsize / 1048576 >= 1 ? round(($allowuploadsize / 1048576), 1).'MB' : round(($allowuploadsize / 1024)).'KB';
 	}
 }
+
 $allowpostimg = $allowpostattach && $imgexts;
 $enctype = $allowpostattach ? 'enctype="multipart/form-data"' : '';
 $maxattachsize_mb = $maxattachsize / 1048576 >= 1 ? round(($maxattachsize / 1048576), 1).'MB' : round(($maxattachsize / 1024)).'KB';

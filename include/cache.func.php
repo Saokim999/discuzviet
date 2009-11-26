@@ -4,11 +4,11 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: cache.func.php 21108 2009-11-16 03:19:18Z tiger $
+	$Id: cache.func.php 21311 2009-11-26 01:35:43Z liulanbo $
 */
 
 define('DISCUZ_KERNEL_VERSION', '7.2');
-define('DISCUZ_KERNEL_RELEASE', '20091120');
+define('DISCUZ_KERNEL_RELEASE', '20091126');
 
 
 function updatecache($cachename = '') {
@@ -433,9 +433,6 @@ function getcachearray($cachename, $script = '') {
 			$table = 'forumlinks';
 			$conditions = "ORDER BY displayorder";
 			break;
-		case 'heats':
-			$table = 'threads';
-			break;
 		case 'bbcodes':
 			$table = 'bbcodes';
 			$conditions = "WHERE available>'0'";
@@ -543,7 +540,7 @@ function getcachearray($cachename, $script = '') {
 	}
 
 	$data = array();
-	if(!in_array($cachename, array('focus', 'secqaa')) && substr($cachename, 0, 5) != 'advs_') {
+	if(!in_array($cachename, array('focus', 'secqaa', 'heats')) && substr($cachename, 0, 5) != 'advs_') {
 		if(empty($table) || empty($cols)) return '';
 		$query = $db->query("SELECT $cols FROM {$tablepre}$table $conditions");
 	}
@@ -918,7 +915,7 @@ function getcachearray($cachename, $script = '') {
 					$adminmenu[] = array('url' => "plugins&operation=config&pluginid=$plugin[pluginid]", 'name' => $plugin['name']);
 				}
 			}
-			$data['my_status'] = $data['plugins']['available']['available'] && in_array('manyou', $data['plugins']['available']['available']) ? $data['my_status'] : 0;
+			$data['my_status'] = $data['plugins']['available'] && in_array('manyou', $data['plugins']['available']) ? $data['my_status'] : 0;
 			writetocache('scriptlang', '', getcachevars(array('scriptlang' => $scriptlang)));
 			if($threadpluginicons) {
 				$existicons = array();

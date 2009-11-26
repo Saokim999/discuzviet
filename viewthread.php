@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: viewthread.php 21086 2009-11-11 08:46:32Z liulanbo $
+	$Id: viewthread.php 21264 2009-11-24 02:44:17Z tiger $
 */
 
 if(!defined('CURSCRIPT')) {
@@ -102,15 +102,17 @@ if($thread['sortid'] && $threadsort) {
 				} else {
 					$optionlist[$option['identifier']]['value'] = $optiondata[$optionid];
 				}
-				$searchtitle[] = '/{('.$option['identifier'].')}/e';
-				$searchvalue[] = '/\[('.$option['identifier'].')value\]/e';
-				$searchunit[] = '/\[('.$option['identifier'].')unit\]/e';
 			}
 
 			if($_DTYPETEMPLATE) {
+				foreach($_DTYPE as $option) {
+					$searchtitle[] = '/{('.$option['identifier'].')}/e';
+					$searchvalue[] = '/\[('.$option['identifier'].')value\]/e';
+					$searchunit[] = '/\[('.$option['identifier'].')unit\]/e';
+				}
 				$typetemplate = preg_replace($searchtitle, "showoption('\\1', 'title')", $_DTYPETEMPLATE);
 				$typetemplate = preg_replace($searchvalue, "showoption('\\1', 'value')", $typetemplate);
-				$typetemplate = preg_replace($searchunit, "showoption('\\1', 'value')", $typetemplate);
+				$typetemplate = preg_replace($searchunit, "showoption('\\1', 'unit')", $typetemplate);
 			}
 		}
 	}

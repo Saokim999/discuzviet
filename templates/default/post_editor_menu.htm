@@ -52,8 +52,8 @@
 		<li><a href="javascript:;" hidefocus="true" class="current" id="{$editorid}_btn_www" onclick="switchImagebutton('www');">{lang e_img_www}</a></li>
 		<!--{if $allowpostimg}-->
 			<li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_imgattachlist" onclick="switchImagebutton('imgattachlist');">{lang e_img_attach}</a></li>
-			<!--{if $swfupload != 1}--><li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_local" onclick="switchImagebutton('local');">{lang normal_upload}</a></li><!--{/if}-->
-			<!--{if $swfupload != 0}--><li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_multi" onclick="switchImagebutton('multi');">{lang batch_upload}</a></li><!--{/if}-->
+			<!--{if $swfupload != 1 && $allowuploadnum}--><li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_local" onclick="switchImagebutton('local');">{lang normal_upload}</a></li><!--{/if}-->
+			<!--{if $swfupload != 0 && $allowuploadnum}--><li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_multi" onclick="switchImagebutton('multi');">{lang batch_upload}</a></li><!--{/if}-->
 		<!--{/if}-->
 	</ul>
 	<div class="popupmenu_option" unselectable="on" id="{$editorid}_www">
@@ -145,7 +145,7 @@
 				<!--{/if}-->
 				<div id="imgattachlist">
 					<!--{if !$imgattachs['used'] && !$imgattachs['unused']}-->
-						<p class="notice">{lang no_attachimg}<a href="javascript:;" onclick="switchImagebutton('{if $swfupload != 0}multi{else}local{/if}');">{lang click_here}</a>{lang attachment_new}</p>
+						<p class="notice">{lang no_attachimg}<!--{if $allowuploadnum}-->, <a href="javascript:;" onclick="switchImagebutton('{if $swfupload != 0}multi{else}local{/if}');">{lang click_here}</a>{lang attachment_new}<!--{/if}--></p>
 					<!--{/if}-->
 				</div>
 				<div id="unusedimgattachlist">
@@ -156,7 +156,7 @@
 					<!--{/if}-->
 				</div>
 				<!--{if $ucappopen['UCHOME']}-->
-					{lang uch_selectfromalbum}: <span id="uch_albums"></span>
+					<p class="notice">{lang uch_selectfromalbum}: <span id="uch_albums"></span></p>
 					<div id="uch_photoes"></div>
 				<!--{/if}-->
 			</div>
@@ -170,8 +170,8 @@
 		<div class="float_ctrl"><span><a href="javascript:;" class="float_close" onclick="hideMenu()">{lang close}</a></span></div>
 		<ul class="imguptype" id="{$editorid}_cmd_attach_ctrl">
 			<li><a href="javascript:;" hidefocus="true" class="current" id="{$editorid}_btn_attachlist" onclick="switchAttachbutton('attachlist');">{lang attachment_list}</a></li>
-			<!--{if $swfupload != 1}--><li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_upload" onclick="switchAttachbutton('upload');">{lang common_upload}</a></li><!--{/if}-->
-			<!--{if $swfupload != 0}--><li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_swfupload" onclick="switchAttachbutton('swfupload');">{lang batch_upload}</a></li><!--{/if}-->
+			<!--{if $swfupload != 1 && $allowuploadnum}--><li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_upload" onclick="switchAttachbutton('upload');">{lang common_upload}</a></li><!--{/if}-->
+			<!--{if $swfupload != 0 && $allowuploadnum}--><li><a href="javascript:;" hidefocus="true" id="{$editorid}_btn_swfupload" onclick="switchAttachbutton('swfupload');">{lang batch_upload}</a></li><!--{/if}-->
 		</ul>
 		<!--{if $swfupload != 1}-->
 			<div class="popupmenu_option" unselectable="on" id="{$editorid}_upload" style="display: none;">
@@ -255,7 +255,7 @@
 				<!--{/if}-->
 				<div id="attachlist">
 					<!--{if !$attachs['used'] && !$attachs['unused']}-->
-						<p class="notice">{lang no_attach}<a href="javascript:;" onclick="switchAttachbutton('{if $swfupload != 0}swfupload{else}upload{/if}');">{lang click_here}</a>{lang attachment_new}</p>
+						<p class="notice">{lang no_attach}<!--{if $allowuploadnum}-->, <a href="javascript:;" onclick="switchAttachbutton('{if $swfupload != 0}swfupload{else}upload{/if}');">{lang click_here}</a>{lang attachment_new}<!--{/if}--></p>
 					<!--{/if}-->
 				</div>
 				<div id="unusedattachlist">

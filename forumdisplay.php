@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: forumdisplay.php 21164 2009-11-18 06:35:34Z tiger $
+	$Id: forumdisplay.php 21202 2009-11-20 01:06:05Z tiger $
 */
 
 define('BINDDOMAIN', 'forumdisplay');
@@ -215,7 +215,7 @@ if(isset($filter)) {
 			$filteradd .= "AND sortid='$sortid'";
 			$forumdisplayadd .= $sortadd = "&amp;sortid=$sortid";
 		}
-	} elseif($filter == 'sort' && $forum['threadsorts']['listable'] && $sortid && isset($forum['threadsorts']['types'][$sortid])) {
+	} elseif($filter == 'sort' && $sortid && isset($forum['threadsorts']['types'][$sortid])) {
 		$forumdisplayadd .= "&amp;filter=sort&amp;sortid=$sortid";
 		$sortadd = "&amp;sortid=$sortid";
 		$filteradd = "AND sortid='$sortid'";
@@ -224,7 +224,7 @@ if(isset($filter)) {
 			$forumdisplayadd .= $typeadd = "&amp;typeid=$typeid";
 		}
 		$query_string = daddslashes($_SERVER['QUERY_STRING'], 1);
-		if($query_string && $quicksearchlist) {
+		if($query_string && $quicksearchlist['option']) {
 			$query_string = substr($query_string, (strpos($query_string, "&") + 1));
 			parse_str($query_string, $selectadd);
 			if($selectadd && is_array($selectadd)) {
@@ -310,8 +310,13 @@ if($globalstick && $forum['allowglobalstick']) {
 		$forumstickytids[] = $forumstickthread['tid'];
 	}
 	if(!empty($forumstickytids)) {
-		$forumstickytids = implode(', ', $forumstickytids);
+		$forumstickytids = implodeids($forumstickytids);
 		$stickytids .= ", $forumstickytids";
+	}
+	
+	$stickytids = trim($stickytids, ', ');
+	if ($stickytids === ''){
+		$stickytids = '0';
 	}
 
 	$stickycount = $_DCACHE['globalstick']['global']['count'] + $_DCACHE['globalstick']['categories'][$thisgid]['count'] + $forumstickycount;
@@ -463,6 +468,7 @@ if($sortid && $forum['threadsorts']['types'][$sortid]) {
 	$threadlist = $sortlistarray['thread']['list'] ? $sortlistarray['thread']['list'] : $threadlist;
 	$threadcount = !empty($sortlistarray['thread']['count']) ? $sortlistarray['thread']['count'] : $threadcount;
 	$multipage = $sortlistarray['thread']['multipage'] ? $sortlistarray['thread']['multipage'] : $multipage;
+	$sortthreadlist = $sortlistarray['sortthreadlist'] ? $sortlistarray['sortthreadlist'] : array();
 }
 
 $separatepos = $separatepos ? $separatepos + 1 : ($announcement ? 1 : 0);

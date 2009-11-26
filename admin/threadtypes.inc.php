@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: threadtypes.inc.php 21085 2009-11-11 07:35:40Z tiger $
+	$Id: threadtypes.inc.php 21237 2009-11-23 03:02:28Z liulanbo $
 */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -114,7 +114,7 @@ echo $special ? '<td>&nbsp;</td>' : '<td></td>';
 
 			if($special == 1) {
 				foreach($delete as $sortid) {
-					$db->query("DROP TABLE {$tablepre}optionvalue$sortid");
+					$db->query("DROP TABLE IF EXISTS {$tablepre}optionvalue$sortid");
 				}
 			}
 
@@ -378,7 +378,7 @@ EOT;
 		$db->query("UPDATE {$tablepre}typeoptions SET title='$titlenew', description='$descriptionnew', identifier='$identifiernew', type='$typenew', unit='$unitnew', rules='".addslashes(serialize($rules[$typenew]))."' WHERE optionid='$optionid'");
 
 		updatecache('threadsorts');
-		cpmsg('threadtype_infotypes_option_succeed', $BASESCRIPT.'?action=threadtypes&operation=optiondetail&optionid='.$optionid, 'succeed');
+		cpmsg('threadtype_infotypes_option_succeed', $BASESCRIPT.'?action=threadtypes&operation=typeoption', 'succeed');
 	}
 
 } elseif($operation == 'sortdetail') {
@@ -664,6 +664,8 @@ EOT;
 						}
 					}
 					$create_table_sql .= ") TYPE=MyISAM;";
+					$dbcharset = empty($dbcharset) ? str_replace('-','',$charset) : $dbcharset;
+					$create_table_sql = syntablestruct($create_table_sql, $db->version() > '4.1', $dbcharset);
 					$db->query($create_table_sql);
 				} else {
 					$tables = array();
@@ -707,7 +709,7 @@ EOT;
 			}
 
 			updatecache('threadsorts');
-			cpmsg('threadtype_infotypes_succeed', $BASESCRIPT.'?action=threadtypes&operation=sortdetail&sortid='.$sortid, 'succeed');
+			cpmsg('threadtype_infotypes_succeed', $BASESCRIPT.'?action=threadtypes&special=1', 'succeed');
 
 		} elseif(submitcheck('sortpreviewsubmit')) {
 			header("Location: $boardurl$BASESCRIPT?action=threadtypes&operation=sortdetail&sortid=$sortid#template");
@@ -873,7 +875,7 @@ EOT;
 		$customoptionsnew = $customoptions && is_array($customoptions) ? implode("\t", $customoptions) : '';
 		$db->query("UPDATE {$tablepre}typemodels SET name='$namenew', customoptions='$customoptionsnew' WHERE id='$modelid'");
 
-		cpmsg('threadtype_infotypes_model_succeed', $BASESCRIPT.'?action=threadtypes&operation=modeldetail&modelid='.$modelid, 'succeed');
+		cpmsg('threadtype_infotypes_model_succeed', $BASESCRIPT.'?action=threadtypes&operation=typemodel', 'succeed');
 	}
 
 } elseif($operation == 'classlist') {
@@ -947,4 +949,24 @@ function showoption($var, $type) {
 	}
 }
 
+function syntablestruct($sql, $version, $dbcharset) {
+
+	if(strpos(trim(substr($sql, 0, 18)), 'CREATE TABLE') === FALSE) {
+		return $sql;
+	}
+
+	$sqlversion = strpos($sql, 'ENGINE=') === FALSE ? FALSE : TRUE;
+
+	if($sqlversion === $version) {
+
+		return $sqlversion && $dbcharset ? preg_replace(array('/ character set \w+/i', '/ collate \w+/i', "/DEFAULT CHARSET=\w+/is"), array('', '', "DEFAULT CHARSET=$dbcharset"), $sql) : $sql;
+	}
+
+	if($version) {
+		return preg_replace(array('/TYPE=HEAP/i', '/TYPE=(\w+)/is'), array("ENGINE=MEMORY DEFAULT CHARSET=$dbcharset", "ENGINE=\\1 DEFAULT CHARSET=$dbcharset"), $sql);
+
+	} else {
+		return preg_replace(array('/character set \w+/i', '/collate \w+/i', '/ENGINE=MEMORY/i', '/\s*DEFAULT CHARSET=\w+/is', '/\s*COLLATE=\w+/is', '/ENGINE=(\w+)(.*)/is'), array('', '', 'ENGINE=HEAP', '', '', 'TYPE=\\1\\2'), $sql);
+	}
+}
 ?>

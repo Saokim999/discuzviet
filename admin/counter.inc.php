@@ -4,7 +4,7 @@
 [Discuz!] (C)2001-2009 Comsenz Inc.
 This is NOT a freeware, use is subject to license terms
 
-$Id: counter.inc.php 21094 2009-11-12 03:02:51Z liulanbo $
+$Id: counter.inc.php 21270 2009-11-24 06:26:41Z monkey $
 */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -187,11 +187,12 @@ if(submitcheck('forumsubmit', 1)) {
 
 	$optionvalues = array();
 	
-	$query = $db->query("SELECT v.*, p.identifier, p.type FROM {$tablepre}typevars v LEFT JOIN {$tablepre}typeoptions p ON p.optionid=v.optionid WHERE search='1' OR p.type IN('radio','select')");
+	$query = $db->query("SELECT v.*, p.identifier, p.type FROM {$tablepre}typevars v LEFT JOIN {$tablepre}typeoptions p ON p.optionid=v.optionid WHERE search='1' OR p.type IN('radio','select','number')");
 	$optionvalues = $sortids = array();
 	while($row = $db->fetch_array($query)) {
 		$optionvalues[$row['sortid']][$row['identifier']] = $row['type'];
 		$optionids[$row['sortid']][$row['optionid']] = $row['identifier'];
+		$searchs[$row['sortid']][$row['optionid']] = $row['search'];
 		$sortids[] = $row['sortid'];
 	}
 	$sortids = array_unique($sortids);
@@ -200,9 +201,47 @@ if(submitcheck('forumsubmit', 1)) {
 		$processed = 1;
 		$sortid = $sortids[$cursort];
 		$options = $optionvalues[$sortid];
+		$search = $searchs[$sortid];
 		$tablename = "{$tablepre}optionvalue{$sortid}";
+		$query = $db->query("SHOW TABLES LIKE '$tablename'");
+		if($db->num_rows($query) != 1) {
+			$create_table_sql = "CREATE TABLE $tablename (";
+			$create_table_sql .= "tid mediumint(8) UNSIGNED NOT NULL DEFAULT '0',fid smallint(6) UNSIGNED NOT NULL DEFAULT '0',";
+			$create_table_sql .= "KEY (fid)";
+			$create_table_sql .= ") TYPE=MyISAM;";
+			$dbcharset = empty($dbcharset) ? str_replace('-','',$charset) : $dbcharset;
+			$create_table_sql = syntablestruct($create_table_sql, $db->version() > '4.1', $dbcharset);
+			$db->query($create_table_sql);
+		}
 		if($changesort) $db->query("TRUNCATE $tablename");
 		$opids = array_keys($optionids[$sortid]);
+		$tables = array();
+		if($db->version() > '4.1') {
+			$query = $db->query("SHOW FULL COLUMNS FROM $tablename", 'SILENT');
+		} else {
+			$query = $db->query("SHOW COLUMNS FROM $tablename", 'SILENT');
+		}
+		while($field = @$db->fetch_array($query)) {
+			$tables[$field['Field']] = 1;
+		}
+		foreach($optionids[$sortid] as $optionid => $identifier) {
+			if(!$tables[$identifier] && (in_array($options[$identifier], array('radio', 'select', 'number')) || $search[$optionid])) {
+				$fieldname = $identifier;
+				if(in_array($options[$identifier], array('radio', 'select'))) {
+					$fieldtype = 'smallint(6) UNSIGNED NOT NULL DEFAULT \'0\'';
+				} elseif($options[$identifier] == 'number') {
+					$fieldtype = 'int(10) UNSIGNED NOT NULL DEFAULT \'0\'';
+				} else {
+					$fieldtype = 'mediumtext NOT NULL';
+				}
+				$db->query("ALTER TABLE {$tablepre}optionvalue$sortid ADD $fieldname $fieldtype");
+
+				if(in_array($options[$identifier], array('radio', 'select', 'number'))) {
+					$db->query("ALTER TABLE {$tablepre}optionvalue$sortid ADD INDEX ($fieldname)");
+				}
+			}
+		}
+		
 		$query = $db->query("SELECT t.*, th.fid FROM {$tablepre}typeoptionvars t left join {$tablepre}threads th ON th.tid=t.tid WHERE t.sortid='$sortid' AND t.optionid IN ('".implode("','", $opids)."')");
 		$inserts = array();
 		while($row = $db->fetch_array($query)) {
@@ -274,4 +313,24 @@ if(submitcheck('forumsubmit', 1)) {
 
 }
 
+function syntablestruct($sql, $version, $dbcharset) {
+
+	if(strpos(trim(substr($sql, 0, 18)), 'CREATE TABLE') === FALSE) {
+		return $sql;
+	}
+
+	$sqlversion = strpos($sql, 'ENGINE=') === FALSE ? FALSE : TRUE;
+
+	if($sqlversion === $version) {
+
+		return $sqlversion && $dbcharset ? preg_replace(array('/ character set \w+/i', '/ collate \w+/i', "/DEFAULT CHARSET=\w+/is"), array('', '', "DEFAULT CHARSET=$dbcharset"), $sql) : $sql;
+	}
+
+	if($version) {
+		return preg_replace(array('/TYPE=HEAP/i', '/TYPE=(\w+)/is'), array("ENGINE=MEMORY DEFAULT CHARSET=$dbcharset", "ENGINE=\\1 DEFAULT CHARSET=$dbcharset"), $sql);
+
+	} else {
+		return preg_replace(array('/character set \w+/i', '/collate \w+/i', '/ENGINE=MEMORY/i', '/\s*DEFAULT CHARSET=\w+/is', '/\s*COLLATE=\w+/is', '/ENGINE=(\w+)(.*)/is'), array('', '', 'ENGINE=HEAP', '', '', 'TYPE=\\1\\2'), $sql);
+	}
+}
 ?>

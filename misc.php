@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: misc.php 21071 2009-11-10 09:34:11Z wangjinbo $
+	$Id: misc.php 21271 2009-11-24 07:27:29Z liulanbo $
 */
 
 define('NOROBOT', TRUE);
@@ -1036,6 +1036,9 @@ if($action == 'votepoll' && submitcheck('pollsubmit', 1)) {
 	header('Content-Disposition: '.('attachment; ').'filename='.$filename);
 	header('Pragma: no-cache');
 	header('Expires: 0');
+	if(strtoupper($charset) == 'UTF-8') {
+		echo chr(0xEF).chr(0xBB).chr(0xBF);
+	}
 	include template('activity_export');
 
 } elseif($action == 'tradeorder') {
