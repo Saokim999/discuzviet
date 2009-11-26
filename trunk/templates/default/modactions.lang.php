@@ -1,71 +1,71 @@
 <?php
 
 // Moderation Pack for Discuz! Version 1.0.0
-// Created by Crossday
+// Created by Crossday - Translated by DiscuzViet Group
 
 $modactioncode = array
 (
 
-	'EDT' => '编辑',
+	'EDT' => 'Biên tập',
 
-	'DEL' => '删除',
-	'DLP' => '删除回复',
-	'PRN' => '批量删帖',
-	'UDL' => '反删除',
+	'DEL' => 'Xóa',
+	'DLP' => 'Xóa bài viết',
+	'PRN' => 'Xóa hàng loạt',
+	'UDL' => 'Hủy xóa',
 
-	'DIG' => '加入精华',
-	'UDG' => '解除精华',
-	'EDI' => '限时精华',
-	'UED' => '解除限时精华',
+	'DIG' => 'Thêm bài hay',
+	'UDG' => 'Bỏ bài hay',
+	'EDI' => 'Thời hạn',
+	'UED' => 'Không thời hạn',
 
-	'CLS' => '关闭',
-	'OPN' => '打开',
-	'ECL' => '限时关闭',
-	'UEC' => '解除限时关闭',
-	'EOP' => '限时打开',
-	'UEO' => '解除限时打开',
+	'CLS' => 'Đóng',
+	'OPN' => 'Mở',
+	'ECL' => 'Tắt thời hạn',
+	'UEC' => 'Không tắt thời hạn',
+	'EOP' => 'Mở thời hạn',
+	'UEO' => 'Không mở thời hạn',
 
-	'STK' => '置顶',
-	'UST' => '解除置顶',
-	'EST' => '限时置顶',
-	'UES' => '解除限时置顶',
+	'STK' => 'Đặt chú ý',
+	'UST' => 'Hủy chú ý',
+	'EST' => 'Thời hạn',
+	'UES' => 'Không thời hạn',
 
-	'SPL' => '分割',
-	'MRG' => '合并',
+	'SPL' => 'Cắt',
+	'MRG' => 'Trộn',
 
-	'HLT' => '设置高亮',
-	'UHL' => '解除高亮',
-	'EHL' => '限时高亮',
-	'UEH' => '解除限时高亮',
+	'HLT' => 'Màu sắc',
+	'UHL' => 'Hủy màu sắc',
+	'EHL' => 'Thời hạn',
+	'UEH' => 'Không giới hạn',
 
-	'BMP' => '提升',
-	'DWN' => '下沉',
+	'BMP' => 'Lên',
+	'DWN' => 'Xuống',
 
-	'MOV' => '移动',
-	'CPY' => '复制',
-	'TYP' => '分类',
+	'MOV' => 'Di chuyển',
+	'CPY' => 'Sao chép',
+	'TYP' => 'Phân loại',
 
-	'RFD' => '强制退款',
+	'RFD' => 'Buộc trả tiền',
 
-	'MOD' => '审核通过',
+	'MOD' => 'Đã kiểm duyệt',
 
-	'ABL' => '加入文集',
-	'RBL' => '移除文集',
+	'ABL' => 'Thêm vào blog',
+	'RBL' => 'Hủy thêm vào blog',
 
-	'PTS' => '推送主题',
-	'RFS' => '解除推送',
-	'RMR' => '取消悬赏',
-	'BNP' => '屏蔽帖子',
-	'UBN' => '解除屏蔽',
+	'PTS' => 'Nâng bài viết',
+	'RFS' => 'Hủy nâng bài',
+	'RMR' => 'Bỏ thưởng điểm',
+	'BNP' => 'Che bài viết',
+	'UBN' => 'Bỏ che bài',
 	
-	'REC' => '推荐',
-	'URE' => '解除推荐',
+	'REC' => 'Được đề cử',
+	'URE' => 'Hủy đề cử',
 
-	'WRN' => '警告',
-	'UWN' => '解除警告',
+	'WRN' => 'Cảnh cáo',
+	'UWN' => 'Hủy cảnh cáo',
 	
-	'SPA' => '鉴定为',
-	'SPD' => '撤销鉴定',	
+	'SPA' => 'Xác nhận',
+	'SPD' => 'Hủy xác nhận',	
 
 );
 
