@@ -1,23 +1,23 @@
 <?php
 
 // Misc Language Pack for Discuz! Version 1.0.0
-// Translated by Crossday
+// Translated by Crossday - Translated by DiscuzViet Group
 
 $lang = array
 (
-	'option' => '相关选项',
-	'target_tid' => '目标主题tid',
-	'target_pid' => '目标帖子pid',
-	'target_username' => '目标用户名',
-	'magics_type_1' => '帖子类',
-	'magics_type_2' => '会员类',
-	'magics_type_3' => '其他类',
+	'option' => ' Lựa chọn',
+	'target_tid' => 'Chọn Chủ đề TID',
+	'target_pid' => 'Chọn Bài viết PID',
+	'target_username' => 'Chọn Tên',
+	'magics_type_1' => 'Chủ đề',
+	'magics_type_2' => 'Thành viên',
+	'magics_type_3' => 'Mục khác',
 
-	'CCK_color' => '颜色',
-	'MOK_info' => '获得的钱币数目规则：大于1且小于购买价格150%的随机数',
-	'CODE_info' => '获得Discuz!测试邀请码一个',
-	'MVK_target' => '要移动到的版面',
-	'SOFA_message' => '一道闪电划破湛蓝的天空，随着一声巨响，沙发被我抢了！哈哈！',
+	'CCK_color' => 'Màu sắc',
+	'MOK_info' => 'Quy định giá tiền: lớn hơn 1 và nhỏ hơn 150% ',
+	'CODE_info' => 'Get Discuz! test Invitation Code',
+	'MVK_target' => 'Chuyển vào',
+	'SOFA_message' => 'Một tia sét xuyên thủng bầu trời trong xanh, với một tiếng nổ lớn, tôi chui xuống ghế sofa! Haha',
 );
 
 ?>
