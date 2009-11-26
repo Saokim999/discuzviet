@@ -1,7 +1,7 @@
 <?php
 
-// Admins' CP Language Pack for Discuz! Version 1.0.0
-// VietNamese – translate and support by JaJa and Saokim999
+// Admins' CP Language Pack for Discuz! Version 1.0.0 Vietnamese
+// Translated and support by JaJa and Saokim999 7.2.20091126
 
 $lang = array
 (
@@ -1640,7 +1640,8 @@ $lang = array
 	'threadtype_edit_maxnum' => 'Giá trị tối đa (tùy chọn):',
 	'threadtype_edit_minnum' => 'Giá trị tối thiểu (tùy chọn):',
 	'threadtype_edit_textmax' => 'Chiều dài tối đa của nội dung của các (tùy chọn):',
-	'threadtype_edit_choices' =>'Tùy chọn: ',  
+	'threadtype_edit_choices' =>'Tùy chọn: ',
+	
 	'threadtype_edit_choices_comment' => 'Only effective when the items are optional, one per line options, index options for the equal sign in front of (proposed), followed by content, such as: <br /> <i> 1 = light Xinhua mouse <br /> 2 = mechanical mouse <br /> 3 = mouse does not </ i> <br /> Note: Do not amend the option to determine after the index and the contents of the correspondence, but still be able to add options. For a show to change the order, can move up and down the whole line position to achieve ',
 	'threadtype_edit_images_weight' => 'Chiều rộng tối đa của hình ảnh (tùy chọn):',
 	'threadtype_edit_images_height' => 'Chiều cao tối đa hình ảnh (tùy chọn):',
@@ -3773,7 +3774,8 @@ $lang = array
 	'project_option_forum_keywords' => 'Key words in this section',
 	'project_option_forum_formulaperm' => 'Authority to set expression',
 	'project_option_forum_allowtag' => 'Mở Tags',
-	'project_option_forum_allowglobalstick' => 'Hiện thị toàn diễn dàn các bài chú ý',
+	'project_option_forum_allowglobalstick' => 'Hiển thị toàn diễn dàn các bài chú ý',
+	'project_option_forum_threadtypes' => 'Phân loại chủ đề',
 	'project_option_forum_extra' => 'Thiết lập khác',
 
 	'project_option_group_readaccess' => 'Access',
