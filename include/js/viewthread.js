@@ -63,7 +63,7 @@ function attachimginfo(obj, infoobj, show, event) {
 }
 
 function copycode(obj) {
-	setCopy(BROWSER.ie ? obj.innerText.replace(/\r\n\r\n/g, '\r\n') : obj.textContent, '代码已复制到剪贴板');
+	setCopy(BROWSER.ie ? obj.innerText.replace(/\r\n\r\n/g, '\r\n') : obj.textContent, 'Đã lưu nội dung vào clipboard');
 }
 
 function signature(obj) {
@@ -120,7 +120,7 @@ function zoom(obj, zimg) {
 			menu.style.overflow = 'visible';
 			menu.style.width = (w < 300 ? 300 : w) + 20 + 'px';
 			menu.style.height = h + 50 + 'px';
-			menu.innerHTML = '<div class="zoominner"><p id="' + menuid + '_ctrl"><span class="right"><a href="' + zimg + '" class="imglink" target="_blank" title="在新窗口打开">在新窗口打开</a><a href="javascipt:;" id="' + menuid + '_adjust" class="imgadjust" title="实际大小">实际大小</a><a href="javascript:;" onclick="hideMenu()" class="imgclose" title="关闭">关闭</a></span>鼠标滚轮缩放图片</p><div align="center" onmousedown="zoomclick=1" onmousemove="zoomclick=2" onmouseup="if(zoomclick==1) hideMenu()"><img id="' + zoomid + '" src="' + zimg + '" width="' + w + '" height="' + h + '" w="' + imgw + '" h="' + imgh + '"></div></div>';
+			menu.innerHTML = '<div class="zoominner"><p id="' + menuid + '_ctrl"><span class="right"><a href="' + zimg + '" class="imglink" target="_blank" title="Open new window">Mở ra cửa sổ mới</a><a href="javascipt:;" id="' + menuid + '_adjust" class="imgadjust" title="Kích thước thực">Kích thước thực tế</a><a href="javascript:;" onclick="hideMenu()" class="imgclose" title="Close">Đóng</a></span>Lăn chuột giữa để phóng to thu nhỏ</p><div align="center" onmousedown="zoomclick=1" onmousemove="zoomclick=2" onmouseup="if(zoomclick==1) hideMenu()"><img id="' + zoomid + '" src="' + zimg + '" width="' + w + '" height="' + h + '" w="' + imgw + '" h="' + imgh + '"></div></div>';
 			$('append_parent').appendChild(menu);
 			$(menuid + '_adjust').onclick = function(e) {adjust(e, 1)};
 			if(BROWSER.ie){
@@ -196,7 +196,7 @@ function parsetag(pid) {
 }
 
 function setanswer(pid){
-	if(confirm('您确认要把该回复选为“最佳答案”吗？')){
+	if(confirm('Bạn muốn xác nhận bài trả lời này là "Câu trả lời hay nhất"?')){
 		if(BROWSER.ie) {
 			doane(event);
 		}
@@ -221,14 +221,14 @@ function showauthor(ctrlObj, menuid) {
 function fastpostvalidate(theform) {
 	s = '';
 	if(theform.message.value == '' && theform.subject.value == '') {
-		s = '请完成标题或内容栏。';
+		s = 'Vui lòng điền tiêu đề';
 		theform.message.focus();
-	} else if(mb_strlen(theform.subject.value) > 80) {
-		s = '您的标题超过 80 个字符的限制。';
+	} else if(mb_strlen(theform.subject.value) > 160) {
+		s = 'Giới hạn 160 ký tự';
 		theform.subject.focus();
 	}
 	if(!disablepostctrl && ((postminchars != 0 && mb_strlen(theform.message.value) < postminchars) || (postmaxchars != 0 && mb_strlen(theform.message.value) > postmaxchars))) {
-		s = '您的帖子长度不符合要求。\n\n当前长度: ' + mb_strlen(theform.message.value) + ' ' + '字节\n系统限制: ' + postminchars + ' 到 ' + postmaxchars + ' 字节';
+		s = 'Chiều dài bài viết không hợp lệ\n\nĐộ dài hiện tại: ' + mb_strlen(theform.message.value) + ' ' + 'ký tự\nHệ thống giới hạn: ' + postminchars + ' tới ' + postmaxchars + ' ký tự';
 	}
 	if(s) {
 		$('fastpostreturn').className = 'onerror';
@@ -286,7 +286,7 @@ function submithandle_fastpost(locationhref) {
 		$('fastpostreturn').className = '';
 	} else {
 		$('post_new').style.display = $('fastpostmessage').value = $('fastpostreturn').className = '';
-		$('fastpostreturn').innerHTML = '本版回帖需要审核，您的帖子将在通过审核后显示';
+		$('fastpostreturn').innerHTML = 'Bài viết đang được xem xét, nó sẽ được hiển thị sau khi kiểm duyệt';
 	}
 }
 
@@ -323,5 +323,5 @@ function appendreply() {
 }
 
 function creditconfirm(v) {
-	return confirm('下载需要消耗' + v + '，您是否要下载？');
+	return confirm('Tải về máy tính' + v + ', bạn có muốn download ?');
 }
