@@ -258,7 +258,7 @@ function setCopy(text, msg){
 			showDialog(msg, 'notice');
 		}
 	} else {
-		var msg = '<div style="text-decoration:underline;">Click để lưu vào ClipBoard</div>' +
+		var msg = '<div style="text-decoration:underline;">Click để lưu vào clipboard</div>' +
 			AC_FL_RunContent('id', 'clipboardswf', 'name', 'clipboardswf', 'devicefont', 'false', 'width', '120', 'height', '40', 'src', 'images/common/clipboard.swf', 'menu', 'false',  'allowScriptAccess', 'sameDomain', 'swLiveConnect', 'true', 'wmode', 'transparent', 'style' , 'margin-top:-20px');
 		showDialog(msg, 'info');
 		text = text.replace(/[\xA0]/g, ' ');
@@ -816,7 +816,7 @@ function showDialog(msg, mode, t, func, cover) {
 	$('append_parent').appendChild(menuObj);
 	var s = '<table cellpadding="0" cellspacing="0" class="fwin"><tr><td class="t_l"></td><td class="t_c"></td><td class="t_r"></td></tr><tr><td class="m_l"></td><td class="m_c"><div class="fcontent' + (mode == 'info' ? '' : ' alert_win') + '"><h3 class="float_ctrl"><em>';
 	s += t ? t : 'Tips';
-	s += '</em><span><a href="javascript:;" class="float_close" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" title="关闭">关闭</a></span></h3>';
+	s += '</em><span><a href="javascript:;" class="float_close" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" title="Close">Đóng</a></span></h3>';
 	if(mode == 'info') {
 		s += msg ? msg : '';
 	} else {
@@ -906,7 +906,7 @@ function Ajax(recvType, waitId) {
 
 	var aj = new Object();
 
-	aj.loading = '加载中...';
+	aj.loading = 'Loading...';
 	aj.recvType = recvType ? recvType : 'XML';
 	aj.waitId = waitId ? $(waitId) : null;
 
@@ -1580,11 +1580,11 @@ function showselect(obj, inpid, t, rettype) {
 			} else {
 				s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = \'0\'">Vĩnh viễn</a><br />';
 				s += showselect_row(inpid, '7 ngày', 7, 1, rettype);
-				s += showselect_row(inpid, '14 ngày', 14, 1, rettype);
-				s += showselect_row(inpid, 'Tháng', 30, 1, rettype);
-				s += showselect_row(inpid, 'Quý', 90, 1, rettype);
-				s += showselect_row(inpid, 'Nửa năm', 182, 1, rettype);
-				s += showselect_row(inpid, 'Năm', 365, 1, rettype);
+				s += showselect_row(inpid, '2 tuần', 14, 1, rettype);
+				s += showselect_row(inpid, '1 tháng', 30, 1, rettype);
+				s += showselect_row(inpid, '3 tháng', 90, 1, rettype);
+				s += showselect_row(inpid, '6 tháng', 182, 1, rettype);
+				s += showselect_row(inpid, '1 năm', 365, 1, rettype);
 				s += showselect_row(inpid, 'Tùy chọn', -1);
 			}
 		}
