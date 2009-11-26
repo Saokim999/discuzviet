@@ -80,9 +80,9 @@ $requestlang = array
 		<a href="###" onclick="insertunit(\'{username}\', \'parameter[settings][template]\')">{username}</a>Đại diện Tên đăng nhập<br />
 		<a href="###" onclick="insertunit(\'{photo}\', \'parameter[settings][template]\')">{photo}</a>Đại diện Avatar<br />
 		<a href="###" onclick="insertunit(\'{title_template}\', \'parameter[settings][template]\')">{title_template}</a>Đại diện tiêu đề feed
-		<a href="###" onclick="insertunit(\'{userlink}\', \'parameter[settings][template]\')">{userlink}</a>Đại diện website của user<br />
+		<a href="###" onclick="insertunit(\'{userlink}\', \'parameter[settings][template]\')">{userlink}</a>Đại diện Trang cá nhân<br />
 		<a href="###" onclick="insertunit(\'{body_template}\', \'parameter[settings][template]\')">{body_template}</a>Đại diện nội dung feed
-		<a href="###" onclick="insertunit(\'{dateline}\', \'parameter[settings][template]\')">{dateline}</a>Đại diện thời gian feed<br />
+		<a href="###" onclick="insertunit(\'{dateline}\', \'parameter[settings][template]\')">{dateline}</a>Đại diện Ngày tạo<br />
 		</div>',
 
 	'doing_name' => 'Doing Module',
@@ -101,104 +101,104 @@ $requestlang = array
 	'doing_limit_comment' => 'Số lượng hoạt động ghi chú được hiển thị, thiết lập một số nguyên lớn hơn 0',
 	'doing_template' => 'Hiển thị template độc lập',
 	'doing_template_comment' => '<div class="extcredits">
-		<a href="###" onclick="insertunit(\'{username}\', \'parameter[settings][template]\')">{username}</a>代表 用户名
-		<a href="###" onclick="insertunit(\'{photo}\', \'parameter[settings][template]\')">{photo}</a>代表 用户头像地址<br />
-		<a href="###" onclick="insertunit(\'{userlink}\', \'parameter[settings][template]\')">{userlink}</a>代表 用户个人主页地址<br />
-		<a href="###" onclick="insertunit(\'{replynum}\', \'parameter[settings][template]\')">{replynum}</a>代表 回复数
-		<a href="###" onclick="insertunit(\'{link}\', \'parameter[settings][template]\')">{link}</a>代表 记录地址<br />
-		<a href="###" onclick="insertunit(\'{message}\', \'parameter[settings][template]\')">{message}</a>代表 记录内容
-		<a href="###" onclick="insertunit(\'{dateline}\', \'parameter[settings][template]\')">{dateline}</a>代表 创建时间<br />
+		<a href="###" onclick="insertunit(\'{username}\', \'parameter[settings][template]\')">{username}</a>Thay cho Tên đăng nhập
+		<a href="###" onclick="insertunit(\'{photo}\', \'parameter[settings][template]\')">{photo}</a>Thay cho Avatar<br />
+		<a href="###" onclick="insertunit(\'{userlink}\', \'parameter[settings][template]\')">{userlink}</a>Thay cho Trang cá nhân<br />
+		<a href="###" onclick="insertunit(\'{replynum}\', \'parameter[settings][template]\')">{replynum}</a>Thay cho Bài trả lời
+		<a href="###" onclick="insertunit(\'{link}\', \'parameter[settings][template]\')">{link}</a>Thay cho Doing link<br />
+		<a href="###" onclick="insertunit(\'{message}\', \'parameter[settings][template]\')">{message}</a>Thay cho nội dung Doing
+		<a href="###" onclick="insertunit(\'{dateline}\', \'parameter[settings][template]\')">{dateline}</a>Thay cho ngày tạo<br />
 		</div>',
 	
-	'app_name' => 'UCHome 应用调用模块',
-	'app_desc' => '调用 UCHome 中的应用列表',
-	'app_title' => '模块标题',
-	'app_title_comment' => '模块在侧边栏显示的标题',
-	'app_title_value' => '应用列表',
-	'app_uids' => '指定用户 UID',
-	'app_uids_comment' => '多个 UID 请用半角逗号 "," 隔开',
-	'app_type' => '应用类型',
-	'app_type_nolimit' => '不限制',
-	'app_type_default' => '只获取默认',
-	'app_type_userapp' => '只用户自已的应用',
-	'app_start' => '起始数据行数',
-	'app_start_comment' => '如需设定起始的数据行数，请输入具体数值，0 为从第一行开始，以此类推',
-	'app_limit' => '显示数据条数',
-	'app_limit_comment' => '设置一次显示的应用条目数，请设置为大于 0 的整数，该条件对默认应用无效',
-	'app_template' => '单条显示模板',
+	'app_name' => 'Module ứng dụng',
+	'app_desc' => 'Các ứng dụng được tạo trên ucHome',
+	'app_title' => 'Tiêu đề',
+	'app_title_comment' => 'Được hiển thị trên Sidebar',
+	'app_title_value' => 'Danh sách ứng dụng',
+	'app_uids' => 'Chỉ định UID',
+	'app_uids_comment' => 'Muốn nhiều UID thì sử dụng dấu "," để phân cách',
+	'app_type' => 'Loại ứng dụng',
+	'app_type_nolimit' => 'Không giới hạn',
+	'app_type_default' => 'Mặc định',
+	'app_type_userapp' => 'Ứng dụng của User',
+	'app_start' => 'Số dòng bắt đầu',
+	'app_start_comment' => 'Thiết lập số bắt đầu từ dòng nào, VD: nhập giá trị 0 là bắt đầu từ dòng đầu tiên',
+	'app_limit' => 'Số lượng',
+	'app_limit_comment' => 'Số lượng ứng dụng được hiển thị, thiết lập một số nguyên lớn hơn 0',
+	'app_template' => 'Hiển thị template độc lập',
 	'app_template_comment' => '<div class="extcredits">
-		<a href="###" onclick="insertunit(\'{icon}\', \'parameter[settings][template]\')">{icon}</a>代表 应用小图标
-		<a href="###" onclick="insertunit(\'{link}\', \'parameter[settings][template]\')">{link}</a>代表 应用地址<br />
-		<a href="###" onclick="insertunit(\'{appname}\', \'parameter[settings][template]\')">{appname}</a>代表 应用名称<br />
+		<a href="###" onclick="insertunit(\'{icon}\', \'parameter[settings][template]\')">{icon}</a>Thay cho Icon ứng dụng
+		<a href="###" onclick="insertunit(\'{link}\', \'parameter[settings][template]\')">{link}</a>Thay cho link Ứng dụng<br />
+		<a href="###" onclick="insertunit(\'{appname}\', \'parameter[settings][template]\')">{appname}</a>Thay cho tên Ứng dụng<br />
 		</div>',
 
 
-	'space_name' => 'UCHome 成员调用模块',
-	'space_desc' => '调用 UCHome 中的用户',
-	'space_title' => '模块标题',
-	'space_title_comment' => '模块在侧边栏显示的标题',
-	'space_title_value' => '最新成员',
-	'space_uids' => '指定用户 UID',
-	'space_uids_comment' => '多个 UID 请用半角逗号 "," 隔开',
-	'space_startfriendnum' => '空间好友数起始值',
-	'space_endfriendnum' => '空间好友数结束值',
-	'space_startviewnum' => '空间访问数起始值',
-	'space_endviewnum' => '空间访问数结束值',
-	'space_startcredit' => '积分起始值',
-	'space_endcredit' => '积分结束值',
-	'space_avatar' => '上传头像',
-	'space_avatar_comment' => '用户是否上传过头像',
-	'space_avatar_nolimit' => '不限制',
-	'space_avatar_noexists' => '未上传',
-	'space_avatar_exists' => '已上传',
-	'space_namestatus' => '实名认证',
-	'space_namestatus_comment' => '获取是否通过实名认证的用户',
-	'space_namestatus_nolimit' => '不限制',
-	'space_namestatus_nopass' => '未通过',
-	'space_namestatus_pass' => '已通过',
-	'space_dateline' => '建立时间',
-	'space_dateline_comment' => '空间创建时间',
-	'space_updatetime' => '更新时间',
-	'space_updatetime_comment' => '空间更新时间',
-	'space_order' => '排序类型',
-	'space_order_comment' => '数据排序类型',
+	'space_name' => 'Module Trang cá nhân',
+	'space_desc' => 'Trang cá nhân của user từ UCHome',
+	'space_title' => 'Tiêu đề',
+	'space_title_comment' => 'Được hiển thị trên Sidebar',
+	'space_title_value' => 'Thành viên mới nhất',
+	'space_uids' => 'Chỉ định UID',
+	'space_uids_comment' => 'Muốn nhiều UID thì sử dụng dấu "," để phân cách',
+	'space_startfriendnum' => 'Giá trị đầu của số Friend',
+	'space_endfriendnum' => 'Giá trị cuối của số Friend',
+	'space_startviewnum' => 'Giá trị đầu của Lần xem',
+	'space_endviewnum' => 'Giá trị cuối của Lần xem',
+	'space_startcredit' => 'Giá trị đầu của Điểm số',
+	'space_endcredit' => 'Giá trị cuối của Điểm số',
+	'space_avatar' => 'Hình Avatar',
+	'space_avatar_comment' => 'Hình đại diện của User',
+	'space_avatar_nolimit' => 'Không giới hạn',
+	'space_avatar_noexists' => 'Chưa có',
+	'space_avatar_exists' => 'Đã có',
+	'space_namestatus' => 'Tên thật',
+	'space_namestatus_comment' => 'Cho dù có được thông qua tên thật người dùng hay không',
+	'space_namestatus_nolimit' => 'Không giới hạn',
+	'space_namestatus_nopass' => 'Chưa thông qua',
+	'space_namestatus_pass' => 'Được thông qua',
+	'space_dateline' => 'Ngày tạo',
+	'space_dateline_comment' => 'Ngày tạo trang cá nhân',
+	'space_updatetime' => 'Cập nhật',
+	'space_updatetime_comment' => 'Ngày cập nhật trang cá nhân',
+	'space_order' => 'Sắp xếp dữ liệu',
+	'space_order_comment' => 'Kiểu sắp đặt dữ liệu',
 	'space_orderselect' => array(
-		array('', '默认顺序'),
-		array('dateline', '建立时间'),
-		array('updatetime', '更新时间'),
-		array('viewnum', '空间访问数'),
-		array('friendnum', '空间好友数'),
-		array('credit', '成员积分')
+		array('', 'Mặc định'),
+		array('dateline', 'Ngày tạo'),
+		array('updatetime', 'Ngày cập nhật'),
+		array('viewnum', 'Lần xem'),
+		array('friendnum', 'Số bạn bè'),
+		array('credit', 'Số điểm')
 	),
 	'space_dateselect' => array(
-		array('0' , '不限制'),
-		array('86400' , '一天以来'),
-		array('172800' , '两天以来'),
-		array('604800' , '一周以来'),
-		array('1209600' , '两周以来'),
-		array('2592000' , '一个月以来'),
-		array('7948800' , '三个月以来'),
-		array('15897600' , '六个月以来'),
-		array('31536000' , '一年以来')
+		array('0' , 'tất cả'),
+		array('86400' , '1 ngày'),
+		array('172800' , '2 ngày'),
+		array('604800' , '1 tuần'),
+		array('1209600' , '2 tuần'),
+		array('2592000' , '1 tháng'),
+		array('7948800' , '3 tháng'),
+		array('15897600' , '6 tháng'),
+		array('31536000' , '1 năm')
 	),
-	'space_sc' => '排序方式',
-	'space_sc_comment' => '返回记录的排序方式',
-	'space_sc_asc' => '递增',
-	'space_sc_desc' => '递减',
-	'space_start' => '起始数据行数',
-	'space_start_comment' => '如需设定起始的数据行数，请输入具体数值，0 为从第一行开始，以此类推',
-	'space_limit' => '显示数据条数',
-	'space_limit_comment' => '设置一次显示的主题条目数，请设置为大于 0 的整数',
-	'space_template' => '单条显示模板',
+	'space_sc' => 'Kiểu sắp xếp',
+	'space_sc_comment' => 'Theo thứ tự sắp xếp của dữ liệu nhận được',
+	'space_sc_asc' => 'Tăng dần',
+	'space_sc_desc' => 'Giảm dần',
+	'space_start' => 'Số dòng khởi tạo',
+	'space_start_comment' => 'Thiết lập số bắt đầu từ dòng nào, VD: nhập giá trị 0 là bắt đầu từ dòng đầu tiên',
+	'space_limit' => 'Số lượng bản ghi',
+	'space_limit_comment' => 'Số lượng bản ghi được hiển thị, thiết lập một số nguyên lớn hơn 0',
+	'space_template' => 'Hiển thị template độc lập',
 	'space_template_comment' => '<div class="extcredits">
-		<a href="###" onclick="insertunit(\'{username}\', \'parameter[settings][template]\')">{username}</a>代表 用户名
-		<a href="###" onclick="insertunit(\'{photo}\', \'parameter[settings][template]\')">{photo}</a>代表 用户头像地址<br />
-		<a href="###" onclick="insertunit(\'{viewnum}\', \'parameter[settings][template]\')">{viewnum}</a>代表 查看数
-		<a href="###" onclick="insertunit(\'{credit}\', \'parameter[settings][template]\')">{credit}</a>代表 积分<br />
-		<a href="###" onclick="insertunit(\'{userlink}\', \'parameter[settings][template]\')">{userlink}</a>代表 用户个人主页地址
-		<a href="###" onclick="insertunit(\'{friendnum}\', \'parameter[settings][template]\')">{friendnum}</a>代表 用户好友数<br />
-		<a href="###" onclick="insertunit(\'{updatetime}\', \'parameter[settings][template]\')">{updatetime}</a>代表 更新时间
-		<a href="###" onclick="insertunit(\'{dateline}\', \'parameter[settings][template]\')">{dateline}</a>代表 创建时间<br />
+		<a href="###" onclick="insertunit(\'{username}\', \'parameter[settings][template]\')">{username}</a>Thay cho Tên đăng nhập
+		<a href="###" onclick="insertunit(\'{photo}\', \'parameter[settings][template]\')">{photo}</a>Thay cho Avatar<br />
+		<a href="###" onclick="insertunit(\'{viewnum}\', \'parameter[settings][template]\')">{viewnum}</a>Thay cho Lần xem
+		<a href="###" onclick="insertunit(\'{credit}\', \'parameter[settings][template]\')">{credit}</a>Thay cho Số điểm<br />
+		<a href="###" onclick="insertunit(\'{userlink}\', \'parameter[settings][template]\')">{userlink}</a>Thay cho Liên kết
+		<a href="###" onclick="insertunit(\'{friendnum}\', \'parameter[settings][template]\')">{friendnum}</a>Thay cho Số lượng bạn bè<br />
+		<a href="###" onclick="insertunit(\'{updatetime}\', \'parameter[settings][template]\')">{updatetime}</a>Thay cho ngày cập nhật
+		<a href="###" onclick="insertunit(\'{dateline}\', \'parameter[settings][template]\')">{dateline}</a>Thay cho Ngày tạo<br />
 	</div>',
 
 );
