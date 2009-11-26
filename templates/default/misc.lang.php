@@ -223,7 +223,7 @@ $language = array
 	'perms_allowedituser' => 'sửa thành viên',
 	'perms_allowmassprune' => 'xóa nhiều bài viết cùng lúc',
 	'perms_allowpostannounce' => 'viết thông báo',
-	'perms_disablepostctrl' => 'Gửi bài không hạn chế kích thước',
+	'perms_disablepostctrl' => 'Gửi bài không hạn chế',
 	'perms_allowviewip' => 'xem IP thành viên',
 
 );
