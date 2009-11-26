@@ -1,267 +1,262 @@
 <?php
 
 // Email Pack for Discuz! Version 3.1.0
-// Translated by Crossday
+// Translated by Discuz Viet Group
 
 // ATTENTION: Please add slashes(\) before single & double quotes( ' & " )
 
 $language = array
 (
-	'moderate_member_invalidate' => '否决',
-	'moderate_member_delete' => '删除',
-	'moderate_member_validate' => '通过',
+	'moderate_member_invalidate' => 'Bị từ chối',
+	'moderate_member_delete' => 'Loại bỏ',
+	'moderate_member_validate' => 'Bởi',
 
 
-	'get_passwd_subject' =>		'取回密码说明',
+	'get_passwd_subject' =>		'Lấy lại mật khẩu',
 	'get_passwd_message' =>		'
 $member[username]，
-这封信是由 $bbname 发送的。
+Bức thư này được gửi bởi $bbname.
 
-您收到这封邮件，是因为在我们的论坛上这个邮箱地址被登记为用户邮箱，
-且该用户请求使用 Email 密码重置功能所致。
-
+Bạn nhận được bức thư này là do lúc bạn đăng kí có thiết lập chế độ 
+nhận Email của diễn đàn.
 ----------------------------------------------------------------------
-重要！
-----------------------------------------------------------------------
-
-如果您没有提交密码重置的请求或不是我们论坛的注册用户，请立即忽略
-并删除这封邮件。只在您确认需要重置密码的情况下，才继续阅读下面的
-内容。
-
-----------------------------------------------------------------------
-密码重置说明
+Chú ý!
 ----------------------------------------------------------------------
 
-您只需在提交请求后的三天之内，通过点击下面的链接重置您的密码：
+Nếu như bạn không kích hoạt lấy lại mật khẩu, hãy lập tức xóa ngay bức thư này!
 
+----------------------------------------------------------------------
+Lấy lại mật khẩu
+----------------------------------------------------------------------
+
+Link dưới đây có thời hạn 3 ngày :
 {$boardurl}member.php?action=getpasswd&uid=$member[uid]&id=$idstring
+(Nếu như bạn không thấy liên kết, xin hãy copy & paste vào trình duyệt!)
+Link ở trên sẽ tự động mở trang mới, Bạn chỉ cần nhập mật khẩu mới là 
+hoàn tất. Bạn cũng có thể thay đổi mật khẩu tại Bảng điều khiển cá nhân.
+IP của bạn là: $onlineip
 
-(如果上面不是链接形式，请将地址手工粘贴到浏览器地址栏再访问)
+Thân
 
-上面的页面打开后，输入新的密码后提交，之后您即可使用新的密码登录
-论坛了。您可以在用户控制面板中随时修改您的密码。
-
-本请求提交者的 IP 为 $onlineip
-
-
-
-此致
-
-$bbname 管理团队.
+Diễn đàn $bbname.
 $boardurl',
 
 
-	'email_verify_subject' =>	'Email 地址验证',
+	'email_verify_subject' =>	'Email',
 	'email_verify_message' =>	'
-$discuz_userss ，
-这封信是由 $bbname 发送的。
+$discuz_userss
+Bức thư này đã được gửi từ $bbname .
 
-您收到这封邮件，是因为在我们论坛的新用户注册，或用户修改 Email 使用
-了您的地址。如果您并没有访问过我们的论坛，或没有进行上述操作，请忽
-略这封邮件。您不需要退订或进行其他进一步的操作。
+Bạn nhận được bức thư này là do lúc bạn đăng ký đánh dấu vào phần nhận 
+email của Ban quản trị, hoặc lúc đổi email có dùng. Nếu như bạn chưa 
+từng tham gia diễn đàn này lần nào thì xin mời xóa nó ngay lập tức và 
+chúng tôi xin chân thành cáo lỗi.
 
 ----------------------------------------------------------------------
-帐号激活说明
+Phần kích hoạt
 ----------------------------------------------------------------------
 
-您是我们论坛的新用户，或在修改您的注册 Email 时使用了本地址，我们需
-要对您的地址有效性进行验证以避免垃圾邮件或地址被滥用。
+Bạn là một thành viên mới của diễn đàn, hoặc bạn đã là thành viên muốn 
+thay đổi email mới. Để phòng ngừa lạm dụng email và để bạn được hưởng 
+đầy đủ mọi quyền lời của diễn đàn.
 
-您只需点击下面的链接即可激活您的帐号：
+Bạn chỉ cần bấm vào liên kết ở dưới để kích hoạt email :
+
 
 {$boardurl}member.php?action=activate&uid=$discuz_uid&id=$idstring
 
-(如果上面不是链接形式，请将地址手工粘贴到浏览器地址栏再访问)
+(Nếu như không hiển thị link liên kết, xin hãy copy và paste 
+vào trình duyệt web của bạn!)
 
-感谢您的访问，祝您使用愉快！
+Cảm ơn bạn đã tham gia diễn đàn. Chúc bạn một ngày tốt lành!
 
 
 
-此致
+Thân chào
 
-$bbname 管理团队.
+Quản lý diễn đàn $bbname.
 $boardurl',
 
 
-	'email_notify_subject' =>	'《$thread[subject]》新回复通知',
+	'email_notify_subject' =>	'Bài trả lời mới $thread[subject]',
 	'email_notify_message' =>	'
-您好，
-这封信是由 $bbname 发送的。
+Chào bạn,
+Bức thư này được gửi từ diễn đàn $bbname
 
-您收到这封邮件，是因为您订阅的以下主题在最近 24 小时内有了新的回复。
-如果您并没有访问过我们的论坛，或没有进行上述操作，请忽略这封邮件。
-您不需要退订或进行其他进一步的操作。
+Bạn nhận được bức thư này là do lúc bạn viết bài có đánh dâu quan tâm 
+đến chủ đè này` và trong vòng 24 giờ vừa qua có bài trả lời mới, nếu 
+bạn chưa làm qua hành động này thì xin mời cứ thẳng tay xóa thư này nhé!
 
 ----------------------------------------------------------------------
-主题信息
+Thông tin chi tiết
 ----------------------------------------------------------------------
-URL:  {$boardurl}viewthread.php?tid=$thread[tid]
-标题: $thread[subject]
-作者: $thread[author]
-查看: $thread[views]
-回复: $thread[replies]
+Link (URL):  {$boardurl}viewthread.php?tid=$thread[tid]
+Chủ đề: $thread[subject]
+Tác giả: $thread[author]
+Xem: $thread[views]
+Trả lời: $thread[replies]
 
-该主题最近一次由 $thread[lastposter] 于 $thread[lastpost] 回复。
+Bài viết : $thread[lastposter] viết trả lời $thread[lastpost] .
 
-您订阅的主题可能有更多的回复，为了不影响您信箱的正常使用，我们每 24
-小时至多只会发送一次新回复通知，在此期间如果有新回复，将在下次一并通
-知。
-
+Bạn đặt chú ý cho bài viết có thể rất nhiều bài viết, để không làm ảnh
+hưởng đến hòm thư của bạn. 24 giờ chúng tôi gửi cho bạn một bức thư duy nhất.
 
 
-此致
 
-$bbname 管理团队.
+Thân chào
+
+Ban quản trị $bbname.
 $boardurl',
 
 
-	'add_member_subject' =>		'您被添加成为会员',
+	'add_member_subject' =>		'Bạn đã được thêm vào danh sách bè bạn',
 	'add_member_message' => 	'
-$newusername ，
-这封信是由 $bbname 发送的。
+$newusername .
+Bức thư này được gửi từ $bbname
 
-我是 $discuz_userss ，$bbname 的管理者之一。您收到这封邮件，是因为您
-刚刚被添加成为我们论坛的会员，当前 Email 即是我们为您注册的地址。
-
-----------------------------------------------------------------------
-重要！
-----------------------------------------------------------------------
-
-如果您对我们的论坛不感兴趣或无意成为会员，请忽略这封邮件。
+Tôi là $discuz_userss, quản lý diễn đàn $bbname. Bạn nhận được bức thư
+này bởi vì có người trong diễn đàn đã thêm bạn vào danh sách thành viên,
+do đó hệ thống đã gửi email đến thông báo cho bạn biết.
 
 ----------------------------------------------------------------------
-帐号信息
+Chú ý!
 ----------------------------------------------------------------------
 
-论坛名称：$bbname
-论坛地址：$boardurl
+Nếu bạn không quan tâm hoặc không muốn làm thành viên diễn đàn, 
+xin mời xóa bức thư này.
 
-用户名：$newusername
-密码：$newpassword
+----------------------------------------------------------------------
+Thông tin tài khoản
+----------------------------------------------------------------------
 
-从现在起您可以使用您的帐号登录我们的论坛，祝您使用愉快！
+Tên diễn đàn: $bbname
+Địa chỉ: $boardurl
+
+Tài khoản: $newusername
+Mật khẩu: $newpassword
+
+Ngay từ bây giờ các bạn có thể đăng nhập vào diễn đàn. 
+Chúc bạn có một ngày thật vui vẻ!
 
 
 
-此致
+Thân chào!
 
-$bbname 管理团队.
+Quản trị $bbname.
 $boardurl',
 
 
-	'birthday_subject' =>		'祝您生日快乐',
+	'birthday_subject' =>		'Chúc bạn sinh nhật vui vẻ',
 	'birthday_message' => 		'
-$member[username]，
-这封信是由 $bbname 发送的。
+$member[username]
+Bức thư này được gửi từ $bbname
 
-您收到这封邮件，是因为在我们的论坛上这个邮箱地址被登记为用户邮箱，
-并且按照您填写的信息，今天是您的生日，很高兴能在此时为您献上一份
-生日祝福，我谨代表论坛管理团队，衷心祝福您生日快乐。
+Bạn nhận được bức thư này là do lúc đăng ký có nhận email thông tin
+từ diễn đàn.
+Hôm nay là sinh nhật của bạn, lúc này chắc bạn đang cùng bè bạn vui vẻ,
+chúng tôi cũng vui cùng bạn, hy vọng sang tuổi mới bạn sẽ thêm nhiều 
+cái mới, vui cùng diễn đàn nhiều hơn. Cuối cùng xin chúc bạn một ngày
+thật vui vẻ và tràn đầy hạnh phúc.
 
-如果您并非我们的会员，或今天并非您的生日，可能是有人误用了您的邮
-件地址，或错误的填写了生日信息，本邮件不会多次重复发送，请忽略这
-封邮件。
+Nếu như bạn không phải mem của diễn đàn, hoặc hôm nay không phải là 
+sinh nhật của bạn, có thể có người đang dùng email của bạn đăng ký trong 
+diễn đàn. Xin mời lập tức xóa ngay email này. Xin cảm ơn,
 
 
 
-此致
+Thân chào!
 
-$bbname 管理团队.
+Ban quản trị $bbname.
 $boardurl',
 
 
-	'email_to_friend_subject' =>	'$discuz_userss 推荐给您: $thread[subject]',
+	'email_to_friend_subject' =>	'$discuz_userss giới thiệu đến bạn chủ đề: $thread[subject]',
 	'email_to_friend_message' =>	'
-这封信是由 $bbname 的 $discuz_userss 发送的。
+Bức thư này được gửi từ diễn đàn $bbname 
+và thành viên $discuz_userss gửi tặng bạn
 
-您收到这封邮件，是因为在 $discuz_userss 通过 $bbname 的“推荐给朋友”
-功能推荐了如下的内容给您，如果您对此不感兴趣，请忽略这封邮件。您不
-需要退订或进行其他进一步的操作。
+Bạn nhận được bức thư này từ thành viên $discuz_userss giới thiệu cho 
+bạn bài hay. Nếu bạn không quan tâm cứ việc xóa thẳng tay!
 
 ----------------------------------------------------------------------
-信件原文开始
+Tin tức
 ----------------------------------------------------------------------
 
 $message
 
 ----------------------------------------------------------------------
-信件原文结束
+Kết thúc
 ----------------------------------------------------------------------
 
-请注意这封信仅仅是由用户使用 “推荐给朋友”发送的，不是论坛官方邮件，
-论坛管理团队不会对这类邮件负责。
+Xin chú ý, đây là thư được gửi do chức năng "Giới thiệu cho bạn bè" - 
+không phải thư của Ban quản trị, nên BQT không chịu trách nhiệm về 
+nội dung được đăng trong bức thư.
 
-欢迎您访问 $bbname
+Chào mừng bạn đến với $bbname
 $boardurl',
 
-	'email_to_invite_subject' =>	'您的朋友 $discuz_userss 发送 $bbname 论坛注册邀请码给您',
+	'email_to_invite_subject' =>	'Thành viên $discuz_userss gửi mã kích hoạt $bbname cho bạn',
 	'email_to_invite_message' =>	'
 $sendtoname,
-这封信是由 $bbname 的 $discuz_userss 发送的。
+Bức thư này được gửi từ thành viên $discuz_userss.
 
-您收到这封邮件，是因为在 $discuz_userss 通过我们论坛的“发送邀请码给朋友”
-功能推荐了如下的内容给您，如果您对此不感兴趣，请忽略这封邮件。您不
-需要退订或进行其他进一步的操作。
+Bạn nhận được bức thư này là do thành viên $discuz_userss gửi tặng bạn 
+mã kích hoạt. Nếu không quan tâm, xin bạn hãy xóa bức thư này
 
 ----------------------------------------------------------------------
-信件原文开始
+Bắt đầu
 ----------------------------------------------------------------------
 
 $message
 
 ----------------------------------------------------------------------
-信件原文结束
+Kết thúc
 ----------------------------------------------------------------------
 
-请注意这封信仅仅是由用户使用 “发送邀请码给朋友”发送的，不是论坛官方邮件，
-论坛管理团队不会对这类邮件负责。
+Chú ý, đây là thư do thành viên gửi tặng mã kích hoạt cho bạn - không
+phải thư của Ban quản trị, nên BQT không chịu trách nhiệm về nội dung
+được đăng trong bức thư.
 
-欢迎您访问 $bbname
+Chào mừng bạn đến với $bbname
 $boardurl',
 
 
-	'moderate_member_subject' =>	'用户审核结果通知',
+	'moderate_member_subject' =>	'Kích hoạt cho thành viên',
 	'moderate_member_message' =>	'
-$member[username] ，
-这封信是由 $bbname 发送的。
-
-您收到这封邮件，是因为在我们的论坛上这个邮箱地址被新用户注册时所
-使用，且管理员设置了需对新用户进行人工审核，本邮件将通知您提交的
-申请的审核结果。
-
+$member[username] 
+Bức thư này dược gửi từ $bbname
+Đây là bức thư kích hoạt của thành viên
 ----------------------------------------------------------------------
-注册信息与审核结果
+Thời gian đăng ký và kết quả
 ----------------------------------------------------------------------
 
-用户名: $member[username]
-注册时间: $member[regdate]
-提交时间: $member[submitdate]
-提交次数: $member[submittimes]
-注册原因: $member[message]
+Tên đăng nhập: $member[username]
+Ngày tham gia: $member[regdate]
+Thời gian gửi: $member[submitdate]
+Số lần gửi: $member[submittimes]
+Lý do đăng ký: $member[message]
 
-审核结果: {$language[\'moderate_member_\'.$member[operation]]}
-审核时间: $member[moddate]
-审核管理员: $discuz_userss
-管理员留言: $member[remark]
+Kết quả kiểm tra: {$language[\'moderate_member_\'.$member[operation]]}
+Thời gian kiểm tra: $member[moddate]
+Người kiểm tra: $discuz_userss
+Lời nhận xét: $member[remark]
 
 ----------------------------------------------------------------------
-审核结果说明
+Kết quả
 ----------------------------------------------------------------------
 
-通过: 您的注册已通过审核，您已成为我们论坛的正式用户。
+Duyệt: Đăng kí thành công. Bạn đã là thành viên chính thức của diễn đàn! 
 
-否决: 您的注册信息不完整，或未满足我们对新用户的某些要求，您可以
-      根据管理员留言，完善您的注册信息，然后再提交。
+Từ chối: Mẫu đăng kí của bạn không hoàn chỉnh, hoặc chưa đủ điều kiện.
+Bạn có thể để lại lời nhắn cho quản trị diễn đàn.
 
-删除：您的注册由于与我们的要求偏差较大，或我们的论坛新注册人数已
-      超过预期，申请被彻底否决。您的帐号已从数据库中删除，将无法
-      再使用其登录或提交再次审核，请您谅解。
-
+Xóa bỏ: Mẫu đăng ký của bạn đã bị chúng tôi xóa bỏ vì có sự sai lầm trong đó,
+hoặc mẫu đăng ký của bạn đã quá hạn. Xin được thứ lỗi!
 
 
-此致
+Thân chào
 
-$bbname 管理团队.
+Ban quản trị $bbname
 $boardurl'
 
 );
