@@ -24,7 +24,7 @@
 	<div class="content">
 		$pluginhooks[forumdisplay_header]
 		<div id="forumheader" class="s_clear">
-			<h1>$forum[name]</h1>
+			<h1 style="{if $forum[extra][namecolor]}color: {$forum[extra][namecolor]};{/if}">$forum[name]</h1>
 			<p class="forumstats">[ <strong>$forum[threads]</strong> {lang thread} / {echo $forum[posts]-$forum[threads]} {lang reply} ]</p>
 			<div class="forumaction">
 				<div class="right">
@@ -36,7 +36,7 @@
 				<!--{if $rssstatus}--><a href="rss.php?fid=$fid&amp;auth=$rssauth" target="_blank" class="feed">RSS</a><!--{/if}-->
 				</div>
 				<!--{if $forum['recyclebin'] && $forum['ismoderator']}-->
-					<a href="{if $adminid == 1}admincp.php?action=recyclebin&frames=yes{elseif $forum['ismoderator']}modcp.php?action=recyclebins&fid=$fid{/if}" class="recyclebin" target="_blank">{lang forum_recyclebin}</a>
+					<a href="{if $adminid == 1}admincp.php?action=recyclebin&amp;frames=yes{elseif $forum['ismoderator']}modcp.php?action=recyclebins&amp;fid=$fid{/if}" class="recyclebin" target="_blank">{lang forum_recyclebin}</a>
 				<!--{/if}-->
 			</div>
 			<!--{if $forum[description]}--><p class="channelinfo">{lang forum_description}: $forum[description]</p><!--{/if}-->
@@ -45,10 +45,9 @@
 					<div class="modlink">
 					$pluginhooks[forumdisplay_modlink]
 					<!--{if $forum['modworks']}-->
-						<a href="modcp.php?action=report&fid=$fid" target="_blank">{lang mod_works_report_existence}</a> |
-						<!--{if $modnum}-->
-							<a href="modcp.php?action=moderate&op=threads&fid=$fid" target="_blank">{lang mod_works_modpost_existence}</a> |
-						<!--{/if}-->
+						<!--{if $reportnum}--><a href="modcp.php?action=report&fid=$fid" target="_blank">{lang mod_works_report_existence}</a> |<!--{/if}-->
+						<!--{if $modnum}--><a href="modcp.php?action=moderate&op=threads&fid=$fid" target="_blank">{lang mod_works_modpost_existence}</a> |<!--{/if}-->
+						<!--{if $modusernum}--><a href="modcp.php?action=moderate&op=members&fid=$fid" target="_blank">{lang mod_works_moduser_existence}</a> |<!--{/if}-->
 					<!--{/if}-->
 					<a href="modcp.php?fid=$fid" target="_blank">{lang modcp}</a>
 					</div>
@@ -64,7 +63,7 @@
 					<span class="headactions"><img onclick="toggle_collapse('modarea_c');" alt="{lang spread}" title="{lang spread}" src="{IMGDIR}/$collapseimg[modarea_c].gif" id="modarea_c_img" class="toggle" /></span>
 					<h3>
 						<!--{if $forum['recommendlist']}-->
-							<a href="javascript:;" id="tab_1" class="current" {if $forum['rules']} onclick="switchTab('tab', 1, 2)"{/if}>{lang forum_recommend}</a><!--{if $forum['ismoderator']}--><a href="modcp.php?action=forums&op=recommend&show=all&fid=$fid" target="_blank">[{lang edit}]</a><!--{/if}-->
+							<a href="javascript:;" id="tab_1" class="current" {if $forum['rules']} onclick="switchTab('tab', 1, 2)"{/if}>{lang forum_recommend}</a><!--{if $forum['ismoderator'] && $allowrecommendthread}--><a href="modcp.php?action=forums&op=recommend&show=all&fid=$fid" target="_blank">[{lang edit}]</a><!--{/if}-->
 						<!--{/if}-->
 						<!--{if $forum['recommendlist'] &&  $forum['rules']}--><span class="pipe">|</span><!--{/if}--><!--{if $forum['rules']}--><a href="javascript:;" id="tab_2"{if !$forum['recommendlist']} class="current"{/if} {if $forum['recommendlist']} onclick="switchTab('tab', 2, 2)"{/if}>{lang forum_rules}</a><!--{/if}-->
 					</h3>
@@ -93,9 +92,8 @@
 			<span class="postbtn" id="newspecial" prompt="post_newthread" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"><a href="post.php?action=newthread&fid=$fid"{if !$forum['allowspecialonly']} onclick="showWindow('newthread', this.href);return false;"{/if}>{lang send_posts}</a></span>
 		</div>
 
-		<!--{if $forum['threadtypes'] && $forum['threadtypes']['listable'] || $forum['threadsorts'] && $forum['threadsorts']['listable']}-->
 		<div class="threadtype">
-			<!--{if $forum['threadsorts'] && $forum['threadsorts']['listable']}-->
+			<!--{if $forum['threadsorts']}-->
 			<p>
 				<!--{loop $forum['threadsorts']['flat'] $id $name}--><!--{if $sortid != $id}--><a href="forumdisplay.php?fid=$fid&amp;filter=sort&amp;sortid=$id$typeadd">$name</a><!--{else}--><strong>$name</strong><!--{/if}--> <!--{/loop}-->
 				<!--{if $forum['threadsorts']['selectbox']}-->
@@ -117,7 +115,6 @@
 			</p>
 			<!--{/if}-->
 		</div>
-		<!--{/if}-->
 		<div class="dtypebox">
 		<!--{if $quicksearchlist['search']}-->
 			<form method="post" name="searhsort" id="searhsort" action="forumdisplay.php?fid=$fid&filter=sort&sortid=$sortid">
@@ -355,7 +352,7 @@
 				</tbody>
 				<!--{/loop}-->
 			<!--{else}-->
-				<tbody><tr><th colspan="6"><p class="nodata">{lang forum_nothreads}</p></th></tr></tbody>
+				<tbody><tr><th colspan="{if $adminid == 1}5{else}4{/if}"><p class="nodata">{lang forum_nothreads}</p></th></tr></tbody>
 			<!--{/if}-->
 			</table>
 			<!--{if $forum['ismoderator'] && $threadcount}-->
@@ -374,7 +371,7 @@
 		<dl id="onlinelist">
 			<!--{if $detailstatus}-->
 			<dd>
-				<span class="headactions"><a href="forumdisplay.php?fid=$fid&amp;page=$page&amp;showoldetails=no#online"><img src="{IMGDIR}/collapsed_no.gif" alt="" /></a></span>
+				<span class="headactions"><a href="forumdisplay.php?fid=$fid&filter=sort&amp;sortid=$sortid&amp;page=$page&amp;showoldetails=no#online"><img src="{IMGDIR}/collapsed_no.gif" alt="" /></a></span>
 				<h3>{lang forum_activeusers}</h3>
 			</dd>
 			<dd>
@@ -393,7 +390,7 @@
 			</dd>
 			<!--{else}-->
 			<dt>
-				<span class="headactions"><a href="forumdisplay.php?fid=$fid&amp;page=$page&amp;showoldetails=yes#online" class="nobdr"><img src="{IMGDIR}/collapsed_yes.gif" alt="" /></a></span>
+				<span class="headactions"><a href="forumdisplay.php?fid=$fid&filter=sort&amp;sortid=$sortid&amp;page=$page&amp;showoldetails=yes#online" class="nobdr"><img src="{IMGDIR}/collapsed_yes.gif" alt="" /></a></span>
 				<h3>{lang forum_activeusers}</h3>
 			</dt>
 			<!--{/if}-->

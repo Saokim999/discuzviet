@@ -88,21 +88,35 @@ function sortshowlist($searchoid = 0, $searchvid = 0, $threadids = array(), $sea
 		while($sortthread = $sdb->fetch_array($query)) {
 			$optionid = $sortthread['optionid'];
 			if($_DTYPE[$optionid]['subjectshow']) {
-				$sortthreadlist[$sortthread['tid']][$_DTYPE[$optionid]['title']] = in_array($_DTYPE[$optionid]['type'], array('radio', 'checkbox', 'select')) ? $_DTYPE[$optionid]['choices'][$sortthread['value']] : $sortthread['value'];
 				$optionvaluelist[$sortthread['tid']][$_DTYPE[$optionid]['identifier']]['title'] = $_DTYPE[$optionid]['title'];
-				$optionvaluelist[$sortthread['tid']][$_DTYPE[$optionid]['identifier']]['value'] = in_array($_DTYPE[$optionid]['type'], array('radio', 'checkbox', 'select')) ? $_DTYPE[$optionid]['choices'][$sortthread['value']] : $sortthread['value'];
 				$optionvaluelist[$sortthread['tid']][$_DTYPE[$optionid]['identifier']]['unit'] = $_DTYPE[$optionid]['unit'];
-				$searchtitle[$sortthread['tid']][] = '/{('.$_DTYPE[$optionid]['identifier'].')}/e';
-				$searchvalue[$sortthread['tid']][] = '/\[('.$_DTYPE[$optionid]['identifier'].')value\]/e';
-				$searchunit[$sortthread['tid']][] = '/\[('.$_DTYPE[$optionid]['identifier'].')unit\]/e';
+				if(in_array($_DTYPE[$optionid]['type'], array('radio', 'checkbox', 'select'))) {
+					if($_DTYPE[$optionid]['type'] == 'checkbox') {
+						foreach(explode("\t", $sortthread['value']) as $choiceid) {
+							$sortthreadlist[$sortthread['tid']][$_DTYPE[$optionid]['title']] .= $_DTYPE[$optionid]['choices'][$choiceid].'&nbsp;';
+							$optionvaluelist[$sortthread['tid']][$_DTYPE[$optionid]['identifier']]['value'] .= $_DTYPE[$optionid]['choices'][$choiceid].'&nbsp;';
+						}
+					} else {
+						$sortthreadlist[$sortthread['tid']][$_DTYPE[$optionid]['title']] = $optionvaluelist[$sortthread['tid']][$_DTYPE[$optionid]['identifier']]['value'] = $_DTYPE[$optionid]['choices'][$sortthread['value']];
+					}
+				} else {
+					$sortthreadlist[$sortthread['tid']][$_DTYPE[$optionid]['title']] = $optionvaluelist[$sortthread['tid']][$_DTYPE[$optionid]['identifier']]['value'] = $sortthread['value'];
+				}
 			}
 		}
 
 		if($_DSTYPETEMPLATE && $sortthreadlist) {
+			foreach($_DTYPE as $option) {
+				if($option['subjectshow']) {
+					$searchtitle[] = '/{('.$option['identifier'].')}/e';
+					$searchvalue[] = '/\[('.$option['identifier'].')value\]/e';
+					$searchunit[] = '/\[('.$option['identifier'].')unit\]/e';
+				}
+			}
 			foreach($sortthreadlist as $tid => $option) {
-				$stemplate[$tid] = preg_replace($searchtitle[$tid], "showoption('\\1', 'title', '$tid')", $_DSTYPETEMPLATE);
-				$stemplate[$tid] = preg_replace($searchvalue[$tid], "showoption('\\1', 'value', '$tid')", $stemplate[$tid]);
-				$stemplate[$tid] = preg_replace($searchunit[$tid], "showoption('\\1', 'unit', '$tid')", $stemplate[$tid]);
+				$stemplate[$tid] = preg_replace($searchtitle, "showoption('\\1', 'title', '$tid')", $_DSTYPETEMPLATE);
+				$stemplate[$tid] = preg_replace($searchvalue, "showoption('\\1', 'value', '$tid')", $stemplate[$tid]);
+				$stemplate[$tid] = preg_replace($searchunit, "showoption('\\1', 'unit', '$tid')", $stemplate[$tid]);
 			}
 		}
 
@@ -132,7 +146,6 @@ function sortshowlist($searchoid = 0, $searchvid = 0, $threadids = array(), $sea
 
 function showoption($var, $type, $tid) {
 	global $optionvaluelist;
-				//print_r($optionvaluelist);
 	if($optionvaluelist[$tid][$var][$type]) {
 		return $optionvaluelist[$tid][$var][$type];
 	} else {

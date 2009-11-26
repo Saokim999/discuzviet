@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: post.js 21024 2009-11-06 08:47:38Z liuqiang $
+	$Id: post.js 21297 2009-11-25 09:40:15Z monkey $
 */
 
 var postSubmited = false;
@@ -866,7 +866,7 @@ function showEditorMenu(tag, params) {
 					insertText(str, str.length - pos[1], 0, false, sel);
 				} else {
 					style += width || height ? '=' + width + ',' + height : '';
-					insertText('[img' + style + ']' + src + '[/img]');
+					insertText('[img' + style + ']' + src + '[/img]', 0, 0, false, sel);
 				}
 				$(ctrlid + '_param_1').value = '';
 			default:
@@ -1444,11 +1444,17 @@ function updateImageList(action) {
 }
 
 function switchButton(btn, btns) {
+	if(!$(editorid + '_btn_' + btn) || !$(editorid + '_' + btn)) {
+		return;
+	}
 	$(editorid + '_btn_' + btn).style.display = '';
 	$(editorid + '_' + btn).style.display = '';
 	$(editorid + '_btn_' + btn).className = 'current';
 	for(i = 0;i < btns.length;i++) {
 		if(btns[i] != btn) {
+			if(!$(editorid + '_' + btns[i]) || !$(editorid + '_btn_' + btns[i])) {
+				continue;
+			}
 			$(editorid + '_' + btns[i]).style.display = 'none';
 			$(editorid + '_btn_' + btns[i]).className = '';
 		}

@@ -5,6 +5,6 @@ if(!defined('IN_DISCUZ')) {
 }
 
 define('DISCUZ_VERSION', '7.2');
-define('DISCUZ_RELEASE', '20091120');
+define('DISCUZ_RELEASE', '20091126');
 
 ?>

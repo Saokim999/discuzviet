@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: editpost.inc.php 21084 2009-11-11 07:30:21Z tiger $
+	$Id: editpost.inc.php 21308 2009-11-26 01:08:59Z monkey $
 */
 
 if(!defined('IN_DISCUZ')) {
@@ -129,7 +129,7 @@ if(!submitcheck('editsubmit')) {
 		}
 	}
 
-	if($thread['special'] == 2 && ($authorid['authorid'] == $discuz_uid && $allowposttrade || $allowedittrade)) {
+	if($thread['special'] == 2 && ($thread['authorid'] == $discuz_uid && $allowposttrade || $allowedittrade)) {
 		$query = $db->query("SELECT * FROM {$tablepre}trades WHERE pid='$pid'");
 		$tradetypeselect = '';
 		if($db->num_rows($query)) {
@@ -271,11 +271,6 @@ if(!submitcheck('editsubmit')) {
 			$polladd = '';
 			if($thread['special'] == 1 && ($alloweditpoll || $isorigauthor) && !empty($polls)) {
 				$pollarray = '';
-				foreach($polloption as $key => $value) {
-					if($value === '') {
-						unset($polloption[$key], $displayorder[$key]);
-					}
-				}
 				$pollarray['options'] = $polloption;
 				if($pollarray['options']) {
 					if(count($pollarray['options']) > $maxpolloptions) {
@@ -327,6 +322,7 @@ if(!submitcheck('editsubmit')) {
 					while($tempoptid = $db->fetch_array($query)) {
 						$optid[] = $tempoptid['polloptionid'];
 					}
+
 					foreach($pollarray['options'] as $key => $value) {
 						$value = dhtmlspecialchars(trim($value));
 						if(in_array($polloptionid[$key], $optid)) {
@@ -738,7 +734,7 @@ if(!submitcheck('editsubmit')) {
 			modlog($thread, 'EDT');
 		}
 
-		if($thread['special'] == 3 && $isfirstpost) {
+		if($thread['special'] == 3 && $isfirstpost && $thread['price'] > 0) {
 			$pricediff = $rewardprice - $thread['price'];
 			$db->query("UPDATE {$tablepre}members SET extcredits$creditstransextra[2]=extcredits$creditstransextra[2]-$pricediff WHERE uid='$orig[authorid]'", 'UNBUFFERED');
 		}

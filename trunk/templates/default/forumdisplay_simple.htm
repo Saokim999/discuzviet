@@ -1,5 +1,5 @@
 {subtemplate header}
-<div id="nav"><a id="fjump" href="$indexname"{if $forumjump && $jsmenu[1]} class="dropmenu" onmouseover="showMenu({'ctrlid':this.id})"{/if}>$bbname</a> $navigation</div>
+<div id="nav"><a id="fjump" href="$indexname"{if $forumjump == 1} class="dropmenu" onmouseover="showMenu({'ctrlid':this.id})"{/if}>$bbname</a> $navigation</div>
 
 <!--{if $admode && !empty($advlist['text'])}-->
 <div id="ad_text" class="ad_text" >
@@ -13,18 +13,18 @@
 	<!--{if $infosidestatus[allow] == 2}-->
 		<a id="sidebar_img" href="javascript:;" onclick="sidebar_collapse(['{lang sidebar_collapsed_yes}', '{lang sidebar_collapsed_no}']);" class="$collapseimg[sidebar]"><!--{if $collapseimg[sidebar] == 'collapsed_yes'}-->{lang sidebar_collapsed_yes}<!--{else}-->{lang sidebar_collapsed_no}<!--{/if}--></a>
 	<!--{elseif $infosidestatus[allow] == 1}-->
-		<a id="sidebar_img" href="javascript:;" onclick="sidebar_collapse(['{lang sidebar_collapsed_yes}', '{lang sidebar_collapsed_no}']);" class="collapsed_yes">{lang sidebar_collapsed_yes}</a>
+		<a id="sidebar_img" href="javascript:;" onclick="sidebar_collapse(['', '{lang sidebar_collapsed_no}']);" class="collapsed_yes">{lang sidebar_collapsed_yes}</a>
 	<!--{/if}-->
 	<div class="main">
 		<div class="content">
 			$pluginhooks[forumdisplay_header]
 			<div id="forumheader" class="s_clear">
-				<h1>$forum[name]</h1>
+				<h1 style="{if $forum[extra][namecolor]}color: {$forum[extra][namecolor]};{/if}">$forum[name]</h1>
 				<div class="forumaction">
-					<a href="my.php?item=favorites&amp;fid=$fid" id="ajax_favorite" class="addfav" onclick="ajaxmenu(this);doane(event);">{lang thread_favorite}</a>
-					<!--{if $adminid == 1 && $forum['recyclebin']}-->
-						<a href="admincp.php?action=recyclebin&amp;frames=yes" target="_blank" class="recyclebin">{lang forum_recyclebin}</a>
-					<!--{/if}-->
+					<a href="my.php?item=favorites&amp;fid=$fid" id="ajax_favorite" onclick="ajaxmenu(this);doane(event);">{lang thread_favorite}</a>
+				<!--{if $forum['recyclebin'] && $forum['ismoderator']}-->
+					<a href="{if $adminid == 1}admincp.php?action=recyclebin&frames=yes{elseif $forum['ismoderator']}modcp.php?action=recyclebins&fid=$fid{/if}" class="recyclebin" target="_blank">{lang forum_recyclebin}</a>
+				<!--{/if}-->
 				</div>
 				<!--{if $forum[description]}--><p class="channelinfo">{lang forum_description}: $forum[description]</p><!--{/if}-->
 				<p id="modedby">
@@ -77,7 +77,7 @@
 	<!--{/if}-->
 </div>
 
-<!--{if $forumjump && $jsmenu[1]}-->
+<!--{if $forumjump}-->
 	<div class="popupmenu_popup" id="fjump_menu" style="display: none">
 	$forummenu
 	</div>

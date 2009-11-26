@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: index_classics.inc.php 21018 2009-11-06 06:57:53Z wangjinbo $
+	$Id: index_classics.inc.php 21260 2009-11-23 08:33:35Z monkey $
 */
 
 if(!defined('IN_DISCUZ')) {
@@ -138,7 +138,7 @@ if(!$gid) {
 				$forumlist[$forum['fup']]['posts'] += $forum['posts'];
 				$forumlist[$forum['fup']]['todayposts'] += $forum['todayposts'];
 				if($subforumsindex && $forumlist[$forum['fup']]['permission'] == 2 && !($forumlist[$forum['fup']]['simple'] & 16) || ($forumlist[$forum['fup']]['simple'] & 8)) {
-					$forumlist[$forum['fup']]['subforums'] .= '<a href="forumdisplay.php?fid='.$forum['fid'].'">'.$forum['name'].'</a>&nbsp;&nbsp;';
+					$forumlist[$forum['fup']]['subforums'] .= '<a href="forumdisplay.php?fid='.$forum['fid'].'" '.($forum['extra']['namecolor'] ? ' style="color: ' . $forum['extra']['namecolor'].';"' : '') . '>'.$forum['name'].'</a>&nbsp;&nbsp;';
 				}
 
 			}

@@ -4,7 +4,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: global.func.php 21023 2009-11-06 08:43:48Z monkey $
+	$Id: global.func.php 21240 2009-11-23 05:31:00Z liulanbo $
 */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -202,7 +202,7 @@ function cpmsg($message, $url = '', $type = '', $extra = '', $halt = TRUE) {
 			"<input type=\"button\" class=\"btn\" value=\"$lang[cancel]\" onClick=\"history.go(-1);\"></p></form><br />";
 	} elseif($type == 'loadingform') {
 		$message = "<form method=\"post\" action=\"$url\" id=\"loadingform\"><input type=\"hidden\" name=\"formhash\" value=\"".FORMHASH."\"><br />$message$extra<img src=\"images/admincp/ajax_loader.gif\" class=\"marginbot\" /><br />".
-			'<p class="marginbot"><a href="###" onclick="$(\'loadingform\').submit();" class="lightlink">'.lang('message_redirect').'</a></p></form><br /><script type="text/JavaScript">setTimeout("$(\'loadingform\').submit();", 2000);</script>';
+			'<p class="marginbot"><a href="###" onclick="$(\'loadingform\').submit();return false;" class="lightlink">'.lang('message_redirect').'</a></p></form><br /><script type="text/JavaScript">setTimeout("$(\'loadingform\').submit();", 2000);</script>';
 	} else {
 		$message .= $extra.($type == 'loading' ? '<img src="images/admincp/ajax_loader.gif" class="marginbot" />' : '');
 		if($url) {
