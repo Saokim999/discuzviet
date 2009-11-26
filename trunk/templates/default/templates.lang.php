@@ -1,7 +1,7 @@
 <?php
 
 // Message Pack for Discuz! Version 1.0.0
-// Created by Crossday - - Translated by DiscuzViet Group
+// Created by Crossday - - Translated by DiscuzViet Group. 7.2 2009112006
 
 $language = array
 (
@@ -24,7 +24,7 @@ $language = array
 	'top' => 'lên trên',
 	'admin' => 'Administrator',
 	'supermod' => 'Tổng quản lý',
-	'moderator' => 'Điều hành',
+	'moderator' => 'Moderator',
 	'recommend_moderator' => 'Đề cử bởi',
 	'moderatorforums' => 'Quản lý các mục sau',
 	'member' => 'Hội viên',
@@ -33,7 +33,7 @@ $language = array
 	'guest' => 'Khách',
 	'anonymous' => 'Chưa đăng ký',
 	'forum' => 'Diễn đàn',
-	'refresh' => 'Làm tươi',
+	'refresh' => 'Làm mới',
 	'show' => 'Xem',
 	'sort' => 'Sắp xếp',
 	'orderby' => 'Sắp xếp theo',
@@ -464,7 +464,7 @@ $language = array
 	'post_fastreply_author' => 'Trả lời # Bài viết',
 	'post_zero_is_nopermission' => 'Nhập 0 hoặc để trống có nghĩa không giới hạn quyền đọc',
 	'post_price_refunded' => 'Chủ đề này bị buộc trả lại tiền',
-	'post_price_free' => 'Chủ đề này đã vượt quá thời gian bán',
+	'post_price_free' => 'Chủ đề này đã hết hạn bán',
 	'post_price_comment' => 'Điểm tối đa bạn muốn là $maxprice {$extcredits[$creditstrans][unit]}',
 	'post_price_income_comment' => ', mỗi bài người viết nhận tối đa là $maxincperthread {$extcredits[$creditstrans][unit]}',
 	'post_price_charge_comment' => ', thời gian bán tối đa là $maxchargespan giờ',
@@ -1322,7 +1322,7 @@ $language = array
 	'somebodys_profile' => 'Thông tin của $member[username]',
 	'add_to_buddylist' => 'Thêm bạn mới',
 	'search_posts' => 'Bài viết của tôi',
-	'edit_member' => 'Sửa đổi',
+	'admin_member' => 'Quản lý người này',
 	'moderations' => 'Thống kê',
 	'valid_before' => 'Có hạn trước',
 	'pageviews' => 'Số trang xem',
@@ -1339,6 +1339,8 @@ $language = array
 	'member_avatar_banned' => 'Avatar bị cấm',
 	'member_signature_banned' => 'Chữ ký bị cấm',
 	'member_viewpro' => 'Xem chi tiết',
+	'member_threads' => 'Chủ đề',
+	'member_replys' => 'Bài trả lời',
 	'member_homepage' => 'Xem trang cá nhân',
 	'regtime' => 'Ngày tham gia',
 	'online_status' => 'Trạng thái',
@@ -2390,7 +2392,6 @@ $language = array
 	'hiddenreplies' => 'Bài này chỉ có tác giả đọc được',
 	'rushreply' => 'Trả lời nhanh',
 	'message_ishidden_hiddenreplies' => 'Bài này chỉ có tác giả đọc được',
-	'admin_member' => 'Quản lý thành viên',
 
 );
 
