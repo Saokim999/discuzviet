@@ -150,7 +150,7 @@ $language = array
 	'pm_to' => 'Người nhận',
 	'pm_date' => 'Ngày',
 	
-	'share_message' => 'Xin chào! $bbname, Mình thấy bài viết này có giá trị, đặc biệt gửi cho bạn.\\n\\n$thread[subject]\\n Địa chỉ là $threadurl\\n\\n hy vọng bạn thích nó.',
+	'share_message' => '$bbname xin chào bạn,\\nChúng tôi thấy bài viết này có giá trị, tiêu đề bài viết là: \\n\\n$thread[subject]\\n Địa chỉ truy cập: $threadurl\\n\\nHy vọng bạn thích nó.',
 
 	'week_0' => 'C.Nhật',
 	'week_1' => 'Thứ 2',
