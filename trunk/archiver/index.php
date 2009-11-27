@@ -160,12 +160,12 @@ function showheader() {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <base href="{$boardurl}" />
-<title>{$navtitle} {$_DCACHE['settings']['bbname']} {$_DCACHE['settings']['seotitle']} - Powered by Discuz! Archiver</title>
+<title>{$navtitle} {$_DCACHE['settings']['bbname']} {$_DCACHE['settings']['seotitle']} - Powered by DiscuzViet! Archiver</title>
 {$_DCACHE['settings']['seohead']}
 <meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
 <meta name="keywords" content="Discuz!,Board,Comsenz,forums,bulletin board,{$_DCACHE['settings']['seokeywords']}" />
-<meta name="description" content="{$meta_contentadd} {$_DCACHE['settings']['bbname']} {$_DCACHE['settings']['seodescription']} - Discuz! Archiver" />
-<meta name="generator" content="Discuz! Archiver {$_DCACHE['settings']['version']}" />
+<meta name="description" content="{$meta_contentadd} {$_DCACHE['settings']['bbname']} {$_DCACHE['settings']['seodescription']} - DiscuzViet! Archiver" />
+<meta name="generator" content="DiscuzViet! Archiver {$_DCACHE['settings']['version']}" />
 <meta name="author" content="Discuz! Team & Comsenz UI Team" />
 <meta name="copyright" content="2001-2009 Comsenz Inc." />
 <style type="text/css">
@@ -199,8 +199,8 @@ function showfooter() {
 
 	echo <<<EOT
 <br /><center>
-<div style="text-algin: center; font-size: 11px">Powered by <strong><a href="http://www.discuz.net" target="_blank">Discuz! Archiver</a></strong> {$_DCACHE['settings']['version']}&nbsp;
-&copy; 2001-2009 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a><br /><br /></div>
+<div style="text-algin: center; font-size: 11px">Powered by <strong><a href="http://code.google.com/p/discuzviet/" target="_blank">DiscuzViet! Archiver</a></strong> {$_DCACHE['settings']['version']}&nbsp;
+&copy; 2001-2009 Translated by JaJa, Saokim999<br /><br /></div>
 </center>
 </body>
 </html>
