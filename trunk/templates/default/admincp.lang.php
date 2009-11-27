@@ -3165,7 +3165,7 @@ $lang = array
 	'tasks_upgrade' => 'Nâng cấp', 
 	'tasks_uninstall' => 'Xóa',
 	'tasks_newbie_task' => 'Nhiệm vụ cho thành viên mới',
-	'tasks_newbie_task_item1' => 'Đây là nhiệm vụ Làm quen kết bạn dành cho thành viên mới đăng ký',
+	'tasks_newbie_task_item1' => 'Đây là nhiệm vụ làm quen diễn đàn dành cho thành viên mới đăng ký',
 	'tasks_newbie_task_item2' => 'Đây là nhiệm vụ làm quen, các thành viên sẽ tự động nhận NV này',
 
 	'tasks_tips' =>' <li>Chỉ có công việc được đánh dấu là "có" các thành viên sẽ nhìn thấy.</ li> ', 
