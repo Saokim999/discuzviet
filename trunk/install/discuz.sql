@@ -1642,7 +1642,7 @@ INSERT INTO cdb_smilies VALUES ('81','0','0','stamp','Bài hay','001.gif');
 INSERT INTO cdb_smilies VALUES ('82','0','1','stamp','Bài nóng','002.gif');
 INSERT INTO cdb_smilies VALUES ('83','0','2','stamp','Ảnh đẹp','003.gif');
 INSERT INTO cdb_smilies VALUES ('84','0','3','stamp','Tuyệt vời','004.gif');
-INSERT INTO cdb_smilies VALUES ('85','0','4','stamp','TOP','005.gif');
+INSERT INTO cdb_smilies VALUES ('85','0','4','stamp','Tinh hoa','005.gif');
 INSERT INTO cdb_smilies VALUES ('86','0','5','stamp','Khuyến khích','006.gif');
 INSERT INTO cdb_smilies VALUES ('87','0','6','stamp','Bản gốc','007.gif');
 INSERT INTO cdb_smilies VALUES ('88','0','7','stamp','Được đề cử','008.gif');
