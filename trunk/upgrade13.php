@@ -52,7 +52,7 @@ $lang = array(
 	'uc_app_ip_comment' => '當主機 DNS 有問題時需要設置，默認請保留為空',
 	'uc_connent_invalid1' => '連接服務器',
 	'uc_connent_invalid2' => ' 失敗，請返回檢查。',
-	'error_message' => '提示信息',
+	'error_message' => 'Thông báo - Đang trong quá trình Update lên Discuz 7.2 www.traitimyenbai.net',
 	'error_return' => '返回',
 
 	'tagtemplates_subject' => '標題',
@@ -63,18 +63,19 @@ $lang = array(
 );
 
 $msglang = array(
-	'redirect_msg' => '瀏覽器會自動跳轉頁面，無需人工干預。除非當您的瀏覽器長時間沒有自動跳轉時，請點擊這裡',
-	'uc_url_empty' => '您沒有填寫 UCenter 的 URL，請返回填寫。',
-	'uc_url_invalid' => 'UCenter 的 URL 格式不合法，正常的格式為： http://www.domain.com ，請返回檢查。',
-	'uc_ip_invalid' => '<font color="red">無法連接 UCenter 所在的 Web 服務器，請填寫 UCenter 服務器的IP，如果 UCenter 與論壇在同一台服務器，可以嘗試填寫：127.0.0.1。</font>',
-	'uc_admin_invalid' => '<font color="red">登錄 UCenter 的管理員帳號密碼錯誤。</font>',
-	'uc_data_invalid' => 'UCenter 獲取數據失敗，請返回檢查 UCenter URL、管理員帳號、密碼。 ',
+	'redirect_msg' => 'Click vào đây nếu không tự chuyển ^^',
+	'uc_url_empty' => '您没有填写 UCenter 的 URL，请返回填写。',
+	'uc_url_invalid' => 'UCenter 的 URL 格式不合法，正常的格式为： http://www.domain.com ，请返回检查。',
+	'uc_ip_invalid' => '<font color="red">无法连接 UCenter 所在的 Web 服务器，请填写 UCenter 服务器的IP，如果 UCenter 与论坛在同一台服务器，可以尝试填写：127.0.0.1。</font>',
+	'uc_admin_invalid' => '<font color="red">登录 UCenter 的管理员帐号密码错误。</font>',
+	'uc_data_invalid' => 'UCenter 获取数据失败，请返回检查 UCenter URL、管理员帐号、密码。 ',
+	'uc_data_invalid' => 'UCenter 获取数据失败，请返回检查 UCenter URL、管理员帐号、密码。 ',
 );
 
 require DISCUZ_ROOT.'./include/db_mysql.class.php';
 @include DISCUZ_ROOT.'./config.inc.php';
 
-$version['old'] = 'Discuz! 7.1 正式版';
+$version['old'] = 'Phiên bản Discuz! 7.1';
 $version['new'] = 'Discuz! 7.2';
 $version['newnumber'] = '7.2';
 $lock_file = DISCUZ_ROOT.'./forumdata/upgrade13.lock';
@@ -175,15 +176,15 @@ $upgrade3 = <<<EOT
 #主題圖章;
 DELETE FROM `cdb_smilies` WHERE `typeid` = 0 AND `type` = 'stamp';
 INSERT INTO `cdb_smilies` (`typeid`, `displayorder`, `type`, `code`, `url`) VALUES
-  (0, 0, 'stamp', '精華', '001.gif'),
-  (0, 1, 'stamp', '熱帖', '002.gif'),
-  (0, 2, 'stamp', '美圖', '003.gif'),
-  (0, 3, 'stamp', '優秀', '004.gif'),
-  (0, 4, 'stamp', '置頂', '005.gif'),
-  (0, 5, 'stamp', '推薦', '006.gif'),
-  (0, 6, 'stamp', '原創', '007.gif'),
-  (0, 7, 'stamp', '版主推薦', '008.gif'),
-  (0, 8, 'stamp', '爆料', '009.gif');
+  (0, 0, 'stamp', 'Bài hay', '001.gif'),
+  (0, 1, 'stamp', 'Bài nóng', '002.gif'),
+  (0, 2, 'stamp', 'Ảnh đẹp', '003.gif'),
+  (0, 3, 'stamp', 'Tuyệt vời', '004.gif'),
+  (0, 4, 'stamp', 'Tinh hoa', '005.gif'),
+  (0, 5, 'stamp', 'Khuyến khích', '006.gif'),
+  (0, 6, 'stamp', 'Bản gốc', '007.gif'),
+  (0, 7, 'stamp', 'Được đề cử', '008.gif'),
+  (0, 8, 'stamp', 'Tin nhanh', '009.gif');
 
 #權限細化;
 UPDATE cdb_admingroups SET allowhighlightthread='1',allowdigestthread='3',allowrecommendthread='1',allowbumpthread='1',allowclosethread='1',allowmovethread='1',allowedittypethread='1',allowstampthread='1',allowcopythread='1',allowmergethread='1',allowsplitthread='1',allowrepairthread='1',allowwarnpost='1',allowviewreport='1',alloweditforum='1',allowviewlog='1',allowremovereward='1',allowedittrade='0',alloweditactivity='0';
@@ -306,7 +307,7 @@ EOT;
 		'version' => $version['new'],
 		)
 	);
-	$template = array('title' => '{bbname} 於 {time} 升級到 {version}');
+	$template = array('title' => '{bbname} trong {time} nâng cấp lên {version}');
 	$db->query("INSERT INTO {$tablepre}feeds (type, fid, typeid, sortid, appid, uid, username, data, template, dateline)
 		VALUES ('feed_announce', '0', '0', '0', '0', '0', '', '".addslashes(serialize($data))."', '".addslashes(serialize($template))."', '$timestamp')");
 	$edittimelimit = $db->result_first("SELECT value FROM {$tablepre}settings WHERE variable='edittimelimit'");
@@ -527,7 +528,7 @@ function $(id) {
 function instfooter() {
 	global $version;
 ?>
-		<div class="footer">&copy;2001 - 2009 <a href="http://www.comsenz.com/">Comsenz</a> Inc.</div>
+		<div class="footer">&copy;2001 - 2009 <a href="http://www.comsenz.com/">Comsenz</a> Inc. Translate by <a href="http://traitimyenbai.net">Discuz Viet Group</a> </div>
 	</div>
 </div>
 </body>
@@ -549,7 +550,7 @@ echo <<<EOD
 	<div class="showmessage">
 	<h2>{$lang[error_message]}</h2>
 	<p>$message</p>
-	<!--<div class="btnbox"><input type="button" class="btn" value="按鈕文字" /></div>-->
+	<!--<div class="btnbox"><input type="button" class="btn" value="Button text" /></div>-->
 	</div>
 EOD;
 		
