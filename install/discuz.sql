@@ -279,10 +279,10 @@ CREATE TABLE cdb_bbcodes (
   PRIMARY KEY (id)
 ) TYPE=MyISAM;
 
-INSERT INTO cdb_bbcodes VALUES ('1','0','fly','bb_fly.gif','<marquee width=\"90%\" behavior=\"alternate\" scrollamount=\"3\">{1}</marquee>','[fly]This is sample text[/fly]','使内容横向滚动，这个效果类似 HTML 的 marquee 标签，注意：这个效果只在 Internet Explorer 浏览器下有效。','1','请输入滚动显示的文字:','1','19');
-INSERT INTO cdb_bbcodes VALUES ('2','1','qq','bb_qq.gif','<a href=\"http://wpa.qq.com/msgrd?V=1&Uin={1}&amp;Site=[Discuz!]&amp;Menu=yes\" target=\"_blank\"><img src=\"http://wpa.qq.com/pa?p=1:{1}:1\" border=\"0\"></a>','[qq]688888[/qq]','显示 QQ 在线状态，点这个图标可以和他（她）聊天','1','请输入显示在线状态 QQ 号码:','1','21');
-INSERT INTO cdb_bbcodes VALUES ('3','0','sup','bb_sup.gif','<sup>{1}</sup>','X[sup]2[/sup]','Superscript','1','Xin nhập vào chữ nâng cao','1','22');
-INSERT INTO cdb_bbcodes VALUES ('4','0','sub','bb_sub.gif','<sub>{1}</sub>','X[sub]2[/sub]','Subscript','1','Xin nhập vào chữ hạ thấp','1','23');
+INSERT INTO cdb_bbcodes VALUES ('1','0','fly','bb_fly.gif','<marquee width=\"90%\" behavior=\"alternate\" scrollamount=\"3\">{1}</marquee>','[fly]Dòng chữ cần chạy[/fly]','Horizontal scroll content, similar to this effect HTML Chạy Labels, pay attention: This is only in effect Internet Explorer Browser under effective.','1','Vui lòng nhập ký tự để chạy:','1','19');
+INSERT INTO cdb_bbcodes VALUES ('2','1','qq','bb_qq.gif','<a href=\"http://wpa.qq.com/msgrd?V=1&Uin={1}&amp;Site=[Discuz!]&amp;Menu=yes\" target=\"_blank\"><img src=\"http://wpa.qq.com/pa?p=1:{1}:1\" border=\"0\"></a>','[qq]688888[/qq]','Hiển thị QQ  I tend to put this point chat.','1','Điền số QQ của bạn:','1','21');
+INSERT INTO cdb_bbcodes VALUES ('3','0','sup','bb_sup.gif','<sup>{1}</sup>','X[sup]2[/sup]','Lên','1','Mời nhập chữ dòng trên','1','22');
+INSERT INTO cdb_bbcodes VALUES ('4','0','sub','bb_sub.gif','<sub>{1}</sub>','X[sub]2[/sub]','Xuống','1','Mời nhập chữ dòng dưới','1','23');
 
 DROP TABLE IF EXISTS cdb_caches;
 CREATE TABLE cdb_caches (
@@ -397,40 +397,174 @@ CREATE TABLE cdb_faqs (
   KEY displayplay (displayorder)
 ) TYPE=MyISAM;
 
-INSERT INTO cdb_faqs VALUES ('1','0','1','','','用户须知','');
-INSERT INTO cdb_faqs VALUES ('2','1','1','','','我必须要注册吗？','这取决于管理员如何设置 Discuz! 论坛的用户组权限选项，您甚至有可能必须在注册成正式用户后后才能浏览帖子。当然，在通常情况下，您至少应该是正式用户才能发新帖和回复已有帖子。请 <a href=\"register.php\" target=\"_blank\">点击这里</a> 免费注册成为我们的新用户！\r\n<br /><br />强烈建议您注册，这样会得到很多以游客身份无法实现的功能。');
-INSERT INTO cdb_faqs VALUES ('3','1','2','login','登录帮助','我如何登录论坛？','如果您已经注册成为该论坛的会员，哪么您只要通过访问页面右上的<a href=\"logging.php?action=login\" target=\"_blank\">登录</a>，进入登陆界面填写正确的用户名和密码（如果您设有安全提问，请选择正确的安全提问并输入对应的答案），点击“提交”即可完成登陆如果您还未注册请点击这里。<br /><br />\r\n如果需要保持登录，请选择相应的 Cookie 时间，在此时间范围内您可以不必输入密码而保持上次的登录状态。');
-INSERT INTO cdb_faqs VALUES ('4','1','3','','','忘记我的登录密码，怎么办？','当您忘记了用户登录的密码，您可以通过注册时填写的电子邮箱重新设置一个新的密码。点击登录页面中的 <a href=\"member.php?action=lostpasswd\" target=\"_blank\">取回密码</a>，按照要求填写您的个人信息，系统将自动发送重置密码的邮件到您注册时填写的 Email 信箱中。如果您的 Email 已失效或无法收到信件，请与论坛管理员联系。');
-INSERT INTO cdb_faqs VALUES ('5','0','2','','','帖子相关操作','');
-INSERT INTO cdb_faqs VALUES ('6','0','3','','','基本功能操作','');
-INSERT INTO cdb_faqs VALUES ('7','0','4','','','其他相关问题','');
-INSERT INTO cdb_faqs VALUES ('8','1','4','','','我如何使用个性化头像','在<a href=\"memcp.php\" target=\"_blank\">控制面板</a>中的“编辑个人资料”，有一个“头像”的选项，可以使用论坛自带的头像或者自定义的头像。');
-INSERT INTO cdb_faqs VALUES ('9','1','5','','','我如何修改登录密码','在<a href=\"memcp.php\" target=\"_blank\">控制面板</a>中的“编辑个人资料”，填写“原密码”，“新密码”，“确认新密码”。点击“提交”，即可修改。');
-INSERT INTO cdb_faqs VALUES ('10','1','6','','','我如何使用个性化签名和昵称','在<a href=\"memcp.php\" target=\"_blank\">控制面板</a>中的“编辑个人资料”，有一个“昵称”和“个人签名”的选项，可以在此设置。');
-INSERT INTO cdb_faqs VALUES ('11','5','1','','','我如何发表新主题','在论坛版块中，点“新帖”，如果有权限，您可以看到有“投票，悬赏，活动，交易”，点击即可进入功能齐全的发帖界面。\r\n<br /><br />注意：一般论坛都设置为高级别的用户组才能发布这四类特殊主题。如发布普通主题，直接点击“新帖”，当然您也可以使用版块下面的“快速发帖”发表新帖(如果此选项打开)。一般论坛都设置为需要登录后才能发帖。');
-INSERT INTO cdb_faqs VALUES ('12','5','2','','','我如何发表回复','回复有分三种：第一、贴子最下方的快速回复； 第二、在您想回复的楼层点击右下方“回复”； 第三、完整回复页面，点击本页“新帖”旁边的“回复”。');
-INSERT INTO cdb_faqs VALUES ('13','5','3','','','我如何编辑自己的帖子','在帖子的右下角，有编辑，回复，报告等选项，点击编辑，就可以对帖子进行编辑。');
-INSERT INTO cdb_faqs VALUES ('14','5','4','','','我如何出售购买主题','<li>出售主题：\r\n当您进入发贴界面后，如果您所在的用户组有发买卖贴的权限，在“售价(金钱)”后面填写主题的价格，这样其他用户在查看这个帖子的时候就需要进入交费的过程才可以查看帖子。</li>\r\n<li>购买主题：\r\n浏览你准备购买的帖子，在帖子的相关信息的下面有[查看付款记录] [购买主题] [返回上一页] \r\n等链接，点击“购买主题”进行购买。</li>');
-INSERT INTO cdb_faqs VALUES ('15','5','5','','','我如何出售购买附件','<li>上传附件一栏有个售价的输入框，填入出售价格即可实现需要支付才可下载附件的功能。</li>\r\n<li>点击帖子中[购买附件]按钮或点击附件的下载链接会跳转至附件购买页面，确认付款的相关信息后点提交按钮，即可得到附件的下载权限。只需购买一次，就有该附件的永远下载权限。</li>');
-INSERT INTO cdb_faqs VALUES ('16','5','6','','','我如何上传附件','<li>发表新主题的时候上传附件，步骤为：写完帖子标题和内容后点上传附件右方的浏览，然后在本地选择要上传附件的具体文件名，最后点击发表话题。</li>\r\n<li>发表回复的时候上传附件，步骤为：写完回复楼主的内容，然后点上传附件右方的浏览，找到需要上传的附件，点击发表回复。</li>');
-INSERT INTO cdb_faqs VALUES ('17','5','7','','','我如何实现发帖时图文混排效果','<li>发表新主题的时候点击上传附件左侧的“[插入]”链接把附件标记插入到帖子中适当的位置即可。</li>');
-INSERT INTO cdb_faqs VALUES ('18','5','8','discuzcode','Discuz!代码','我如何使用Discuz!代码','<table width=\"99%\" cellpadding=\"2\" cellspacing=\"2\">\r\n  <tr>\r\n    <th width=\"50%\">Discuz!代码</th>\r\n    <th width=\"402\">效果</th>\r\n  </tr>\r\n  <tr>\r\n    <td>[b]粗体文字 Abc[/b]</td>\r\n    <td><strong>粗体文字 Abc</strong></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[i]斜体文字 Abc[/i]</td>\r\n    <td><em>斜体文字 Abc</em></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[u]下划线文字 Abc[/u]</td>\r\n    <td><u>下划线文字 Abc</u></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[color=red]红颜色[/color]</td>\r\n    <td><font color=\"red\">红颜色</font></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[size=3]文字大小为 3[/size] </td>\r\n    <td><font size=\"3\">文字大小为 3</font></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[font=仿宋]字体为仿宋[/font] </td>\r\n    <td><font face=\"仿宋\">字体为仿宋</font></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[align=Center]内容居中[/align] </td>\r\n    <td><div align=\"center\">内容居中</div></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[url]http://www.comsenz.com[/url]</td>\r\n    <td><a href=\"http://www.comsenz.com\" target=\"_blank\">http://www.comsenz.com</a>（超级链接）</td>\r\n  </tr>\r\n  <tr>\r\n    <td>[url=http://www.Discuz.net]Discuz! 论坛[/url]</td>\r\n    <td><a href=\"http://www.Discuz.net\" target=\"_blank\">Discuz! 论坛</a>（超级链接）</td>\r\n  </tr>\r\n  <tr>\r\n    <td>[email]myname@mydomain.com[/email]</td>\r\n    <td><a href=\"mailto:myname@mydomain.com\">myname@mydomain.com</a>（E-mail链接）</td>\r\n  </tr>\r\n  <tr>\r\n    <td>[email=support@discuz.net]Discuz! 技术支持[/email]</td>\r\n    <td><a href=\"mailto:support@discuz.net\">Discuz! 技术支持（E-mail链接）</a></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[quote]Discuz! Board 是由康盛创想（北京）科技有限公司开发的论坛软件[/quote] </td>\r\n    <td><div style=\"font-size: 12px\"><br /><br /><div class=\"quote\"><h5>引用:</h5><blockquote>原帖由 <i>admin</i> 于 2006-12-26 08:45 发表<br />Discuz! Board 是由康盛创想（北京）科技有限公司开发的论坛软件</blockquote></div></td>\r\n  </tr>\r\n   <tr>\r\n    <td>[code]Discuz! Board 是由康盛创想（北京）科技有限公司开发的论坛软件[/code] </td>\r\n    <td><div style=\"font-size: 12px\"><br /><br /><div class=\"blockcode\"><h5>代码:</h5><code id=\"code0\">Discuz! Board 是由康盛创想（北京）科技有限公司开发的论坛软件</code></div></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[hide]隐藏内容 Abc[/hide]</td>\r\n    <td>效果:只有当浏览者回复本帖时，才显示其中的内容，否则显示为“<b>**** 隐藏信息 跟帖后才能显示 *****</b>”</td>\r\n  </tr>\r\n  <tr>\r\n    <td>[hide=20]隐藏内容 Abc[/hide]</td>\r\n    <td>效果:只有当浏览者积分高于 20 点时，才显示其中的内容，否则显示为“<b>**** 隐藏信息 积分高于 20 点才能显示 ****</b>”</td>\r\n  </tr>\r\n  <tr>\r\n    <td>[list][*]列表项 #1[*]列表项 #2[*]列表项 #3[/list]</td>\r\n    <td><ul>\r\n      <li>列表项 ＃1</li>\r\n      <li>列表项 ＃2</li>\r\n      <li>列表项 ＃3 </li>\r\n    </ul></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[img]http://www.discuz.net/images/default/logo.gif[/img] </td>\r\n    <td>帖子内显示为：<img src=\"http://www.discuz.net/images/default/logo.gif\" /></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[img=88,31]http://www.discuz.net/images/logo.gif[/img] </td>\r\n    <td>帖子内显示为：<img src=\"http://www.discuz.net/images/logo.gif\" /></td>\r\n  </tr> <tr>\r\n    <td>[media=400,300,1]多媒体 URL[/media]</td>\r\n    <td>帖子内嵌入多媒体，宽 400 高 300 自动播放</td>\r\n  </tr>\r\n <tr>\r\n    <td>[fly]飞行的效果[/fly]</td>\r\n    <td><marquee scrollamount=\"3\" behavior=\"alternate\" width=\"90%\">飞行的效果</marquee></td>\r\n  </tr>\r\n  <tr>\r\n    <td>[flash]Flash网页地址 [/flash] </td>\r\n    <td>帖子内嵌入 Flash 动画</td>\r\n  </tr>\r\n  <tr>\r\n    <td>[qq]123456789[/qq]</td>\r\n    <td>在帖子内显示 QQ 在线状态，点这个图标可以和他（她）聊天</td>\r\n  </tr>\r\n  <tr>\r\n    <td>X[sup]2[/sup]</td>\r\n    <td>X<sup>2</sup></td>\r\n  </tr>\r\n  <tr>\r\n    <td>X[sub]2[/sub]</td>\r\n    <td>X<sub>2</sub></td>\r\n  </tr>\r\n  \r\n</table>');
-INSERT INTO cdb_faqs VALUES ('19','6','1','','','我如何使用短消息功能','您登录后，点击导航栏上的短消息按钮，即可进入短消息管理。\r\n点击[发送短消息]按钮，在\"发送到\"后输入收信人的用户名，填写完标题和内容，点提交(或按 Ctrl+Enter 发送)即可发出短消息。\r\n<br /><br />如果要保存到发件箱，以在提交前勾选\"保存到发件箱中\"前的复选框。\r\n<ul>\r\n<li>点击收件箱可打开您的收件箱查看收到的短消息。</li>\r\n<li>点击发件箱可查看保存在发件箱里的短消息。 </li>\r\n<li>点击已发送来查看对方是否已经阅读您的短消息。 </li>\r\n<li>点击搜索短消息就可通过关键字，发信人，收信人，搜索范围，排序类型等一系列条件设定来找到您需要查找的短消息。 </li>\r\n<li>点击导出短消息可以将自己的短消息导出htm文件保存在自己的电脑里。 </li>\r\n<li>点击忽略列表可以设定忽略人员，当这些被添加的忽略用户给您发送短消息时将不予接收。</li>\r\n</ul>');
-INSERT INTO cdb_faqs VALUES ('20','6','2','','','我如何向好友群发短消息','登录论坛后，点击短消息，然后点发送短消息，如果有好友的话，好友群发后面点击全选，可以给所有的好友群发短消息。');
-INSERT INTO cdb_faqs VALUES ('21','6','3','','','我如何查看论坛会员数据','点击导航栏上面的会员，然后显示的是此论坛的会员数据。注：需要论坛管理员开启允许你查看会员资料才可看到。');
-INSERT INTO cdb_faqs VALUES ('22','6','4','','','我如何使用搜索','点击导航栏上面的搜索，输入搜索的关键字并选择一个范围，就可以检索到您有权限访问论坛中的相关的帖子。');
-INSERT INTO cdb_faqs VALUES ('23','6','5','','','我如何使用“我的”功能','<li>会员必须首先<a href=\"logging.php?action=login\" target=\"_blank\">登录</a>，没有用户名的请先<a href=\"register.php\" target=\"_blank\">注册</a>；</li>\r\n<li>登录之后在论坛的左上方会出现一个“我的”的超级链接，点击这个链接之后就可进入到有关于您的信息。</li>');
-INSERT INTO cdb_faqs VALUES ('24','7','1','','','我如何向管理员报告帖子','打开一个帖子，在帖子的右下角可以看到：“编辑”、“引用”、“报告”、“评分”、“回复”等等几个按钮，点击其中的“报告”按钮进入报告页面，填写好“我的意见”，单击“报告”按钮即可完成报告某个帖子的操作。');
-INSERT INTO cdb_faqs VALUES ('25','7','2','','','我如何“打印”，“推荐”，“订阅”，“收藏”帖子','当你浏览一个帖子时，在它的右上角可以看到：“打印”、“推荐”、“订阅”、“收藏”，点击相对应的文字连接即可完成相关的操作。');
-INSERT INTO cdb_faqs VALUES ('26','7','3','','','我如何设置论坛好友','设置论坛好友有3种简单的方法。\r\n<ul>\r\n<li>当您浏览帖子的时候可以点击“发表时间”右侧的“加为好友”设置论坛好友。</li>\r\n<li>当您浏览某用户的个人资料时，可以点击头像下方的“加为好友”设置论坛好友。</li>\r\n<li>您也可以在控制面板中的好友列表增加您的论坛好友。</li>\r\n<ul>');
-INSERT INTO cdb_faqs VALUES ('27','7','4','','','我如何使用RSS订阅','在论坛的首页和进入版块的页面的右上角就会出现一个rss订阅的小图标<img src=\"images/common/xml.gif\" border=\"0\">，鼠标点击之后将出现本站点的rss地址，你可以将此rss地址放入到你的rss阅读器中进行订阅。');
-INSERT INTO cdb_faqs VALUES ('28','7','5','','','我如何清除Cookies','cookie是由浏览器保存在系统内的，在论坛的右下角提供有\"清除 Cookies\"的功能，点击后即可帮您清除系统内存储的Cookies。 <br /><br />\r\n以下介绍3种常用浏览器的Cookies清除方法(注：此方法为清除全部的Cookies,请谨慎使用)\r\n<ul>\r\n<li>Internet Explorer: 工具（选项）内的Internet选项→常规选项卡内，IE6直接可以看到删除Cookies的按钮点击即可，IE7为“浏 览历史记录”选项内的删除点击即可清空Cookies。对于Maxthon,腾讯TT等IE核心浏览器一样适用。 </li>\r\n<li>FireFox:工具→选项→隐私→Cookies→显示Cookie里可以对Cookie进行对应的删除操作。 </li>\r\n<li>Opera:工具→首选项→高级→Cookies→管理Cookies即可对Cookies进行删除的操作。</li>\r\n</ul>');
-INSERT INTO cdb_faqs VALUES ('29','7','6','','','我如何联系管理员','您可以通过论坛底部右下角的“联系我们”链接快速的发送邮件与我们联系。也可以通过管理团队中的用户资料发送短消息给我们。');
-INSERT INTO cdb_faqs VALUES ('30','7','7','','','我如何开通个人空间','如果您有权限开通“我的个人空间”，当用户登录论坛以后在论坛首页，用户名的右方点击开通我的个人空间，进入个人空间的申请页面。');
-INSERT INTO cdb_faqs VALUES ('31','7','8','','','我如何将自己的主题加入个人空间','如果您有权限开通“我的个人空间”，在您发表的主题上方点击“加入个人空间”，您发表的主题以及回复都会加入到您空间的日志里。');
-INSERT INTO cdb_faqs VALUES ('32','5','9','smilies','表情','我如何使用表情代码','表情是一些用字符表示的表情符号，如果打开表情功能，Discuz! 会把一些符号转换成小图像，显示在帖子中，更加美观明了。目前支持下面这些表情：<br /><br />\r\n<table cellspacing=\"0\" cellpadding=\"4\" width=\"30%\" align=\"center\">\r\n<tr><th width=\"25%\" align=\"center\">表情符号</td>\r\n<th width=\"75%\" align=\"center\">对应图像</td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:)</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/smile.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:(</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/sad.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:D</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/biggrin.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:\\\'(</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/cry.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:@</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/huffy.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:o</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/shocked.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:P</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/tongue.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:$</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/shy.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">;P</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/titter.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:L</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/sweat.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:Q</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/mad.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:lol</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/lol.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:hug:</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/hug.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:victory:</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/victory.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:time:</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/time.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:kiss:</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/kiss.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:handshake</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/handshake.gif\" alt=\"\" /></td>\r\n</tr>\r\n<tr>\r\n<td width=\"25%\" align=\"center\">:call:</td>\r\n<td width=\"75%\" align=\"center\"><img src=\"images/smilies/default/call.gif\" alt=\"\" /></td>\r\n</tr>\r\n</table>\r\n</div></div>\r\n<br />');
-INSERT INTO cdb_faqs VALUES ('33','0','5','','','论坛高级功能使用','');
-INSERT INTO cdb_faqs VALUES ('34','33','0','forwardmessagelist','','论坛快速跳转关键字列表','Discuz! 支持自定义快速跳转页面，当某些操作完成后，可以不显示提示信息，直接跳转到新的页面，从而方便用户进行下一步操作，避免等待。 在实际使用当中，您根据需要，把关键字添加到快速跳转设置里面(后台 -- 基本设置 --  界面与显示方式 -- [<a href=\"admincp.php?action=settings&operation=styles&frames=yes\" target=\"_blank\">提示信息跳转设置</a> ])，让某些信息不显示而实现快速跳转。以下是 Discuz! 当中的一些常用信息的关键字:\r\n</br></br>\r\n\r\n<table width=\"99%\" cellpadding=\"2\" cellspacing=\"2\">\r\n  <tr>\r\n    <td width=\"50%\">关键字</td>\r\n    <td width=\"50%\">提示信息页面或者作用</td>\r\n  </tr>\r\n  <tr>\r\n    <td>login_succeed</td>\r\n    <td>登录成功</td>\r\n  </tr>\r\n  <tr>\r\n    <td>logout_succeed</td>\r\n    <td>退出登录成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>thread_poll_succeed</td>\r\n    <td>投票成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>thread_rate_succeed</td>\r\n    <td>评分成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>register_succeed</td>\r\n    <td>注册成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>usergroups_join_succeed</td>\r\n    <td>加入扩展组成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td height=\"22\">usergroups_exit_succeed</td>\r\n    <td>退出扩展组成功</td>\r\n  </tr>\r\n  <tr>\r\n    <td>usergroups_update_succeed</td>\r\n    <td>更新扩展组成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>buddy_update_succeed</td>\r\n    <td>好友更新成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_edit_succeed</td>\r\n    <td>编辑帖子成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_edit_delete_succeed</td>\r\n    <td>删除帖子成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_reply_succeed</td>\r\n    <td>回复成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_newthread_succeed</td>\r\n    <td>发表新主题成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_reply_blog_succeed</td>\r\n    <td>文集评论发表成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_newthread_blog_succeed</td>\r\n    <td>blog 发表成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>profile_avatar_succeed</td>\r\n    <td>头像设置成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>profile_succeed</td>\r\n    <td>个人资料更新成功</td>\r\n  </tr>\r\n    <tr>\r\n    <td>pm_send_succeed</td>\r\n    <td>短消息发送成功</td>\r\n  </tr>\r\n  </tr>\r\n    <tr>\r\n    <td>pm_delete_succeed</td>\r\n    <td>短消息删除成功</td>\r\n  </tr>\r\n  </tr>\r\n    <tr>\r\n    <td>pm_ignore_succeed</td>\r\n    <td>短消息忽略列表更新</td>\r\n  </tr>\r\n    <tr>\r\n    <td>admin_succeed</td>\r\n    <td>管理操作成功〔注意：设置此关键字后，所有管理操作完毕都将直接跳转〕</td>\r\n  </tr>\r\n    <tr>\r\n    <td>admin_succeed_next&nbsp;</td>\r\n    <td>管理成功并将跳转到下一个管理动作</td>\r\n  </tr> \r\n    <tr>\r\n    <td>search_redirect</td>\r\n    <td>搜索完成，进入搜索结果列表</td>\r\n  </tr>\r\n</table>');
+INSERT INTO cdb_faqs VALUES ('1','0','1','','','Bạn nên biết','');
+INSERT INTO cdb_faqs VALUES ('2','1','1','','','Bạn có cần đăng ký ?','Điều này còn tùy thuộc quản trị thiết đặt tùy chọn cho diễn đàn, ban có thể đăng ký thành công xong mới có thể xem được đầy đủ chức năng của bài viết, nhưng mà ít nhất bạn cũng phải đăng ký một tài khoản mới mới có thể gửi bài mới được. Xin mời bấm <a href="register.php" target="_blank">tại đây</a> để đăng ký tài khoản mới !');
+INSERT INTO cdb_faqs VALUES ('3','1','2','login','Giúp đỡ về đăng nhập','Làm thế nào để đăng nhập?','Bạn đã đăng ký thành công, chỉ cần bấm <a href="logging.php?action=login" target="_blank">tại đây</a> để đăng nhập, vào trang đăng nhập bạn chỉ cần nhập tài khoản và mật khẩu ( nếu như bạn có đặt câu hỏi an toàn, thì xin mời điền thật <b>chính xác</b> ) , bấm vào OK để hoàn tất .<br><br>
+Nếu bạn muốn giữ cho đăng nhập thật lâu, thì hãy chọn thời gian Cookie tương ứng, trong thời gian đó bạn không cần phải đăng nhập lại thêm lần nữa.');
+INSERT INTO cdb_faqs VALUES ('4','1','3','','','Quên mật khẩu, làm thế nào đây ?','Nếu như bạn quên mật khẩu hoặc tài khoản, bạn có thể dùng lại email mà bạn đã đăng ký vào phần <a href="member.php?action=lostpasswd" target="_blank"> Quên mật khẩu</a>, theo như thông tin trong đó điền thật đầy đủ (Lưu ý với những bạn lấy mật khẩu sau lần chuyển từ mã IPB sang Discuz thì không cần phải nhập câu hỏi và trả lời an toàn đâu nhé !), hệ thống sẽ gửi thư về cho bạn. Nếu như Email của bạn vô hiệu hoặc không thể nào nhận email xin mời gửi thư cho ban quản trị, trong thư nếu như yêu cầu muốn đổi mật khẩu thì bạn sẽ viết mật khẩu muốn đổi và gửi thư.');
+INSERT INTO cdb_faqs VALUES ('5','0','2','','','Những vấn đề liên quan đến bài viết','');
+INSERT INTO cdb_faqs VALUES ('6','0','3','','','Các thao tác cơ bản','');
+INSERT INTO cdb_faqs VALUES ('7','0','4','','','Các vấn đề khác','');
+INSERT INTO cdb_faqs VALUES ('8','1','4','','','Làm thế nào để dùng hình ảnh đại diện riêng?','Tại phần <a href="memcp.php" target="_blank">quản lý cá nhân</a> > Sửa thông tin cá nhân > Cá tính hóa dữ liệu > Hình đại diện bạn hãy chọn ảnh bạn thích.');
+INSERT INTO cdb_faqs VALUES ('9','1','5','','','Làm thế nào để đổi mật khẩu?','Tại phần <a href="memcp.php" target="_blank">quản lý cá nhân</a> -> Sửa thông tin cá nhân ->  Đăng nhập diễn đàn điền mật khẩu cũ và hai lần mật khẩu mới , bấm OK là hoàn tất.');
+INSERT INTO cdb_faqs VALUES ('10','1','6','','','Làm thế nào để đổi chữ ký và tên đầy đủ?','Tại phần <a href="memcp.php" target="_blank">quản lý cá nhân</a> -> Sửa thông tin cá nhân -> Dữ liệu cơ bản -> bạn sẽ thấy những phần cần sửa.');
+INSERT INTO cdb_faqs VALUES ('11','5','1','','','Làm thế nào để gửi bài mới?','Tại mỗi mục của diễn đàn, bấm Bài mới, nếu như bạn đủ quyền, bạn có thể thấy Bình chọn, Bài thưởng, Bài nóng, Giao dịch.
+<br/><br/>Chú ý: Chỉ có tài khoản cấp cao mới có thể gửi được 4 loại chủ đề, nếu như muốn gửi chủ đề bình thường có thể bấm vào Bài mới, hoặc bạn có thể gửi bài nhanh ở dưới mỗi mục của diễn đàn( Bạn phải đăng nhập mới sử dụng chức năng này)');
+INSERT INTO cdb_faqs VALUES ('12','5','2','','','Làm thế nào để trả lời bài viết?','Có ba cách: Thứ nhất, bạn có thể kéo xuống dưới mỗi bài viết rồi nhập nội dung và bấm OK để trả lời nhanh. Thứ hai, ở mỗi bài viết bạn muốn trả lời bấm vào chữ Trả lời . Và cách thứ 3: tại đầu trang và cuối trang bên cạnh nút Bài mới có nút Trả lời');
+INSERT INTO cdb_faqs VALUES ('13','5','3','','','Làm thế nào để tự chỉnh sửa bài viết?','Tại phía dưới của bài viết bên phải, có  Biên tập, Trả lời, báo cáo. Bấm vào Biên tập bạn sẽ sửa được bài viết của bạn.');
+INSERT INTO cdb_faqs VALUES ('14','5','4','','','Tôi có thể bán chủ đề của mình?','<li>Bán chủ đề:
+Ở trang gửi bài viết, nếu như bạn có quyền bán và mua,  bấm vào mục Thông tin khác và tại Giá (tiền tài), bạn nhập vào số tiền bạn cho rằng bài viết của bạn đáng giá. Như thế này ai muốn vào đọc bài viết của bạn sẽ phải đưa ra một giá như bạn đã yêu cầu. </li>
+<li>Mua chủ đề:
+Bài viết yêu cầu bạn mua sẽ có dạng là tên chủ đề [ Số tiền bạn cần phải trả] và việc của bạn là tiến vào chủ đề bấm mua là xong.');
+INSERT INTO cdb_faqs VALUES ('15','5','5','','','Tôi có thể mua và bán tệp đính kèm?','<li> Đưa tệp đính kèm lên có một ô bạn nhập giá tiền bao nhiêu thì mới được xem </li>
+<li>Tệp nào đính kèm có giá bán thì bạn cứ việc bấm vào mua nếu như bạn có đủ số tiền tác giả đã đưa ra.</li>');
+INSERT INTO cdb_faqs VALUES ('16','5','6','','','Tôi có thể đưa tệp đính kèm lên diễn đàn?','Ở dưới trang viết bài, có phần gửi tệp đính kèm nếu như nhóm của bạn có đủ quyền gửi.');
+INSERT INTO cdb_faqs VALUES ('17','5','7','','','Tôi có thể dùng tệp đính kèm mọi nơi được không?','Trước tiên bạn phải gửi một tệp đính kèm lên đã. Khi gửi xong bạn quay trở lại sửa bài viết đó và ở gần cuối trang tìm phần tệp đính kèm và bấm vào cho vào liên kết. Nó sẽ hiện ra một dòng như thế này [attachimg]xxx[/attachimg] . Bạn có thể copy cái này rồi đó.');
+INSERT INTO cdb_faqs VALUES ('18','5','8','discuzcode','BBcodes','Cách sử dụng BBcodes','<table width="99%" cellpadding="2" cellspacing="2">
+  <tr>
+    <th width="50%">Các mã cơ bản nhất</th>
+    <th width="402">Hiệu quả</th>
+  </tr>
+  <tr>
+    <td>[b]Chữ tô đậm Abc[/b]</td>
+    <td><strong>Chữ tô đậm Abc</strong></td>
+  </tr>
+  <tr>
+    <td>[i]Chữ in nghiêng Abc[/i]</td>
+    <td><em>Chữ in nghiêng Abc</em></td>
+  </tr>
+  <tr>
+    <td>[u]Chữ gạch chân Abc[/u]</td>
+    <td><u>Chữ gạch chân Abc</u></td>
+  </tr>
+  <tr>
+    <td>[color=red]Chữ màu đỏ[/color]</td>
+    <td><font color="red">Chữ màu đỏ</font></td>
+  </tr>
+  <tr>
+    <td>[size=3]Kích cỡ chữ 3[/size] </td>
+    <td><font size="3">Kích cỡ chữ 3</font></td>
+  </tr>
+  <tr>
+    <td>[font=Tahoma]Font chữ Tahoma[/font] </td>
+    <td><font face="Tahoma">Font chữ Tahoma</font></td>
+  </tr>
+  <tr>
+    <td>[align=Center]Chữ căn giữa[/align] </td>
+    <td><div align="center">Chữ căn giữa</div></td>
+  </tr>
+  <tr>
+    <td>[url]http://traitimyenbai.net[/url]</td>
+    <td><a href="http://traitimyenbai.net" target="_blank">http://traitimyenbai.net</a>(Siêu liên kết)</td>
+  </tr>
+  <tr>
+    <td>[url=http://1traitimyenbai.net]Diễn đàn Trái Tim Yên Bái[/url]</td>
+    <td><a href="http://traitimyenbai.net" target="_blank">Diễn đàn Trái Tim Yên Bái</a>(Siêu liên kết)</td>
+  </tr>
+  <tr>
+    <td>[email]admin@traitimyenbai.net[/email]</td>
+    <td><a href="mailto:admin@traitimyenbai.net">admin@traitimyenbai.net</a> Liên kết Email</td>
+  </tr>
+  <tr>
+    <td>[email=admin@traitimyenbai.net]Hỗ trợ[/email]</td>
+    <td><a href="admin@traitimyenbai.net">Hỗ trợ</a></td>
+  </tr>
+  <tr>
+    <td>[quote]Trái Tim Yên Bái.Net là Diễn đàn CNTT giải trí tổng hợp.[/quote] </td>
+    <td><div style="font-size: 12px"><br /><br /><div class="quote"><h5>Trích dẫn :</h5><blockquote>Trích dẫn bài viết của <i>admin</i> vào lúc 2006-12-26 08:45 được gửi<br />Trái Tim Yên Bái.Net là Diễn đàn CNTT giải trí tổng hợp.</blockquote></div></td>
+  </tr>
+   <tr>
+    <td>[code]Trái Tim Yên Bái.Net là Diễn đàn CNTT giải trí tổng hợp.[/code] </td>
+    <td><div style="font-size: 12px"><br /><br /><div class="blockcode"><h5>CODE:</h5><code id="code0">Trái Tim Yên Bái.Net là Diễn đàn CNTT giải trí tổng hợp.</code></div></td>
+  </tr>
+  <tr>
+    <td>[hide]Nội dung ẩn Abc[/hide]</td>
+    <td>Chức năng: bạn phải trả lời mới xem được nội dung ẩn bên dưới, nếu không nó sẽ xuất hiện "<b>**** Nội dung ẩn trả lời mới xem được *****</b>”</td>
+  </tr>
+  <tr>
+    <td>[hide=20]Nội dung ẩn Abc[/hide]</td>
+    <td>Hiệu quả: chỉ có những người có điểm trên 20 mới xem được nếu không nó sẽ xuất hiện"<b>**** Nội dung ẩn chỉ có điểm trên 20 mới xem được ****</b>”</td>
+  </tr>
+  <tr>
+    <td>[list][*]Danh sách 1 #1[*]Danh sách 2 #2[*]Danh sách 3 #3[/list]</td>
+    <td><ul>
+      <li>Danh sách  1</li>
+      <li>Danh sách  2</li>
+      <li>Danh sách  3 </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>[fly]Chữ chạy[/fly]</td>
+    <td><marquee scrollamount="3" behavior="alternate" width="90%">Chữ Chạy</marquee></td>
+  </tr>
+  <tr>
+    <td>[flash]Đường dẫn Flash [/flash] </td>
+    <td>Bài viết sẽ hiện thị Flash</td>
+  </tr>
+  <tr>
+    <td>[qq]123456789[/qq]</td>
+    <td>Tại diễn đàn sẽ hiển thị hiện trang QQ</td>
+  </tr>
+  <tr>
+    <td>[ra]Đường dẫn ra[/ra]</td>
+    <td>Tại bài viết sẽ chạy file có đuôi ra</td>
+  </tr>
+  <tr>
+    <td>[rm]Đường dẫn rm[/rm] </td>
+    <td>Tại bài viết sẽ chạy file có đuôi rm</td>
+  </tr>
+  <tr>
+    <td>[wma]Đường dẫn wma[/wma] </td>
+    <td>Tại bài viết sẽ chạy file có đuôi wma</td>
+  </tr>
+  <tr>
+    <td>[wmv]Đường dẫn wmv[/wmv]</td>
+    <td>Tại bài viết sẽ chạy file có đuôi wmv</td>
+  </tr>
+  <tr>
+    <td>[img]http://traitimyenbai.net/img/logo.gif[/img] </td>
+    <td>Bài viết sẽ hiện ra hình <img src="http://traitimyenbai.net/img/logo.gif" /></td>
+  </tr>
+  <tr>
+    <td>[img=88,31]http://traitimyenbai.net/img/logo.gif[/img] </td>
+    <td>Bài viết sẽ hiện ra hình : <img src="http://traitimyenbai.net/img/logo.gif" /></td>
+  </tr>
+</table>');
+INSERT INTO cdb_faqs VALUES ('19','6','1','','','Làm thế nào để gửi tin nhắn?','Sau khi bạn đăng nhập xong, trên cùng có một hàng quản lý . Bấm vào mục tin nhắn bạn sẽ vào được trang gửi tin nhắn.
+Bấm vào [Gửi tin nhắn] , tại phần gửi đến bạn bấm tên người nhận và viết xong nội dung. Có thể bấm OK! ( hoặc Ctrl+enter để gửi) thì lập tức tin nhắn sẽ tức tốc gửi.
+<br /><br />Nếu như bạn muốn lưu vào mục tin nhắn đã gửi, trước khi gửi bạn chọn phần <b>Không gửi, lưu lại trong hộp lưu trữ</b>.
+<ul>
+<li>Bấm vào Tin nhắn để xem những tin nhắn mà bạn đã nhận được. </li>
+<li>Bấm vào hộp lưu trữ để xem những tin nhắn mà bạn đã lưu trữ </li>
+<li>Bấm vào Đã gửi để xem những tin nhắn đã được gửi đi và có thể xem người nhận đã đọc hay chưa?</li>
+<li>Ở phần tìm tin nhắn bạn có thể tìm tin nhắn theo từ khóa, người gửi, người nhận, pham vị gửi, và tuần tự tin nhắn muốn tìm.</li>
+<li>Có thể xuất tin nhắn dạng html để lưu về máy đọc sau</li>
+<li>Ở phần danh sách loại trừ, nếu bạn không muốn nhận tin nhắn của ai đó thì theo hướng dẫn ở đấy để thực hiện</li>
+</ul>');
+INSERT INTO cdb_faqs VALUES ('20','6','2','','','Tôi có thể gửi tin nhắn cho tất cả bạn tôi không?','Sau khi bạn đã vào phần gửi tin nhắn, bấm từng người bạn để gửi hoặc bấm vào <b>Gửi nhóm bè bạn</b> để gửi hết.');
+INSERT INTO cdb_faqs VALUES ('21','6','3','','','Tôi có thể xem danh sách thành viên','Phần trên của diễn đàn các bạn sẽ dễ dàng thấy được danh sách thành viên, bấm vào đó sẽ hiện ra danh sách tất cả thành viên. Chú ý: Quản trị viên có thể tắt chức năng không cho phép thành viên xem được danh sách thành viên.');
+INSERT INTO cdb_faqs VALUES ('22','6','4','','','Sử dụng chức năng tìm kiếm','Ở phần trên cùng của diễn đàn bạn có thể bấm vào <b> Tìm kiếm </b>, bạn nhập vào nội dung cần tìm kiếm thì có thể ra kết quả như bạn muốn tìm.');
+INSERT INTO cdb_faqs VALUES ('23','6','5','','','Chức năng Của tôi là gì?','<li>Trước tiên bạn phải <a href="logging.php?action=login" target="_blank">đăng nhập</a>, chưa có tài khoản bạn có thể <a href="register.php" target="_blank">đăng ký</a>；</li>
+<li>Đăng nhập xong sẽ xuất hiện mục Của tôi, ở đây sẽ có tất cả những thông tin liên quan về bạn.</li>');
+INSERT INTO cdb_faqs VALUES ('24','7','1','','','Tôi có thể báo cáo bài viết xấu?','Mở một bài viết, ở mỗi phần nó có Biên tập, Trích dẫn, Báo cáo, Bình luận, Trả lời . 
+
+Bạn bấm vào <b>Báo cáo</b> để vào trang báo cáo bài viết xấu, nhập nội dung bạn cần báo cáo lên cho cấp trên.');
+INSERT INTO cdb_faqs VALUES ('25','7','2','','','Làm thế nào để In chủ đề , Giới thiệu Đọc sau','Tại mỗi bài viết có xuất hiện những thứ như bạn đã nhắc ở trên.');
+INSERT INTO cdb_faqs VALUES ('26','7','3','','','Tôi có thể thêm bạn?','Diễn đàn thiết đặt 3 cách để bạn có thể thêm bạn:
+<ul>
+<li>Tại mỗi bài viết ở bên trái ở dưới hình ảnh đại diện bạn bấm vào Cho vào danh sách bạn bè</li>
+<li>Ở mỗi trang cá nhân của bè bạn</li>
+<li>Và tại mục quản lí cá nhân cũng được</li>
+<ul>');
+INSERT INTO cdb_faqs VALUES ('27','7','4','','','Tôi có thể sử dụng RSS','Ở tại trang chủ của diễn đàn góc trên bên phải có một hình  <img src="images/common/xml.gif" border="0">, bấm vào đó sẽ vào trang RSS, bạn sẽ copy cái link rồi cho vào feed của blog bạn.');
+INSERT INTO cdb_faqs VALUES ('28','7','5','','','Tôi có thể xóa cookies?','Cookie là do trình duyệt của bạn lưu lại vào máy, tại phía dưới có một dòng gọi là xóa cookie, bấm vào đó để xóa toàn bộ cookie liên quan đến diễn đàn.<br /><br />
+');
+INSERT INTO cdb_faqs VALUES ('29','7','6','','','Tôi có thể liên hệ với quản lý diễn đàn?','Bạn có thể tìm thấy ở cuối cùng của diễn đàn bên phải phần liên hệ với chúng tôi sẽ tìm thấy email của BQT.');
+INSERT INTO cdb_faqs VALUES ('30','7','7','','','Tôi có thể mở một BLOG','Nếu như bạn có quyền hạn thì có thể mở một blog. sau khi đăng nhập bấm vào mở một blog thì bạn sẽ vào trang blog của chính bạn đó.');
+INSERT INTO cdb_faqs VALUES ('31','7','8','','','Tôi có thể nhập bài viết của mình vào blog?','Tại mỗi bài viết có phần nhập bài viết vào blog.');
+INSERT INTO cdb_faqs VALUES ('32','5','9','smilies','Biểu cảm','Các mã smilies của diễn đàn','Smilies là một cách để biểu hiện cảm xúc của mình ở bài viết thông qua những hình ngộ nghĩnh:<br /><br />\r\n<table cellspacing="0" cellpadding="4" width="30%" align="center">\r\n<tr><th width="25%" align="center">Mã</td>\r\n<th width="75%" align="center">Hình</td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:)</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/smile.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:(</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/sad.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:D</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/biggrin.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:\\\'(</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/cry.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:@</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/huffy.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:o</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/shocked.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:P</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/tongue.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:$</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/shy.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">;P</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/titter.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:L</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/sweat.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:Q</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/mad.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:lol</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/lol.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:hug:</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/hug.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:victory:</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/victory.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:time:</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/time.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:kiss:</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/kiss.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:handshake</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/handshake.gif" alt="" /></td>\r\n</tr>\r\n<tr>\r\n<td width="25%" align="center">:call:</td>\r\n<td width="75%" align="center"><img src="images/smilies/default/call.gif" alt="" /></td>\r\n</tr>\r\n</table>\r\n</div></div>\r\n<br />');
+INSERT INTO cdb_faqs VALUES ('33','0','5','','','Sử dụng chức năng cao cấp','');
+INSERT INTO cdb_faqs VALUES ('34','33','0','forwardmessagelist','','Thông tin về các trang đợi',' Mã nguồn Discuz! tự mặc định khi xong một hành đông nào đó thì nó sẽ chuyển sang trang gợi ý, nếu bạn là người quản trị diễn đàn không cần thiết phải chờ có thể bỏ nó ở trong ACP (ACP -- Thiết đặt cơ bản -- Hiển thị -- [<a href="admincp.php?action=settings&do=styles&frames=yes" target="_blank">Thông tin gợi ý khi đợi</a> ], làm cho thông tin gợi ý mà chuyển trang một cách nhanh chóng. Bên dưới là một số từ khóa hay dùng nhất: \r\n</br></br>\r\n\r\n<table width="99%" cellpadding="2" cellspacing="2">\r\n  <tr>\r\n    <td width="50%">Từ quan trọng</td>\r\n    <td width="50%">Thông tin gợi ý của trang hoặc tác dụng</td>\r\n  </tr>\r\n  <tr>\r\n    <td>login_succeed</td>\r\n    <td>Đăng nhập thành công</td>\r\n  </tr>\r\n  <tr>\r\n    <td>logout_succeed</td>\r\n    <td>Đăng xuất thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>thread_poll_succeed</td>\r\n    <td>Bầu thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>thread_rate_succeed</td>\r\n    <td>Chấm điểm thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>register_succeed</td>\r\n    <td>Đăng ký thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>usergroups_join_succeed</td>\r\n    <td>Gia nhập vào nhóm mở rộng thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td height="22">usergroups_exit_succeed</td>\r\n    <td>Thoát nhóm mở rộng thành công</td>\r\n  </tr>\r\n  <tr>\r\n    <td>usergroups_update_succeed</td>\r\n    <td>Cập nhất nhóm mở rộng thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>buddy_update_succeed</td>\r\n    <td>Cập nhật bạn bè thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_edit_succeed</td>\r\n    <td>Chỉnh sửa bài viết thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_edit_delete_succeed</td>\r\n    <td>Xóa bài viết thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_reply_succeed</td>\r\n    <td>Trả lời thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_newthread_succeed</td>\r\n    <td>Gửi bài mới thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_reply_blog_succeed</td>\r\n    <td>Bình luận tập văn gửi thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>post_newthread_blog_succeed</td>\r\n    <td>blog Phát biểu thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>profile_avatar_succeed</td>\r\n    <td>Đặt hình đại diện thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>profile_succeed</td>\r\n    <td>Cập nhật dữ liệu cá nhân thành công</td>\r\n  </tr>\r\n    <tr>\r\n    <td>pm_send_succeed</td>\r\n    <td>Gửi tin nhắn thành công</td>\r\n  </tr>\r\n  </tr>\r\n    <tr>\r\n    <td>pm_delete_succeed</td>\r\n    <td>Xóa tin nhắn thành công</td>\r\n  </tr>\r\n  </tr>\r\n    <tr>\r\n    <td>pm_ignore_succeed</td>\r\n    <td>Cập nhật bảng từ chối tin nhắn</td>\r\n  </tr>\r\n    <tr>\r\n    <td>admin_succeed</td>\r\n    <td>Thao tác quản lý thành công( Chú ý: Sau khi thiết đặt từ này, thao tác của quản lý cứ rứa mà thực hiện</td>\r\n  </tr>\r\n    <tr>\r\n    <td>admin_succeed_next&nbsp;</td>\r\n    <td>Quản lý thành công, bây giờ có thể chuyển sang trang</td>\r\n  </tr> \r\n    <tr>\r\n    <td>search_redirect</td>\r\n    <td>Tìm kiếm hoàn thành, tiến vào trang kết quả</td>\r\n  </tr>\r\n</table>');
 
 DROP TABLE IF EXISTS cdb_favorites;
 CREATE TABLE cdb_favorites (
@@ -682,18 +816,18 @@ CREATE TABLE cdb_magics (
   KEY displayorder (available,displayorder)
 ) TYPE=MyISAM;
 
-INSERT INTO cdb_magics VALUES ('1','1','1','Thẻ màu sắc','CCK','可以变换主题的颜色,并保存24小时','0','10','999','0','0','0','20','0','magic_color.inc.php','');
-INSERT INTO cdb_magics VALUES ('2','1','3','Thẻ tiền tài','MOK','可以随机获得一些金币','0','10','999','0','0','0','30','0','magic_money.inc.php','');
-INSERT INTO cdb_magics VALUES ('3','1','1','Thẻ IP','SEK','可以查看帖子作者的IP','0','15','999','0','0','0','30','0','magic_see.inc.php','');
-INSERT INTO cdb_magics VALUES ('4','1','1','Thẻ thăng tiến','UPK','可以提升某个主题','0','10','999','0','0','0','30','0','magic_up.inc.php','');
-INSERT INTO cdb_magics VALUES ('5','1','1','Thẻ đỉnh cao','TOK','可以将主题置顶24小时','0','20','999','0','0','0','40','0','magic_top.inc.php','');
-INSERT INTO cdb_magics VALUES ('6','1','1','Thẻ hối hận','REK','可以删除自己的帖子','0','10','999','0','0','0','30','0','magic_del.inc.php','');
-INSERT INTO cdb_magics VALUES ('7','1','2','Thẻ đánh hơi','RTK','查看某个用户是否在线','0','15','999','0','0','0','30','0','magic_reporter.inc.php','');
-INSERT INTO cdb_magics VALUES ('8','1','1','Thẻ trầm mặc','CLK','24小时内不能回复','0','15','999','0','0','0','30','0','magic_close.inc.php','');
-INSERT INTO cdb_magics VALUES ('9','1','1','Thẻ huyên náo','OPK','使贴子可以回复','0','15','999','0','0','0','30','0','magic_open.inc.php','');
-INSERT INTO cdb_magics VALUES ('10','1','1','Thẻ ẩn thân','YSK','可以将自己的帖子匿名','0','20','999','0','0','0','30','0','magic_hidden.inc.php','');
-INSERT INTO cdb_magics VALUES ('11','1','1','Thẻ hồi phục','CBK','将匿名恢复为正常显示的用户名,匿名终结者','0','15','999','0','0','0','20','0','magic_renew.inc.php','');
-INSERT INTO cdb_magics VALUES ('12','1','1','Thẻ di động','MVK','可将自已的帖子移动到其他版面（隐含、特殊限定版面除外）','0','50','989','0','0','0','50','0','magic_move.inc.php','');
+INSERT INTO cdb_magics VALUES ('1','1','1','Thẻ đổi màu','CCK','Thẻ này có thể dùng đổi màu chủ đề trong vòng 24 tiếng.','0','10','999','0','0','0','20','magic_color.inc.php','');
+INSERT INTO cdb_magics VALUES ('2','1','3','Thẻ tiền tài','MOK','Có thể tuỳ hứng thưởng cho bạn một ít tiền','0','10','999','0','0','0','30','magic_money.inc.php','');
+INSERT INTO cdb_magics VALUES ('3','1','1','Thẻ IP','SEK','Có thể xem IP tác giả của bài viết','0','15','999','0','0','0','30','magic_see.inc.php','');
+INSERT INTO cdb_magics VALUES ('4','1','1','Thẻ thăng tiến','UPK','Có thể lên cấp chủ đề','0','10','999','0','0','0','30','magic_up.inc.php','');
+INSERT INTO cdb_magics VALUES ('5','1','1','Thẻ đỉnh cao','TOK','Có thể đặt chú ý chủ đề trong vòng 24 tiếng','0','20','999','0','0','0','40','magic_top.inc.php','');
+INSERT INTO cdb_magics VALUES ('6','1','1','Thẻ hối hận','REK','Dùng thẻ này bạn có tự xoá chủ đề của mình','0','10','999','0','0','0','30','magic_del.inc.php','');
+INSERT INTO cdb_magics VALUES ('7','1','2','Thẻ đánh hơi','RTK','Thẻ này có tác dùng tìm xem một người nào đó có trực tuyến hay không','0','15','999','0','0','0','30','magic_reporter.inc.php','');
+INSERT INTO cdb_magics VALUES ('8','1','1','Thẻ trầm mặc','CLK','Thẻ này kích hoạt vào chủ đề nào thì trong vòng 24 tiếng không thể trả lời trên chủ đề này.','0','15','999','0','0','0','30','magic_close.inc.php','');
+INSERT INTO cdb_magics VALUES ('9','1','1','Thẻ huyên náo','OPK','Có thể trả lời bất cứ nơi đâu','0','15','999','0','0','0','30','magic_open.inc.php','');
+INSERT INTO cdb_magics VALUES ('10','1','1','Thẻ ẩn thân','YSK','Có thể sử dụng tên nặc danh để viết bài','0','20','999','0','0','0','30','magic_hidden.inc.php','');
+INSERT INTO cdb_magics VALUES ('11','1','1','Thẻ hồi phục','CBK','Dùng thẻ này để khôi phục bài viết có dùng tên nặc danh lại thành bình thường','0','15','999','0','0','0','20','magic_renew.inc.php','');
+INSERT INTO cdb_magics VALUES ('12','1','1','Thẻ di động','MVK','Dùng thẻ này có thể chuyển bài viết từ mục này sang mục khác ( ngoại trừ mục ẩn hoặc là mục đặc biệt)','0','50','989','0','0','0','50','magic_move.inc.php','');
 
 DROP TABLE IF EXISTS cdb_medallog;
 CREATE TABLE cdb_medallog (
@@ -1136,9 +1270,9 @@ CREATE TABLE cdb_prompttype (
 INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (1,'pm','Tin nhắn riêng','pm.php?filter=newpm');
 INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (2,'announcepm','Thông báo','pm.php?filter=announcepm');
 INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (3,'task','Nhiệm vụ','task.php?item=doing');
-INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (4,'systempm','Tin từ hệ thống','');
-INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (5,'friend','Tin từ bạn bè','');
-INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (6,'threads','Tin từ bài viết','');
+INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (4,'systempm','Tin  hệ thống','');
+INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (5,'friend','Tin bạn bè','');
+INSERT INTO cdb_prompttype (`id`, `key`, `name`, `script`) VALUES (6,'threads','Tin bài viết','');
 
 DROP TABLE IF EXISTS cdb_promptmsgs;
 CREATE TABLE cdb_promptmsgs (
@@ -1322,7 +1456,7 @@ INSERT INTO cdb_settings VALUES ('baidusitemap','1');
 INSERT INTO cdb_settings VALUES ('baidusitemap_life','12');
 INSERT INTO cdb_settings VALUES ('bannedmessages','1');
 INSERT INTO cdb_settings VALUES ('bbclosed','');
-INSERT INTO cdb_settings VALUES ('bbname','Discuz! Board');
+INSERT INTO cdb_settings VALUES ('bbname','Discuz! Việt');
 INSERT INTO cdb_settings VALUES ('bbrules','0');
 INSERT INTO cdb_settings VALUES ('bbrulestxt','');
 INSERT INTO cdb_settings VALUES ('bdaystatus','0');
@@ -1477,7 +1611,7 @@ INSERT INTO cdb_settings VALUES ('showimages','1');
 INSERT INTO cdb_settings VALUES ('showsettings','7');
 INSERT INTO cdb_settings VALUES ('sigviewcond','0');
 INSERT INTO cdb_settings VALUES ('sitemessage','');
-INSERT INTO cdb_settings VALUES ('sitename','DiscuzViệt');
+INSERT INTO cdb_settings VALUES ('sitename','Discuz Việt');
 INSERT INTO cdb_settings VALUES ('siteuniqueid','IK1LJU36a18eetLY');
 INSERT INTO cdb_settings VALUES ('siteurl','http://code.google.com/p/discuzviet/');
 INSERT INTO cdb_settings VALUES ('smcols','8');
@@ -1533,8 +1667,8 @@ INSERT INTO cdb_settings VALUES ('watermarktext','');
 INSERT INTO cdb_settings VALUES ('watermarktrans','65');
 INSERT INTO cdb_settings VALUES ('watermarktype','0');
 INSERT INTO cdb_settings VALUES ('welcomemsg','1');
-INSERT INTO cdb_settings VALUES ('welcomemsgtitle','Xin chào {username}，cảm ơn bạn đã đăng ký, hãy đọc tiếp phần sau');
-INSERT INTO cdb_settings VALUES ('welcomemsgtxt','Gởi {username}，Bạn đã đăng ký tham gia tại {sitename}，Khi bạn viết bài, xin tuân thủ các quy định của hệ thống.\r\nNếu bạn có bất kỳ câu hỏi nào hãy liên hệ với người quản trị，Email: {adminemail}.\r\n\r\n\r\n{bbname}\r\n{time}');
+INSERT INTO cdb_settings VALUES ('welcomemsgtitle','Xin chào {username} cảm ơn bạn đã đăng ký, hãy đọc tiếp phần sau');
+INSERT INTO cdb_settings VALUES ('welcomemsgtxt','Gởi {username} Bạn đã đăng ký tham gia tại {sitename} Khi bạn viết bài, xin tuân thủ các quy định của hệ thống.\r\nNếu bạn có bất kỳ câu hỏi nào hãy liên hệ với người quản trị Email: {adminemail}.\r\n\r\n\r\n{bbname}\r\n{time}');
 INSERT INTO cdb_settings VALUES ('whosonlinestatus','1');
 INSERT INTO cdb_settings VALUES ('whosonline_contract','0');
 INSERT INTO cdb_settings VALUES ('zoomstatus','1');
@@ -2238,7 +2372,7 @@ CREATE TABLE cdb_usergroups (
 ) TYPE=MyISAM;
 
 INSERT INTO cdb_usergroups SET `groupid`=1,`radminid`=1,`type`='system',`system`='private',`grouptitle`='ADMINISTRATOR',`creditshigher`=0,`creditslower`=0,`stars`=9,`color`='',`groupavatar`='',`readaccess`=200,`allowvisit`=1,`allowpost`=1,`allowreply`=1,`allowpostpoll`=1,`allowpostreward`=1,`allowposttrade`=1,`allowpostactivity`=1,`allowdirectpost`=3,`allowgetattach`=1,`allowpostattach`=1,`allowvote`=1,`allowmultigroups`=1,`allowsearch`=2,`allowcstatus`=1,`allowuseblog`=1,`allowinvisible`=1,`allowtransfer`=1,`allowsetreadperm`=1,`allowsetattachperm`=1,`allowhidecode`=1,`allowhtml`=0,`allowcusbbcode`=1,`allowanonymous`=1,`allownickname`=1,`allowsigbbcode`=1,`allowsigimgcode`=1,`allowviewpro`=1,`allowviewstats`=1,`disableperiodctrl`=1,`reasonpm`=0,`maxprice`=30,`maxsigsize`=500,`maxattachsize`=2048000,`maxsizeperday`=0,`maxpostsperhour`=0,`attachextensions`='',`raterange`='1	-30	30	500',`mintradeprice`=1,`maxtradeprice`=0,`minrewardprice`=1,`maxrewardprice`=0,`magicsdiscount`=0,`allowmagics`=2,`maxmagicsweight`=200,`allowbiobbcode`=2,`allowbioimgcode`=2,`maxbiosize`=0,`allowinvite`=0,`allowmailinvite`=0,`maxinvitenum`=0,`inviteprice`=0,`maxinviteday`=0,`allowpostdebate`=1,`tradestick`=5,`exempt`=255,`allowsendpm`=1,`maxattachnum`=0,`allowposturl`=3,`allowrecommend`=1,`allowpostrushreply`=1;
-INSERT INTO cdb_usergroups SET `groupid`=2,`radminid`=2,`type`='system',`system`='private',`grouptitle`='SuperMODERATOR',`creditshigher`=0,`creditslower`=0,`stars`=8,`color`='',`groupavatar`='',`readaccess`=150,`allowvisit`=1,`allowpost`=1,`allowreply`=1,`allowpostpoll`=1,`allowpostreward`=1,`allowposttrade`=1,`allowpostactivity`=1,`allowdirectpost`=1,`allowgetattach`=1,`allowpostattach`=1,`allowvote`=1,`allowmultigroups`=1,`allowsearch`=1,`allowcstatus`=1,`allowuseblog`=1,`allowinvisible`=1,`allowtransfer`=1,`allowsetreadperm`=1,`allowsetattachperm`=1,`allowhidecode`=1,`allowhtml`=0,`allowcusbbcode`=1,`allowanonymous`=0,`allownickname`=1,`allowsigbbcode`=1,`allowsigimgcode`=1,`allowviewpro`=1,`allowviewstats`=1,`disableperiodctrl`=1,`reasonpm`=0,`maxprice`=20,`maxsigsize`=300,`maxattachsize`=2048000,`maxsizeperday`=0,`maxpostsperhour`=0,`attachextensions`='chm, pdf, zip, rar, tar, gz, bzip2, gif, jpg, jpeg, png',`raterange`='1	-15	15	50',`mintradeprice`=1,`maxtradeprice`=0,`minrewardprice`=1,`maxrewardprice`=0,`magicsdiscount`=0,`allowmagics`=2,`maxmagicsweight`=180,`allowbiobbcode`=2,`allowbioimgcode`=2,`maxbiosize`=0,`allowinvite`=0,`allowmailinvite`=0,`maxinvitenum`=0,`inviteprice`=0,`maxinviteday`=0,`allowpostdebate`=1,`tradestick`=5,`exempt`=255,`allowsendpm`=1,`maxattachnum`=0,`allowposturl`=3,`allowrecommend`=1;
+INSERT INTO cdb_usergroups SET `groupid`=2,`radminid`=2,`type`='system',`system`='private',`grouptitle`='Super Moderator',`creditshigher`=0,`creditslower`=0,`stars`=8,`color`='',`groupavatar`='',`readaccess`=150,`allowvisit`=1,`allowpost`=1,`allowreply`=1,`allowpostpoll`=1,`allowpostreward`=1,`allowposttrade`=1,`allowpostactivity`=1,`allowdirectpost`=1,`allowgetattach`=1,`allowpostattach`=1,`allowvote`=1,`allowmultigroups`=1,`allowsearch`=1,`allowcstatus`=1,`allowuseblog`=1,`allowinvisible`=1,`allowtransfer`=1,`allowsetreadperm`=1,`allowsetattachperm`=1,`allowhidecode`=1,`allowhtml`=0,`allowcusbbcode`=1,`allowanonymous`=0,`allownickname`=1,`allowsigbbcode`=1,`allowsigimgcode`=1,`allowviewpro`=1,`allowviewstats`=1,`disableperiodctrl`=1,`reasonpm`=0,`maxprice`=20,`maxsigsize`=300,`maxattachsize`=2048000,`maxsizeperday`=0,`maxpostsperhour`=0,`attachextensions`='chm, pdf, zip, rar, tar, gz, bzip2, gif, jpg, jpeg, png',`raterange`='1	-15	15	50',`mintradeprice`=1,`maxtradeprice`=0,`minrewardprice`=1,`maxrewardprice`=0,`magicsdiscount`=0,`allowmagics`=2,`maxmagicsweight`=180,`allowbiobbcode`=2,`allowbioimgcode`=2,`maxbiosize`=0,`allowinvite`=0,`allowmailinvite`=0,`maxinvitenum`=0,`inviteprice`=0,`maxinviteday`=0,`allowpostdebate`=1,`tradestick`=5,`exempt`=255,`allowsendpm`=1,`maxattachnum`=0,`allowposturl`=3,`allowrecommend`=1;
 INSERT INTO cdb_usergroups SET `groupid`=3,`radminid`=3,`type`='system',`system`='private',`grouptitle`='Moderator',`creditshigher`=0,`creditslower`=0,`stars`=7,`color`='',`groupavatar`='',`readaccess`=100,`allowvisit`=1,`allowpost`=1,`allowreply`=1,`allowpostpoll`=1,`allowpostreward`=1,`allowposttrade`=1,`allowpostactivity`=1,`allowdirectpost`=1,`allowgetattach`=1,`allowpostattach`=1,`allowvote`=1,`allowmultigroups`=1,`allowsearch`=1,`allowcstatus`=1,`allowuseblog`=1,`allowinvisible`=0,`allowtransfer`=1,`allowsetreadperm`=1,`allowsetattachperm`=1,`allowhidecode`=1,`allowhtml`=0,`allowcusbbcode`=1,`allowanonymous`=0,`allownickname`=1,`allowsigbbcode`=1,`allowsigimgcode`=1,`allowviewpro`=1,`allowviewstats`=1,`disableperiodctrl`=1,`reasonpm`=0,`maxprice`=10,`maxsigsize`=200,`maxattachsize`=2048000,`maxsizeperday`=0,`maxpostsperhour`=0,`attachextensions`='chm, pdf, zip, rar, tar, gz, bzip2, gif, jpg, jpeg, png',`raterange`='1	-10	10	30',`mintradeprice`=1,`maxtradeprice`=0,`minrewardprice`=1,`maxrewardprice`=0,`magicsdiscount`=0,`allowmagics`=2,`maxmagicsweight`=160,`allowbiobbcode`=2,`allowbioimgcode`=2,`maxbiosize`=0,`allowinvite`=0,`allowmailinvite`=0,`maxinvitenum`=0,`inviteprice`=0,`maxinviteday`=0,`allowpostdebate`=1,`tradestick`=5,`exempt`=224,`allowsendpm`=1,`maxattachnum`=0,`allowposturl`=3,`allowrecommend`=1;
 INSERT INTO cdb_usergroups SET `groupid`=4,`radminid`=0,`type`='system',`system`='private',`grouptitle`='Cấm phát ngôn',`creditshigher`=0,`creditslower`=0,`stars`=0,`color`='',`groupavatar`='',`readaccess`=0,`allowvisit`=1,`allowpost`=0,`allowreply`=0,`allowpostpoll`=0,`allowpostreward`=0,`allowposttrade`=0,`allowpostactivity`=0,`allowdirectpost`=0,`allowgetattach`=0,`allowpostattach`=0,`allowvote`=0,`allowmultigroups`=0,`allowsearch`=0,`allowcstatus`=0,`allowuseblog`=0,`allowinvisible`=0,`allowtransfer`=0,`allowsetreadperm`=0,`allowsetattachperm`=0,`allowhidecode`=0,`allowhtml`=0,`allowcusbbcode`=0,`allowanonymous`=0,`allownickname`=0,`allowsigbbcode`=0,`allowsigimgcode`=0,`allowviewpro`=0,`allowviewstats`=0,`disableperiodctrl`=0,`reasonpm`=0,`maxprice`=0,`maxsigsize`=0,`maxattachsize`=0,`maxsizeperday`=0,`maxpostsperhour`=0,`attachextensions`='',`raterange`='',`mintradeprice`=1,`maxtradeprice`=0,`minrewardprice`=1,`maxrewardprice`=0,`magicsdiscount`=1,`allowmagics`=0,`maxmagicsweight`=0,`allowbiobbcode`=0,`allowbioimgcode`=0,`maxbiosize`=0,`allowinvite`=0,`allowmailinvite`=0,`maxinvitenum`=0,`inviteprice`=0,`maxinviteday`=0,`allowpostdebate`=0,`tradestick`=5,`exempt`=0,`allowsendpm`=1,`maxattachnum`=0,`allowposturl`=3,`allowrecommend`=1;
 INSERT INTO cdb_usergroups SET `groupid`=5,`radminid`=0,`type`='system',`system`='private',`grouptitle`='Cấm truy cập',`creditshigher`=0,`creditslower`=0,`stars`=0,`color`='',`groupavatar`='',`readaccess`=0,`allowvisit`=0,`allowpost`=0,`allowreply`=0,`allowpostpoll`=0,`allowpostreward`=0,`allowposttrade`=0,`allowpostactivity`=0,`allowdirectpost`=0,`allowgetattach`=0,`allowpostattach`=0,`allowvote`=0,`allowmultigroups`=0,`allowsearch`=0,`allowcstatus`=0,`allowuseblog`=0,`allowinvisible`=0,`allowtransfer`=0,`allowsetreadperm`=0,`allowsetattachperm`=0,`allowhidecode`=0,`allowhtml`=0,`allowcusbbcode`=0,`allowanonymous`=0,`allownickname`=0,`allowsigbbcode`=0,`allowsigimgcode`=0,`allowviewpro`=0,`allowviewstats`=0,`disableperiodctrl`=0,`reasonpm`=0,`maxprice`=0,`maxsigsize`=0,`maxattachsize`=0,`maxsizeperday`=0,`maxpostsperhour`=0,`attachextensions`='',`raterange`='',`mintradeprice`=1,`maxtradeprice`=0,`minrewardprice`=1,`maxrewardprice`=0,`magicsdiscount`=1,`allowmagics`=0,`maxmagicsweight`=0,`allowbiobbcode`=0,`allowbioimgcode`=0,`maxbiosize`=0,`allowinvite`=0,`allowmailinvite`=0,`maxinvitenum`=0,`inviteprice`=0,`maxinviteday`=0,`allowpostdebate`=0,`tradestick`=5,`exempt`=0,`allowsendpm`=1,`maxattachnum`=0,`allowposturl`=3,`allowrecommend`=1;
