@@ -176,7 +176,7 @@ include_once DISCUZ_ROOT.'./uc_client/client.php';
 showtableheader('home_sys_info', 'fixpadding');
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	lang('home_discuz_version'),
-	'Discuz! '.DISCUZ_VERSION.' Release '.DISCUZ_RELEASE.' <a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version='.DISCUZ_VERSION.'&release='.DISCUZ_RELEASE.'&charset='.$charset.'&dbcharset='.$dbcharset.'" class="lightlink smallfont" target="_blank">'.lang('home_check_newversion').'</a> <a href="http://www.comsenz.com/purchase/discuz/" class="lightlink smallfont" target="_blank">&#19987;&#19994;&#25903;&#25345;&#19982;&#26381;&#21153;</a> <a href="http://idc.comsenz.com" class="lightlink smallfont" target="_blank">&#68;&#105;&#115;&#99;&#117;&#122;&#33;&#19987;&#29992;&#20027;&#26426;</a>'
+	'Discuz! '.DISCUZ_VERSION.' Release '.DISCUZ_RELEASE.' <a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version='.DISCUZ_VERSION.'&release='.DISCUZ_RELEASE.'&charset='.$charset.'&dbcharset='.$dbcharset.'" class="lightlink smallfont" target="_blank">'.lang('home_check_newversion').'</a> <a href="http://code.google.com/p/discuzviet/" class="lightlink smallfont" target="_blank">H&#7895; tr&#7907; c&#224;i &#273;&#7863;t</a> <a href="http://www.nktshop.com" class="lightlink smallfont" target="_blank">H&#7895; tr&#7907; hosting</a>'
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	lang('home_ucclient_version'),
@@ -209,13 +209,8 @@ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallf
 showtablefooter();
 
 showtableheader('home_dev', 'fixpadding');
-showtablerow('', array('class="vtop td24 lineheight"'), array(
-	lang('home_dev_copyright'),
-	'<span class="bold"><a href="http://www.comsenz.com" class="lightlink2" target="_blank">&#x5eb7;&#x76db;&#x521b;&#x60f3;(&#x5317;&#x4eac;)&#x79d1;&#x6280;&#x6709;&#x9650;&#x516c;&#x53f8; (Comsenz Inc.)</a></span>'
-));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
-	lang('home_dev_manager'),
-	'<a href="http://www.discuz.net/space.php?uid=1" class="lightlink smallfont" target="_blank">&#x6234;&#x5FD7;&#x5EB7; (Kevin \'Crossday\' Day)</a>'
+	lang('home_dev_manager'), 'JaJa - Saokim999</a>'
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	lang('home_dev_team'),
@@ -260,7 +255,18 @@ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), ar
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), array(
 	lang('home_dev_links'),
-	'<a href="http://www.comsenz.com" class="lightlink" target="_blank">&#x516C;&#x53F8;&#x7F51;&#x7AD9;</a>, <a href="http://idc.comsenz.com" class="lightlink" target="_blank">&#x865A;&#x62DF;&#x4E3B;&#x673A;</a>, <a href="http://www.comsenz.com/category-51" class="lightlink" target="_blank">&#x8D2D;&#x4E70;&#x6388;&#x6743;</a>, <a href="http://www.discuz.com/" class="lightlink" target="_blank">&#x44;&#x69;&#x73;&#x63;&#x75;&#x7A;&#x21;&#x20;&#x4EA7;&#x54C1;</a>, <a href="http://www.comsenz.com/downloads/styles/discuz" class="lightlink" target="_blank">&#x6A21;&#x677F;</a>, <a href="http://www.comsenz.com/downloads/plugins/discuz" class="lightlink" target="_blank">&#x63D2;&#x4EF6;</a>, <a href="http://faq.comsenz.com" class="lightlink" target="_blank">&#x6587;&#x6863;</a>, <a href="http://www.discuz.net/" class="lightlink" target="_blank">&#x8BA8;&#x8BBA;&#x533A;</a>'
+	'<a href="http://code.google.com/p/discuzviet/" class="lightlink" target="_blank">Website</a>, 
+	<a href="http://idc.comsenz.com" class="lightlink" target="_blank">Hosting</a>, 
+	<a href="http://www.comsenz.com/category-51" class="lightlink" target="_blank">Buy license</a>, 
+	<a href="http://www.discuz.com/" class="lightlink" target="_blank">Products</a>, 
+	<a href="http://www.comsenz.com/downloads/styles/discuz" class="lightlink" target="_blank">Template</a>, 
+	<a href="http://www.comsenz.com/downloads/plugins/discuz" class="lightlink" target="_blank">Plug-in</a>, 
+	<a href="http://faq.comsenz.com" class="lightlink" target="_blank">FAQ</a>, 
+	<a href="http://www.discuz.net/" class="lightlink" target="_blank">Discussion</a>'
+));
+showtablerow('', array('class="vtop td24 lineheight"'), array(
+	lang('home_dev_copyright'),
+	'<span class="bold"><a href="http://www.comsenz.com" class="lightlink2" target="_blank">Comsenz Inc.</a></span>'
 ));
 showtablefooter();
 
