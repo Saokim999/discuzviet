@@ -23,7 +23,7 @@ function modaction(action, pid, extra) {
 		var checked = 1;
 	}
 	if(!checked) {
-		alert('请选择需要操作的帖子');
+		alert('Chọn bài viết để quản lý');
 	} else {
 		$('modactions').action = 'topicadmin.php?action='+ action +'&fid=' + fid + '&tid=' + tid + '&infloat=yes&nopost=yes' + (!pid ? '' : '&topiclist[]=' + pid) + extra + '&r' + Math.random();
 		showWindow('mods', 'modactions', 'post');
@@ -110,7 +110,7 @@ function tmodthreads(optgroup, operation) {
 		}
 	}
 	if(!checked) {
-		alert('请选择需要操作的帖子');
+		alert('Chọn bài viết để quản lý');
 	} else {
 		$('moderate').optgroup.value = optgroup;
 		$('moderate').operation.value = operation;
