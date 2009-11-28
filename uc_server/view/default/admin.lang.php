@@ -1,5 +1,5 @@
 <?php
-//Việt hóa bởi KhongBanQuyen.com
+//Việt hóa bởi khongbanquyen.com, hoàn thiện bởi JaJa
 $lang = array(
 	'user_search' => 'Tìm',
 	'user_name' => 'Tên',
@@ -13,5 +13,5 @@ $lang = array(
 	'user_addsubmit' => 'Submit',
 	'delete' => 'Xóa',
 	'email' => 'Email',
-	'user_list' => 'Danh sách thành viên',
+	'user_list' => 'Users List',
 );

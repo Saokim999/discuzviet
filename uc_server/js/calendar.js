@@ -20,9 +20,9 @@ function loadcalendar() {
 	s += '<table cellspacing="0" cellpadding="0" width="100%" style="text-align: center;" class="table1">';
 	s += '<thead>';
 	s += '<tr align="center" id="calendar_week">';
-	s += '<th><a href="###" onclick="refreshcalendar(yy, mm-1)" title="上一月">《</a></th>';
-	s += '<th colspan="5" style="text-align: center"><a href="###" onclick="showdiv(\'year\');_cancelBubble(event)" title="点击选择年份" id="year"></a>&nbsp; - &nbsp;<a id="month" title="点击选择月份" href="###" onclick="showdiv(\'month\');_cancelBubble(event)"></a></th>';
-	s += '<th><A href="###" onclick="refreshcalendar(yy, mm+1)" title="下一月">》</A></th>';
+	s += '<th><a href="###" onclick="refreshcalendar(yy, mm-1)" title="Previous month">《</a></th>';
+	s += '<th colspan="5" style="text-align: center"><a href="###" onclick="showdiv(\'year\');_cancelBubble(event)" title="Click choice year" id="year"></a>&nbsp; - &nbsp;<a id="month" title="Click choice month" href="###" onclick="showdiv(\'month\');_cancelBubble(event)"></a></th>';
+	s += '<th><A href="###" onclick="refreshcalendar(yy, mm+1)" title="Next month">》</A></th>';
 	s += '</tr>';
 	s += '<tr id="calendar_header"><td>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td></tr>';
 	s += '</thead>';
