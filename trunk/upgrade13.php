@@ -52,7 +52,7 @@ $lang = array(
 	'uc_app_ip_comment' => '當主機 DNS 有問題時需要設置，默認請保留為空',
 	'uc_connent_invalid1' => '連接服務器',
 	'uc_connent_invalid2' => ' 失敗，請返回檢查。',
-	'error_message' => 'Thông báo - Đang trong quá trình Update lên Discuz 7.2 www.traitimyenbai.net',
+	'error_message' => 'Thông báo - Đang trong quá trình Update lên Discuz 7.2 traitimyenbai.net',
 	'error_return' => '返回',
 
 	'tagtemplates_subject' => '標題',
