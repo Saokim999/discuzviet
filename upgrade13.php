@@ -34,54 +34,53 @@ $lang = array(
 	'error_message' => 'Thông báo lỗi',
 	'message_return' => 'Quay lại',
 	'old_step' => 'Quay lại',
-	'new_step' => 'Tiếp theo',
-	'uc_appname' => 'Diễn đnà',
+	'new_step' => 'Tiếp tục',
+	'uc_appname' => 'Diễn đàn',
 	'uc_appreg' => 'Đăng nhập',
 	'uc_appreg_succeed' => 'Kết nối UCenter Thành công',
-	'uc_continue' => 'Ấn vào để tiếp tục',
-	'uc_setup' => '<font color="red">Nếu UCenter chưa được cài đặt. Bấm vào đây để cài</font>',
-	'uc_title_ucenter' => 'Vui lòng điền thông tin UCenter ',
+	'uc_continue' => 'Click vào đây để tiếp tục',
+	'uc_setup' => '<font color="red">Nếu không, bấm vào đây để cài đặt UCenter</font>',
+	'uc_title_ucenter' => 'Xin vui lòng điền vào thông tin liên quan đến UCenter',
 	'uc_url' => 'UCenter URL',
 	'uc_ip' => 'UCenter IP',
-	'uc_admin' => 'User Admin UCenter',
-	'uc_adminpw' => 'Password UCenter',
+	'uc_admin' => 'Tài khoản UCenter',
+	'uc_adminpw' => 'Mật khẩu UCenter',
 	'uc_title_app' => 'Thông tin',
-	'uc_app_name' => 'Tên của',
+	'uc_app_name' => 'Tên',
 	'uc_app_url' => 'URL',
-	'uc_app_ip' => 'IP',
-	'uc_app_ip_comment' => 'DNS có vấn đề khi các máy chủ cần phải đặt mặc định, để trống',
+	'uc_app_ip' => 'P',
+	'uc_app_ip_comment' => 'Sử dụng DNS khi máy chủ có vấn đề, không thì để trống',
 	'uc_connent_invalid1' => 'Kết nối với máy chủ',
-	'uc_connent_invalid2' => 'Kết nối Thất bại, quay trở lại để kiểm tra.',
-	'error_message' => 'Thông báo - Đang trong quá trình Update lên Discuz 7.2 traitimyenbai.net',
+	'uc_connent_invalid2' => ' Kết nối thất bại, quay trở lại để kiểm tra',
+	'error_message' => 'Chú ý:',
 	'error_return' => 'Quay lại',
 
 	'tagtemplates_subject' => 'Tiêu đề',
 	'tagtemplates_uid' => 'UID',
-	'tagtemplates_username' => 'Username',
+	'tagtemplates_username' => 'Gửi bởi',
 	'tagtemplates_dateline' => 'Ngày',
-	'tagtemplates_url' => 'Địa chỉ Tem',
+	'tagtemplates_url' => 'URL',
 );
 
 $msglang = array(
-	'redirect_msg' => 'Click vào đây nếu không tự chuyển ^^',
-	'uc_url_empty' => '您没有填写 UCenter 的 URL，请返回填写。',
-	'uc_url_invalid' => 'UCenter 的 URL 格式不合法，正常的格式为： http://www.domain.com ，请返回检查。',
-	'uc_ip_invalid' => '<font color="red">无法连接 UCenter 所在的 Web 服务器，请填写 UCenter 服务器的IP，如果 UCenter 与论坛在同一台服务器，可以尝试填写：127.0.0.1。</font>',
-	'uc_admin_invalid' => '<font color="red">登录 UCenter 的管理员帐号密码错误。</font>',
-	'uc_data_invalid' => 'UCenter 获取数据失败，请返回检查 UCenter URL、管理员帐号、密码。 ',
-	'uc_data_invalid' => 'UCenter 获取数据失败，请返回检查 UCenter URL、管理员帐号、密码。 ',
+	'redirect_msg' => 'Trình duyệt sẽ tự động nâng cấp. Chúc bạn nâng cấp thành công. Không tự chạy thì click vào đây',
+	'uc_url_empty' => 'Bạn chưa điền  URL của UCenter, xin vui lòng quay lại để điền vào',
+	'uc_url_invalid' => 'Định dạng URL của UCenter không hợp lệ. Dạng hợp lệ http://traitimyenbai.net',
+	'uc_ip_invalid' => '<font color="red">Không thể kết nối máy chủ UCenter, xin hãy xác nhận chắc chắn IP UCenter, nếu UCenter và forum trên cùng 1 máy chủ, bạn có thể thử điền vào: 127.0.0.1</font>',
+	'uc_admin_invalid' => '<font color="red">Tài khoản admin UCenter sai</font>',
+	'uc_data_invalid' => 'Truy cập vào dữ liệu Ucenter thất bại, hãy quay lại kiểm tra URL UCenter, tài khoản quản trị và mật khẩu Ucenter. ',
 );
 
 require DISCUZ_ROOT.'./include/db_mysql.class.php';
 @include DISCUZ_ROOT.'./config.inc.php';
 
-$version['old'] = 'Phiên bản Discuz! 7.1';
+$version['old'] = 'Discuz! 7.1';
 $version['new'] = 'Discuz! 7.2';
 $version['newnumber'] = '7.2';
 $lock_file = DISCUZ_ROOT.'./forumdata/upgrade13.lock';
 
 if(!$dbhost || !$dbname || !$dbuser) {
-	instmsg('論壇數據庫的主機，數據庫名，用戶名為空。');
+	instmsg('Không được để trống thông tin về cơ sở dữ liệu');
 }
 
 $db = new dbstuff();
@@ -98,12 +97,12 @@ if($db->version() > '4.1.0') {
 	$dbcharset = strtolower($dbcharset);
 	$tablethreadcharset = strtolower($tablethreadcharset);
 	if($dbcharset && $dbcharset !=  $tablethreadcharset) {
-		instmsg("您的配置文件 (./config.inc.php) 中的字符集 ($dbcharset) 與表的字符集 ($tablethreadcharset) 不匹配。");
+		instmsg("File (./config.inc.php) có charset là ($dbcharset) không trùng khớp với charset của các table ($tablethreadcharset)");
 	}
 }
 
 $upgrade1 = <<<EOT
-#帖子位置信息存儲;
+#帖子位置信息存储;
 DROP TABLE IF EXISTS cdb_postposition;
 CREATE TABLE cdb_postposition (
 	`tid` int(10) unsigned NOT NULL,
@@ -113,42 +112,42 @@ CREATE TABLE cdb_postposition (
 ) ENGINE=MyISAM;
 
 
-# 後台是否在頁面上顯示帖子評分記錄;
+# 后台是否在页面上显示帖子评分记录;
 REPLACE INTO cdb_settings (variable, value) VALUES ('ratelogon', '0');
 
-#主題列表分割帶;
+#主题列表分割带;
 REPLACE INTO cdb_settings (variable, value) VALUES ('forumseparator', '1');
 
-# 附件 URL 即可直接參與媒體播放功能開關;
+# 附件 URL 即可直接参与媒体播放功能开关;
 REPLACE INTO cdb_settings (variable, value) VALUES ('allowattachurl', '0');
 
-# 個人資料頁可自由查看他人的帖子;
+# 个人资料页可自由查看他人的帖子;
 REPLACE INTO cdb_settings (variable, value) VALUES ('allowviewuserthread', '');
 
-#不受審核限制的 IP 列表;
+#不受审核限制的 IP 列表;
 REPLACE INTO cdb_settings (variable, value) VALUES ('ipverifywhite', '');
 
 EOT;
 
 $upgradetable = array(
 
-	# 編輯帖子時間按照用戶組設置
+	# 编辑帖子时间按照用户组设置
 	array('usergroups', 'ADD', 'edittimelimit', "smallint(6) UNSIGNED NOT NULL DEFAULT '0'"),
 
-	# 增加主題狀態標示
+	# 增加主题状态标示
 	array('threads', 'ADD', 'status', "smallint (6)UNSIGNED  DEFAULT '0' NOT NULL"),
 
-	#主題圖章
+	#主题图章
 	array('smilies', 'MODIFY', 'type', "ENUM('smiley','icon','stamp') NOT NULL DEFAULT 'smiley'"),
 	array('threadsmod', 'ADD', 'stamp', "TINYINT(3) NOT NULL"),
 
-	#是否允許發表搶樓貼
+	#是否允许发表抢楼贴
 	array('usergroups', 'ADD', 'allowpostrushreply', "TINYINT(1) NOT NULL DEFAULT '0'"),
-	# 分類信息加強
+	# 分类信息加强
 	array('typevars', 'ADD', 'subjectshow', "TINYINT(1) NOT NULL DEFAULT '0'"),
 	array('threadtypes', 'ADD', 'stemplate', "TEXT NOT NULL"),
 	array('typeoptions', 'ADD', 'unit', "VARCHAR(40) NOT NULL AFTER `type`"),
-	# 前台權限細化
+	# 前台权限细化
 	array('admingroups', 'ADD', 'allowhighlightthread', "tinyint(1) NOT NULL DEFAULT '0'"),
 	array('admingroups', 'ADD', 'allowdigestthread', "tinyint(1) NOT NULL DEFAULT '0'"),
 	array('admingroups', 'ADD', 'allowrecommendthread', "tinyint(1) NOT NULL DEFAULT '0'"),
@@ -167,15 +166,15 @@ $upgradetable = array(
 	array('admingroups', 'ADD', 'allowremovereward', "tinyint(1) NOT NULL DEFAULT '0'"),
 	array('admingroups', 'ADD', 'allowedittrade', "tinyint(1) NOT NULL DEFAULT '0'"),
 	array('admingroups', 'ADD', 'alloweditactivity', "tinyint(1) NOT NULL DEFAULT '0'"),
-	
-	#有關版塊的其他信息
+
+	#有关版块的其他信息
 	array('forumfields', 'ADD', 'extra', "TEXT NOT NULL DEFAULT ''"),
 );
 
 $upgrade3 = <<<EOT
-#主題圖章;
-DELETE FROM `cdb_smilies` WHERE `typeid` = 0 AND `type` = 'stamp';
-INSERT INTO `cdb_smilies` (`typeid`, `displayorder`, `type`, `code`, `url`) VALUES
+#主题图章;
+DELETE FROM cdb_smilies WHERE `typeid` = 0 AND `type` = 'stamp';
+INSERT INTO cdb_smilies (`typeid`, `displayorder`, `type`, `code`, `url`) VALUES
   (0, 0, 'stamp', 'Bài hay', '001.gif'),
   (0, 1, 'stamp', 'Bài nóng', '002.gif'),
   (0, 2, 'stamp', 'Ảnh đẹp', '003.gif'),
@@ -186,7 +185,7 @@ INSERT INTO `cdb_smilies` (`typeid`, `displayorder`, `type`, `code`, `url`) VALU
   (0, 7, 'stamp', 'Được đề cử', '008.gif'),
   (0, 8, 'stamp', 'Tin nhanh', '009.gif');
 
-#權限細化;
+#权限细化;
 UPDATE cdb_admingroups SET allowhighlightthread='1',allowdigestthread='3',allowrecommendthread='1',allowbumpthread='1',allowclosethread='1',allowmovethread='1',allowedittypethread='1',allowstampthread='1',allowcopythread='1',allowmergethread='1',allowsplitthread='1',allowrepairthread='1',allowwarnpost='1',allowviewreport='1',alloweditforum='1',allowviewlog='1',allowremovereward='1',allowedittrade='0',alloweditactivity='0';
 
 UPDATE cdb_admingroups SET allowedittrade='1',alloweditactivity='1' WHERE admingid='1';
@@ -207,7 +206,7 @@ if(!isset($cookiepre)) {
 }
 
 if(file_exists($lock_file)) {
-	instmsg('升級被鎖定，應該是已經升級過了，如果已經恢複數據請手動刪除<br />'.str_replace(DISCUZ_ROOT, '', $lock_file).'<br />之後再來刷新頁面。');
+	instmsg('Nâng cấp đã bị khoá, nếu muốn nâng cấp hãy xóa<br />'.str_replace(DISCUZ_ROOT, '', $lock_file).'<br />Xóa rồi nhấn F5 để tiếp tục');
 }
 
 if($step == 1) {
@@ -215,21 +214,21 @@ if($step == 1) {
 	$msg = '<div class="btnbox marginbot">
 			<form method="get">
 			<input type="hidden" name="step" value="check" />
-				<input type="submit" style="padding: 2px;" value="開始升級" name="submit" />
+				<input type="submit" style="padding: 2px;" value="Bắt đầu nâng cấp" name="submit" />
 			</form>
 		</div>';
 
 echo <<<EOT
 		<div class="licenseblock">
 		<div class="license">
-	<h1>本升級程序只能從 $version[old] 升級到 $version[new]</h1>
-	升級之前<b>務必備份數據庫資料</b>，否則升級失敗無法恢復<br /><br />
-		正確的升級方法為:
+	<h1>Quá trình nâng cấp chỉ có thể từ $version[old] lên $version[new]</h1>
+	Trước khi nâng cấp <b>Hãy sao lưu cơ sở dữ liệu</b> Nếu không, nâng cấp thất bại có thể không phục hồi được<br /><br />
+		Phương pháp nâng cấp:
 	<ol>
-		<li>關閉原有論壇，上傳 $version[new] 的全部文件和目錄（除install目錄和config.inc.php文件），覆蓋服務器上的 $version[old]
-		<li>上傳升級程序到論壇目錄中。
-		<li>運行本程序，直到出現升級完成的提示
-		<li>如果中途失敗，請使用Discuz!工具箱（./utilities/tools.php）裡面的數據恢復工具恢復備份，去除錯誤後重新運行本程序
+		<li>Vào AdminCp, đóng cửa forum. Tải lên bản $version[new] bao gồm tất cả các file trừ  thư mục install và file config.inc.php của phiên bản $version[old]
+		<li>Tải file upgrade13.php vào trong ./forum (ngang hàng với index.php)
+		<li>Chạy nâng cấp http://site-cua-ban.com/forum/upgrade13.php
+		<li>Nếu thất bại, hãy sữ dụng ./utilities/tools.php để phục hồi dữ liệu
 	</ol>
 </div></div>
 	$msg
@@ -243,31 +242,31 @@ EOT;
 	@touch(DISCUZ_ROOT.'./forumdata/install.lock');
 	@unlink(DISCUZ_ROOT.'./install/index.php');
 
-//	echo "<h4>Discuz!程序版本檢測</h4>";
+//	echo "<h4>Phát hiện chương trình Discuz!h4>";
 
 	if(!defined('UC_CONNECT')) {
-		instmsg('您的config.inc.php文件被覆蓋，請恢復備份好的config.inc.php文件，之後再嘗試升級。');
+		instmsg('File config.inc.php của bạn đã được ghi đè, hãy phục hồi các sao lưu của một tập tin config.inc.php, sau đó thử nâng cấp lại');
 	}
 
 	include_once DISCUZ_ROOT.'./discuz_version.php';
 	if(!defined('DISCUZ_VERSION') || DISCUZ_VERSION != $version['newnumber']) {
-		instmsg('您還沒有上傳(或者上傳不完全)最新的'.$version['new'].'的程序文件，請先上傳之後再嘗試升級。');
+		instmsg('Bạn chưa tải lên (hoặc tải lên không đầy đủ) bản '.$version['new'].'Vui lòng tải lên đầy đủ');
 	}
 
-	instmsg("Discuz!程序版本檢測通過，自動執行下一步。", '?step=2');
+	instmsg("Nâng cấp Discuz! - Bước tiếp theo", '?step=2');
 
 } elseif($step == 2) {
 
-//	echo "<h4>新增數據表</h4>";
+//	echo "<h4>Tạo dữ liệu mới</h4>";
 
 	dir_clear('./forumdata/cache');
 	dir_clear('./forumdata/templates');
 
 	runquery($upgrade1);
 
-	instmsg("新增數據表處理完畢。", '?step=3');
+	instmsg("xử lý dữ liệu mới", '?step=3');
 	instfooter();
-	
+
 } elseif($step == 3) {
 
 	$start = isset($_GET['start']) ? intval($_GET['start']) : 0;
@@ -276,44 +275,47 @@ EOT;
 
 	if(isset($upgradetable[$start]) && $upgradetable[$start][0]) {
 
-		//echo "升級數據表 [ $start ] {$tablepre}{$upgradetable[$start][0]} {$upgradetable[$start][3]}:";
+		//echo "升级数据表 [ $start ] {$tablepre}{$upgradetable[$start][0]} {$upgradetable[$start][3]}:";
 		$successed = upgradetable($upgradetable[$start]);
 
 		if($successed === TRUE) {
 			$start ++;
 			if(isset($upgradetable[$start]) && $upgradetable[$start][0]) {
-				instmsg("升級數據表 [ $start ] {$tablepre}{$upgradetable[$start][0]} {$upgradetable[$start][3]}:<span class='w'>OK</span>", "?step=3&start=$start");
+				instmsg("Nâng cấp Data [ $start ] {$tablepre}{$upgradetable[$start][0]} {$upgradetable[$start][3]}:<span class='w'>OK</span>", "?step=3&start=$start");
 			}
 		} elseif($successed === FALSE) {
-			instmsg("調整數據表結構失敗：{$tablepre}{$upgradetable[$start][0]} {$upgradetable[$start][3]}");
+			instmsg("Không thể điều chỉnh cơ cấu bảng dữ liệu: {$tablepre}{$upgradetable[$start][0]} {$upgradetable[$start][3]}");
 		} elseif($successed == 'TABLE NOT EXISTS') {
-			instmsg("<span class=red>數據表：{$tablepre}{$upgradetable[$start][0]}不存在，升級無法繼續，請確認您的論壇版本是否正確!</span>");
+			instmsg("<span class=red>Bảng dữ liệu: {$tablepre}{$upgradetable[$start][0]} không tồn tại, không thể tiếp tục nâng cấp, bạn nên chắc rằng phiên bản chính xác cho diễn đàn của bạn!</span>");
 		}
 	}
 
-	instmsg("論壇數據表結構調整完畢。", "?step=4");
+	instmsg("Cơ cấu lại bảng dữ liệu diễn đàn hoàn tất", "?step=4");
 	instfooter();
 
 } elseif($step == 4) {
 
-//	echo "<h4>更新部分數據</h4>";
+//	echo "<h4>Cập nhật một số dữ liệu</h4>";
 	runquery($upgrade3);
 
-	@include_once DISCUZ_ROOT.'./forumdata/cache/cache_settings.php';
+	$query = $db->query("SELECT value, variable FROM {$tablepre}settings WHERE variable IN('bbname', 'dateformat', 'timeoffset')");
+	while($row = $db->fetch_array($query)) {
+		$settings[$row['variable']] = $row['value'];
+	}
 	$timestamp = time();
 	$data = array('title' => array(
-		'bbname' => $_DCACHE['settings']['bbname'],
-		'time' => gmdate($_DCACHE['settings']['dateformat'], $timestamp + $_DCACHE['settings']['timeoffset'] * 3600),
+		'bbname' => $settings['bbname'],
+		'time' => gmdate($settings['dateformat'], $timestamp + $settings['timeoffset'] * 3600),
 		'version' => $version['new'],
 		)
 	);
-	$template = array('title' => '{bbname} trong {time} nâng cấp lên {version}');
+	$template = array('title' => '{bbname}nâng cấp lên {version} lúc {time}');
 	$db->query("INSERT INTO {$tablepre}feeds (type, fid, typeid, sortid, appid, uid, username, data, template, dateline)
 		VALUES ('feed_announce', '0', '0', '0', '0', '0', '', '".addslashes(serialize($data))."', '".addslashes(serialize($template))."', '$timestamp')");
 	$edittimelimit = $db->result_first("SELECT value FROM {$tablepre}settings WHERE variable='edittimelimit'");
 	$db->query("UPDATE {$tablepre}usergroups SET edittimelimit='$edittimelimit'");
 	updatespecial();
-	instmsg("部分數據更新完畢。", "?step=5");
+	instmsg("Cập nhật hoàn tất", "?step=5");
 	instfooter();
 } elseif($step == 5) {
 	if(getgpc('addfounder_contact','P')) {
@@ -326,7 +328,7 @@ EOT;
 
 		$contact = serialize(array('qq' => $qq, 'msn' => $msn, 'email' => $email));
 		$db->query("REPLACE {$tablepre}settings (variable, value) VALUES ('founder_contact', '$contact')");
-		instmsg("進入下一步。","?step=7");
+		instmsg("Bước tiếp theo","?step=7");
 	} else {
 		$contact = array();
 		$contact = unserialize($db->result_first("SELECT value FROM {$tablepre}settings WHERE variable='founder_contact'"));
@@ -334,42 +336,42 @@ EOT;
 echo <<<EOD
  		<div class="licenseblock">
 		<div class="license">
-	<h1>Hướng dẫn và điều khoản upgrade</h1>
+	<h1>Chương trình cải thiện Discuz!</h1>
 	<ol>
-		<li>Cập nhập phiên bản $version[new]</li>
-		<li>Nhớ backup Database trước khi làm. Offline forum để backup. Nếu update thất bại dùng file tools.php khôi phục </ li>
-<li>Phiên bản Discuz 7.2 dịch bởi Discuz Việt Goup : Saokim999 & jajaja</ li>
-<li> you install using this version, you agreed to join the "Sing Improvement Program", Discuz! operations through analysis of the data on the site, to provide operational guidance for your suggestions, we will prompt you how to open the forum under the site operation function, how to configure the functionality of a reasonable and provide a number of other operational experience. </ li>
-<li> order to facilitate our operating strategy to communicate with you, please leave a commonly used network contacts. </ li>
+		<li>Để tiếp tục nâng cao chất lượng sản phẩm, nâng cao kinh nghiệm người dùng $version[new] , hiên bản của xây dựng trong hệ thống thống kê.</li>
+		<li>Hệ thống thống kê sẽ giúp chúng tôi phân tích hoạt động của người sử dụng thói quen diễn đàn để giúp chúng tôi trong các phiên bản tương lai của các cải tiến sản phẩm, thiết kế chi tiết phù hợp với nhu cầu của người sử dụng các tính năng mới</li>
+		<li>Hệ thống thống kê không thu thập thông tin nhạy cảm của trang web này không thu thập thông tin người sử dụng, không có nguy cơ bảo mật, và thông qua các bài kiểm tra thực tế sẽ không ảnh hưởng đến hiệu quả hoạt động của diễn đàn này</li>
+		<li>Sử dụng phiên bản này bạn đã cài đặt, bạn đồng ý gia nhập "Chương trình cải thiện Discuz!", Hoạt động thông qua phân tích các dữ liệu trên trang web của, để cung cấp các hoạt động hướng dẫn cho các đề xuất của bạn, chúng tôi sẽ nhắc bạn làm thế nào để mở diễn đàn theo chức năng hoạt động của trang web, làm thế nào để cấu hình các chức năng của một hợp lý và cung cấp một số kinh nghiệm hoạt động khác.</li>
+		<li>Để tạo thuận lợi cho giao tiếp giữa chúng tôi và bạn chiến lược hoạt động, xin vui lòng để lại một địa chỉ liên lạc mạng thường được sử dụng.</li>
 	</ol>
 </div></div>
 <div class="desc">
-	<h4> điền vào liên lạc </h4>
-<p> thông tin liên lạc chính xác giúp chúng tôi cung cấp cho bạn những thông tin mới nhất và an toàn các khía cạnh của báo cáo </ p>
+	<h4>Điền thông tin liên hệ</h4>
+	<p>Các thông tin liên lạc chính xác giúp chúng tôi cung cấp cho bạn những thông tin mới nhất và các báo cáo an ninh</p>
 </div>
 
 <form action="$url_forward" method="post" id="postform">
 	<table class="tb2">
 		<tr>
-			<th class="tbopt">QQ：</th>
+			<th class="tbopt">QQ</th>
 			<td><input type="text" value="$contact[qq]" name="qq" size="35" class="txt" /></td>
-			<td>請正確填寫QQ號碼</td>
+			<td>Điền vào số QQ</td>
 		</tr>
 		<tr>
 
-			<th class="tbopt">MSN：</th>
+			<th class="tbopt">MSN</th>
 			<td><input type="text" value="$contact[msn]" name="msn" size="35" class="txt" /></td>
-			<td>MSN賬號</td>
+			<td>Điền vào số MSN</td>
 		</tr>
 		<tr>
-			<th class="tbopt">E-mail：</th>
+			<th class="tbopt">E-mail</th>
 			<td><input type="text" value="$contact[email]" name="email" size="35" class="txt" /></td>
 
-			<td>郵箱地址</td>
+			<td>Địa chỉ email</td>
 		</tr>
 		<tr>
 			<th class="tbopt"></th>
-			<td><input type="submit" class="btn" name="addfounder_contact" value="下一步" /> &nbsp; &nbsp;<a href='?step=6'>跳過</a>
+			<td><input type="submit" class="btn" name="addfounder_contact" value="Tiếp tục" /> &nbsp; &nbsp;<a href='?step=6'>Bỏ qua</a>
 			<td></td>
 		</tr>
 	</table>
@@ -393,29 +395,30 @@ EOD;
 	dir_clear('./uc_client/data/cache');
 	@touch($lock_file);
 	if(!@unlink('upgrade13.php')) {
-		$msg = '<li><b>必刪除本程序</b></li>';
+		$msg = '<li><b>GoHooH.CoM khuyên bạn xóa file upgrade13.php</b></li>';
 	} else {
 		$msg = '';
 	}
 echo <<<EOT
 		<div class="licenseblock">
 		<div class="license">
-	<h1>恭喜您論壇數據升級成功</h1>
-	<h3>接下來請您：</h3>
+	<h1>GoHooH.CoM: chúc mừng bạn nâng cấp thành công</h1>
+	<h3>Tiếp theo:</h3>
 	<ol>
 		$msg
-		<li>使用管理員身份登錄論壇，進入後台，更新緩存</li>
-		<li>進行論壇註冊、登錄、發貼等常規測試，看看運行是否正常</li>
+		<li>Đăng nhập forum với tài khoản quản trị viên và cập nhật bộ nhớ cache</li>
+		<li>Xem các hoạt động đăng ký, đăng nhập, gửi bài... có hoạt động bình thường hay không</li>
+		<li>Click vào <a href='http://code.google.com/p/discuzviet/' target='_blank'>đây</a> để cập nhật thông tin mới về Discuz!</li>
 	</ol>
 </div></div>
 
 EOT;
 echo '<div class="btnbox marginbot">
 			<form method="get" action="index.php">
-				<b>感謝您選用我們的產品！</b><input type="submit" style="padding: 2px;" value="您現在可以訪問論壇，查看升級情況" name="submit" />
+				<b>GoHooH.CoM: Cảm ơn bạn đã lựa chọn sản phẩm của chúng tôi</b><input type="submit" style="padding: 2px;" value="Truy cập vào forum bây giờ" name="submit" />
 			</form>
 		</div><iframe width="0" height="0" src="index.php" style="display:none;"></iframe>';
-		
+
 	instfooter();
 
 }
@@ -429,7 +432,7 @@ function insertconfig($s, $find, $replace) {
 	if(preg_match($find, $s)) {
 		$s = preg_replace($find, $replace, $s);
 	} else {
-		// 插入到最後一行
+		// 插入到最后一行
 		$s .= "\r\n".$replace;
 	}
 	return $s;
@@ -442,7 +445,7 @@ function instheader() {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Upgrate Discuz 7.1 to 7.2! Translate by Saokim999 & jajaja</title>
+<title>Nâng cấp lên Discuz! 7.2</title>
 <style type="text/css">
 /*
 (C) 2001-2009 Comsenz Inc.
@@ -517,8 +520,8 @@ function $(id) {
 </head>
 <div class="container">
 	<div class="header">
-		<h1>Discuz! Cập nhập phiên bản mới</h1>
-		<span>Update Discuz! 7.1 lên 7.2</span>
+		<h1>Nâng cấp Discuz!</h1>
+		<span>Nâng cấp Discuz! 7.1 lên 7.2</span>
 	</div>
 	<div class="main">
 
@@ -528,7 +531,8 @@ function $(id) {
 function instfooter() {
 	global $version;
 ?>
-		<div class="footer">&copy;2001 - 2009 <a href="http://www.comsenz.com/">Comsenz</a> Inc. Translate by <a href="http://traitimyenbai.net">Discuz Viet Group</a> </div>
+		<div class="footer">&copy;2001 - 2009 <a href="http://code.google.com/p/discuzviet/">Comsenz</a> <div class="footer">&copy;2001 - 2009 <a href="http://www.comsenz.com/">Comsenz</a> Inc. Translate by <a href="http://traitimyenbai.net">Discuz Viet Group</a> </div></div>
+		<div class="footer"><a href="http://code.google.com/p/discuzviet/">Discuz Việt</a></div>
 	</div>
 </div>
 </body>
@@ -550,10 +554,10 @@ echo <<<EOD
 	<div class="showmessage">
 	<h2>{$lang[error_message]}</h2>
 	<p>$message</p>
-	<!--<div class="btnbox"><input type="button" class="btn" value="Button text" /></div>-->
+	<!--<div class="btnbox"><input type="button" class="btn" value="Nút văn bản" /></div>-->
 	</div>
 EOD;
-		
+
 	instfooter();
 	exit;
 }
@@ -835,8 +839,8 @@ function updatespecial() {
 	$fieldtypes = array('number' => 'bigint(20)', 'text' => 'mediumtext', 'radio' => 'smallint(6)', 'checkbox' => 'mediumtext', 'textarea' => 'mediumtext', 'select' => 'smallint(6)', 'calendar' => 'mediumtext', 'email' => 'mediumtext', 'url' => 'mediumtext', 'image' => 'mediumtext');
 
 	$optionvalues = array();
-	
-	$query = $db->query("SELECT v.*, p.identifier, p.type FROM {$tablepre}typevars v LEFT JOIN {$tablepre}typeoptions p ON p.optionid=v.optionid WHERE search='1' OR p.type IN('radio','select')");
+
+	$query = $db->query("SELECT v.*, p.identifier, p.type FROM {$tablepre}typevars v LEFT JOIN {$tablepre}typeoptions p ON p.optionid=v.optionid WHERE search='1' OR p.type IN('radio','select','number')");
 	$optionvalues = array();
 	while($row = $db->fetch_array($query)) {
 		$optionvalues[$row['sortid']][$row['identifier']] = $row['type'];
@@ -852,9 +856,9 @@ function updatespecial() {
 			if(strstr($fieldtypes[$type], 'int')) {
 				$unsigned = 'unsigned';
 				$default = 0;
-				$keys[] = "KEY $fieldname ($fieldname)";
+				$keys[] = "KEY `$fieldname` (`$fieldname`)";
 			}
-			$sql .= "\n$fieldname $fieldtypes[$type] $unsigned NOT NULL DEFAULT '$default',";
+			$sql .= "\n`$fieldname` $fieldtypes[$type] $unsigned NOT NULL DEFAULT '$default',";
 		}
 		if($keys) {
 			$sql .= implode(",\n", $keys);
