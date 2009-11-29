@@ -334,18 +334,18 @@ EOT;
 echo <<<EOD
  		<div class="licenseblock">
 		<div class="license">
-	<h1>關於《康盛改善計劃》的說明</h1>
+	<h1>Hướng dẫn và điều khoản upgrade</h1>
 	<ol>
-		<li>為了不斷改進產品質量，改善用戶體驗，$version[new]版內置了統計系統。</li>
-		<li>該統計系統有利於我們分析用戶在論壇的操作習慣，進而幫助我們在未來的版本中對產品進行改進，設計出更符合用戶需求的新功能。</li>
-		<li>該統計系統不會收集站點敏感信息，不收集用戶資料，不存在安全風險，並且經過實際測試不會影響論壇的運行效率。</li>
-		<li>您安裝使用本版本表示您同意加入《康盛改善計劃》，Discuz!運營部門會通過對站點數據的分析為您提供運營指導建議，我們將提示您如何根據站點運行情況開啟論壇功能，如何進行合理的功能配置，以及提供其他的一些運營經驗等。</li>
-		<li>為了方便我們和您溝通運營策略，請您留下常用的網絡聯繫方式。</li>
+		<li>Cập nhập phiên bản $version[new]</li>
+		<li>Nhớ backup Database trước khi làm. Offline forum để backup. Nếu update thất bại dùng file tools.php khôi phục </ li>
+<li>Phiên bản Discuz 7.2 dịch bởi Discuz Việt Goup : Saokim999 & jajaja</ li>
+<li> you install using this version, you agreed to join the "Sing Improvement Program", Discuz! operations through analysis of the data on the site, to provide operational guidance for your suggestions, we will prompt you how to open the forum under the site operation function, how to configure the functionality of a reasonable and provide a number of other operational experience. </ li>
+<li> order to facilitate our operating strategy to communicate with you, please leave a commonly used network contacts. </ li>
 	</ol>
 </div></div>
 <div class="desc">
-	<h4>填寫聯繫方式</h4>
-	<p>正確的聯繫方式有助於我們給你提供最新的信息和安全方面的報告</p>
+	<h4> điền vào liên lạc </h4>
+<p> thông tin liên lạc chính xác giúp chúng tôi cung cấp cho bạn những thông tin mới nhất và an toàn các khía cạnh của báo cáo </ p>
 </div>
 
 <form action="$url_forward" method="post" id="postform">
@@ -442,7 +442,7 @@ function instheader() {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Discuz! 升級嚮導</title>
+<title>Upgrate Discuz 7.1 to 7.2! Translate by Saokim999 & jajaja</title>
 <style type="text/css">
 /*
 (C) 2001-2009 Comsenz Inc.
@@ -517,8 +517,8 @@ function $(id) {
 </head>
 <div class="container">
 	<div class="header">
-		<h1>Discuz! 升級嚮導</h1>
-		<span>從 Discuz! 7.1 升級到 7.2</span>
+		<h1>Discuz! Cập nhập phiên bản mới</h1>
+		<span>Update Discuz! 7.1 lên 7.2</span>
 	</div>
 	<div class="main">
 
