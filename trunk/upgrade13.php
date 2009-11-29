@@ -225,8 +225,8 @@ echo <<<EOT
 	Trước khi nâng cấp <b>Hãy sao lưu cơ sở dữ liệu</b> Nếu không, nâng cấp thất bại có thể không phục hồi được<br /><br />
 		Phương pháp nâng cấp:
 	<ol>
-		<li>Vào AdminCp, đóng cửa forum. Tải lên bản $version[new] bao gồm tất cả các file trừ  thư mục install và file config.inc.php của phiên bản $version[old]
-		<li>Tải file upgrade13.php vào trong ./forum (ngang hàng với index.php)
+		<li>Vào AdminCP, đóng cửa forum. Tải lên bản $version[new] bao gồm tất cả các file trừ thư mục install và file config.inc.php của phiên bản $version[old]
+		<li>Tải file upgrade13.php vào trong thư mục chứa forum (ngang hàng với index.php)
 		<li>Chạy nâng cấp http://site-cua-ban.com/forum/upgrade13.php
 		<li>Nếu thất bại, hãy sữ dụng ./utilities/tools.php để phục hồi dữ liệu
 	</ol>
@@ -395,14 +395,14 @@ EOD;
 	dir_clear('./uc_client/data/cache');
 	@touch($lock_file);
 	if(!@unlink('upgrade13.php')) {
-		$msg = '<li><b>GoHooH.CoM khuyên bạn xóa file upgrade13.php</b></li>';
+		$msg = '<li><b>DiscuzViệt! khuyên bạn xóa file upgrade13.php</b></li>';
 	} else {
 		$msg = '';
 	}
 echo <<<EOT
 		<div class="licenseblock">
 		<div class="license">
-	<h1>GoHooH.CoM: chúc mừng bạn nâng cấp thành công</h1>
+	<h1>DiscuzViệt! chúc mừng bạn nâng cấp thành công</h1>
 	<h3>Tiếp theo:</h3>
 	<ol>
 		$msg
@@ -415,7 +415,7 @@ echo <<<EOT
 EOT;
 echo '<div class="btnbox marginbot">
 			<form method="get" action="index.php">
-				<b>GoHooH.CoM: Cảm ơn bạn đã lựa chọn sản phẩm của chúng tôi</b><input type="submit" style="padding: 2px;" value="Truy cập vào forum bây giờ" name="submit" />
+				<b>DiscuzViệt! Cảm ơn bạn đã lựa chọn sản phẩm của chúng tôi</b><input type="submit" style="padding: 2px;" value="Truy cập vào forum bây giờ" name="submit" />
 			</form>
 		</div><iframe width="0" height="0" src="index.php" style="display:none;"></iframe>';
 
@@ -531,7 +531,7 @@ function $(id) {
 function instfooter() {
 	global $version;
 ?>
-		<div class="footer">&copy;2001 - 2009 <a href="http://code.google.com/p/discuzviet/">Comsenz</a> <div class="footer">&copy;2001 - 2009 <a href="http://www.comsenz.com/">Comsenz</a> Inc. Translate by <a href="http://traitimyenbai.net">Discuz Viet Group</a> </div></div>
+		<div class="footer">&copy;2001 - 2009 <a href="http://code.google.com/p/discuzviet/">Comsenz</a> <div class="footer">&copy;2001 - 2009 <a href="http://www.comsenz.com/">Comsenz</a> Inc. Translate by <a href="http://traitimyenbai.net">DiscuzViet Group</a> </div></div>
 		<div class="footer"><a href="http://code.google.com/p/discuzviet/">Discuz Việt</a></div>
 	</div>
 </div>
