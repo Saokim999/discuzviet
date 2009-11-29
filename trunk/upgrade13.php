@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 @set_magic_quotes_runtime(0);
@@ -48,7 +48,7 @@ $lang = array(
 	'uc_title_app' => 'Thông tin',
 	'uc_app_name' => 'Tên',
 	'uc_app_url' => 'URL',
-	'uc_app_ip' => 'P',
+	'uc_app_ip' => 'IP',
 	'uc_app_ip_comment' => 'Sử dụng DNS khi máy chủ có vấn đề, không thì để trống',
 	'uc_connent_invalid1' => 'Kết nối với máy chủ',
 	'uc_connent_invalid2' => ' Kết nối thất bại, quay trở lại để kiểm tra',
