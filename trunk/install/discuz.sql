@@ -158,8 +158,8 @@ CREATE TABLE cdb_addons (
   PRIMARY KEY (`key`)
 ) TYPE=MyISAM;
 
-INSERT INTO cdb_addons (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('25z5wh0o00', 'Comsenz', 'Comsenz官方网站', 'http://www.comsenz.com', 'Comsenz官方网站推荐的论坛模板与插件', 'ts@comsenz.com', 'http://www.comsenz.com/addon/logo.gif', 1);
-INSERT INTO cdb_addons (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('R051uc9D1i', 'DPS', 'DPS 插件中心', 'http://bbs.7dps.com', '提供 Discuz!7.1/7.2 新核(NC)插件，享受一键安装/升级/卸载带来的快感，还提供少量风格。', 'http://bbs.7dps.com/thread-1646-1-1.html', 'http://api.7dps.com/addons/logo.gif', 0);
+INSERT INTO cdb_addons (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('25z5wh0o00', 'Comsenz', 'Comsenz', 'http://www.comsenz.com', 'Comsenz', 'ts@comsenz.com', 'http://www.comsenz.com/addon/logo.gif', 1);
+INSERT INTO cdb_addons (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('R051uc9D1i', 'DPS', 'DPS', 'http://bbs.7dps.com', 'Hỗ trợ Discuz!7.1/7.2 bản(NC)cài, gỡ, update chỉ một click chuột', 'http://bbs.7dps.com/thread-1646-1-1.html', 'http://api.7dps.com/addons/logo.gif', 0);
 
 DROP TABLE IF EXISTS cdb_advertisements;
 CREATE TABLE cdb_advertisements (
@@ -659,7 +659,9 @@ CREATE TABLE cdb_forumlinks (
   PRIMARY KEY (id)
 ) TYPE=MyISAM;
 
-INSERT INTO cdb_forumlinks VALUES ('1','0','Discuz! Việt','http://www.discuz.net','Discuz! Việt forum','images/logo.gif');
+INSERT INTO cdb_forumlinks VALUES ('1','0','Discuz! Việt','http://code.google.com/p/discuzviet','Discuz! Việt forum','images/logo.gif');
+INSERT INTO cdb_forumlinks VALUES ('2','0','Trái Tim Yên Bái','http://traitimyenbai.net','Support Skin. Plugin Discuz','http://traitimyenbai.net/img/logodz.gif');
+INSERT INTO cdb_forumlinks VALUES ('3','0','KTSHOP','http://www.nktshop.com/vi/','In ấn, thiết kế Quảng cáo','images/logo.gif');
 
 DROP TABLE IF EXISTS cdb_forumrecommend;
 CREATE TABLE cdb_forumrecommend (
@@ -1036,7 +1038,7 @@ CREATE TABLE cdb_navs (
 INSERT INTO cdb_navs VALUES ('1','0','Index','','#','0','0','1','1','0','0');
 INSERT INTO cdb_navs VALUES ('2','0','Tìm kiếm','','search.php','0','0','1','2','0','0');
 INSERT INTO cdb_navs VALUES ('3','0','Plugins','','#','0','0','1','4','0','0');
-INSERT INTO cdb_navs VALUES ('4','0','Hướng dẫn','','faq.php','0','0','1','5','0','0');
+INSERT INTO cdb_navs VALUES ('4','0','FAQ','','faq.php','0','0','1','5','0','0');
 INSERT INTO cdb_navs VALUES ('5','0','Sitemap','','#','0','0','1','6','0','0');
 
 DROP TABLE IF EXISTS cdb_onlinelist;
