@@ -878,7 +878,7 @@ $language = array
 	'login_now' => 'Bạn đã có tài khoản? <a href="logging.php?action=login" onclick="hideWindow(\'register\');showWindow(\'login\', this.href);return false;">Nhấn vào để đăng nhập</a>',
 	'login_password' => 'Mật khẩu:',
 	'login_permanent' => 'Lưu mật khẩu',
-	'login_normal_mode' => 'trực tuyến',
+	'login_normal_mode' => 'Trực tuyến',
 	'login_switch_invisible_mode' => 'Chuyển qua trạng thái ẩn danh',
 	'login_switch_normal_mode' => 'Chuyển qua trạng thái trực tuyến',
 	'login_invisible_mode' => 'Ẩn danh',
