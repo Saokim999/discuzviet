@@ -157,7 +157,7 @@ $lang = array(
 	'install_founder_contact' => 'Điền thông tin liên lạc',
 
 	'init_credits_karma' => 'Danh Vọng',
-	'init_credits_money' => 'Gyn - Đồng tiền tại GoHooH',
+	'init_credits_money' => 'Tiền',
 
 	'init_group_0' => 'Member', 
 	'init_group_1' => 'Administrator', 
@@ -190,11 +190,11 @@ $lang = array(
 	'init_cron_6' => 'Daily bulletin clean up',
 	'init_cron_7' => 'Time-limited operation clean-up',
 	'init_cron_8' => 'Forum to promote clean-up',
-	'init_cron_9' => 'Monthly Theme clean up'
+	'init_cron_9' => 'Monthly Theme clean up',
 	'init_cron_10' => 'Update X-Space user daily',
 	'init_cron_11' => 'Updated weekly themes',
 
-	'init_bbcode_1' => 'So that the contents of horizontal scrolling, the effect similar to the HTML of the marquee tags, Note: This effect is only valid under Internet Explorer browser.'
+	'init_bbcode_1' => 'So that the contents of horizontal scrolling, the effect similar to the HTML of the marquee tags, Note: This effect is only valid under Internet Explorer browser.',
 	'init_bbcode_2' => 'Embed Flash animations',
 	'init_bbcode_3' => 'Show QQ online status, point of this icon can chat',
 	'init_bbcode_4' => 'Superscript',
