@@ -266,7 +266,7 @@ $language = array
 	'home' => 'Trang chính',
 	'home_lastvisit' => 'lần duyệt cuối: ',
 	'home_welcome' => 'Bạn đã gia nhập Diễn đàn với tên : ',
-	'home_welcome_guest' => '<p>Bạn có thể <a href="{$regname}" onclick="showWindow(\'register\', this.href);return false;" class="lightlink">Đăng ký</a> một tài khoản，và <a href="logging.php?action=login" onclick="showWindow(\'login\', this.href);return false;" class="lightlink">Đăng nhập</a>，vào diễn đàn để truy cập đến những nội dung thú vị, những bài viết hay, và có được những giây phút bổ ích bên những người bạn mới.</p>',
+	'home_welcome_guest' => '<p>Mời bạn <a href="{$regname}" onclick="showWindow(\'register\', this.href);return false;" class="lightlink">Đăng ký</a> tài khoản hoặc <a href="logging.php?action=login" onclick="showWindow(\'login\', this.href);return false;" class="lightlink">Đăng nhập</a> để tham gia vào các hoạt động diễn đàn.</p>',
 	'sidebar_collapsed_yes' => 'Mở Sidebar',
 	'sidebar_collapsed_no' => 'Đóng Sidebar',
 	'data_nonexistence' => 'Dữ liệu hoặc nội dung không tồn tại',
@@ -2378,9 +2378,9 @@ $language = array
 	'apitype_alipay' => 'Trả qua Alipay', 
 	'apitype_tenpay' => 'Trả qua Tenpay', 
 
-	'feeds_discuz' => 'Thao tác trên diễn đàn', 
+	'feeds_discuz' => 'Hoạt động của diễn đàn', 
 	'feeds_apps' => 'Ứng dụng', 
-	'feeds_forum' => 'Nội dung Diễn đàn', 
+	'feeds_forum' => 'Quay lại diễn đàn chính', 
 	'feeds_show_all' => 'Xem tất cả', 
 
 	'hottopics' => 'Chủ đề HOT', 
