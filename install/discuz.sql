@@ -660,8 +660,8 @@ CREATE TABLE cdb_forumlinks (
 ) TYPE=MyISAM;
 
 INSERT INTO cdb_forumlinks VALUES ('1','0','Discuz! Việt','http://code.google.com/p/discuzviet','Discuz! Việt forum','images/logo.gif');
-INSERT INTO cdb_forumlinks VALUES ('2','0','Trái Tim Yên Bái','http://traitimyenbai.net','Support Skin. Plugin Discuz','http://traitimyenbai.net/img/logodz.gif');
-INSERT INTO cdb_forumlinks VALUES ('3','0','KTSHOP','http://www.nktshop.com/vi/','In ấn, thiết kế Quảng cáo','images/logo.gif');
+INSERT INTO cdb_forumlinks VALUES ('2','0','Trái Tim Yên Bái','http://traitimyenbai.net','Support Skin. Plugin Discuz, Ucenter Home','http://traitimyenbai.net/img/logodz.gif');
+INSERT INTO cdb_forumlinks VALUES ('3','0','KTSHOP','http://www.nktshop.com/vi','In ấn, thiết kế Quảng cáo','images/logo.gif');
 
 DROP TABLE IF EXISTS cdb_forumrecommend;
 CREATE TABLE cdb_forumrecommend (
