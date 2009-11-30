@@ -3,8 +3,8 @@
 
 $dlang = array
 (
-	'nextpage' => 'Tiếp',
-	'date' => ' Lúc, Hôm nay, Hôm qua, Hôm kia, giờ, nửa, phút, giây, bây giờ'
+	'nextpage' => 'Kế tiếp',
+	'date' => ' vào, hôm nay, hôm qua, hôm kia,h,nửa,phút,s,bây giờ'
 );
 
 ?>
