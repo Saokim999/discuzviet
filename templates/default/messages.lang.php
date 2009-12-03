@@ -549,7 +549,7 @@ $language = array
 	'admin_cpanel_locked' => 'Nhập sai pass nhiều lần,<br />Admin CP khóa trong 30 phút T_T.',
 	'admin_cpanel_noaccess_ip' => 'Your IP is not allowed to visite Admin CP',
 
-	'msn_binding_succeed' => 'Binding Succeed/Replace MSN account！',
+	'msn_binding_succeed' => 'Binding Succeed/Replace MSN account',
 
 	'payonline_succeed' => 'Bạn đã trả tiền xong.',
 
@@ -562,7 +562,7 @@ $language = array
 	'favoriteforums_exists' => 'Bạn đang theo dõi về diễn đàn này<br /><a href=\"my.php?item=attention&type=forum\" class=\"lightlink\" target=\"_blank\">[Các quan tâm của tôi]</a>',
 	'favoriteforums_remove_succeed' => 'diễn đàn đã bị hủy việc theo dõi.',
 
-	'recommend_duplicate' => 'Bạn đã đánh giá chủ đề này trong',
+	'recommend_duplicate' => 'Bạn đã đánh giá Bài này rồi',
 	'recommend_outoftimes' => 'Hôm nay cơ hội đánh giá của bạn đã hết, xin vui lòng quay lại vào ngày mai',
 	'recommend_self_disallow' => 'Bạn không thể đánh giá các bài viết của mình',
 	'recommend_daycount_succed' => 'Đánh chỉ mục trong chủ đề này <strong style="color:'.NOTICETEXT.'">$allowrecommend</strong>，Hôm nay, bạn có thể đánh giá $daycount lần',
