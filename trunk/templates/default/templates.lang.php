@@ -892,7 +892,7 @@ $language = array
 	'login_guest' => 'Bạn chưa có tài khoản? <a href="$regname" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Hãy đăng ký ngay">$reglinkname</a>',
 	'login_clearcookies' => 'Xoá cookies',
 	'login_inactive' => 'Để kích hoạt <a href="javascript:;" onclick="$(\'registerform\').activationauth.value=\'\';$(\'activation_hidden\').style.display=\'\';$(\'activation_user\').style.display=\'none\'">{$reglinkname} bây giờ</a>',
-	'login_refresh' => 'Nhấn vào đây nếu bạn cảm thấy đợi lâu',
+	'login_refresh' => 'Nhấn vào đây nếu bạn thấy lâu',
 
 	'profile_email_verify' => 'Tài khoản của bạn chưa kích hoạt, vào e-mail để kích hoạt tài khoản của bạn',
 	'profile_email_verify_comment' => 'Nếu bạn không nhận được e-mail của chúng tôi gửi, hãy đến hộp cá nhân bấm vào "xác minh lại Email" hay "Mật khẩu và an ninh" để thay thế một địa chỉ email khác. Lưu ý: Trước khi hoàn tất kích hoạt, theo ban quản trị, bạn sẽ chỉ được để xem nhận dạng các thành viên diễn đàn, bạn có thể không có khả năng tiến hành các hoạt động như gửi bài. Sau khi kích hoạt thành công của các hạn chế nêu trên sẽ được tự động bị hủy',
