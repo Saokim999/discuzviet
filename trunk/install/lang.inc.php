@@ -1266,17 +1266,17 @@ slideImgTexts[{order}] = \\"{subject}\\";
 $tasktypes = array(
   'promotion' =>
   array (
-    'name' => '论坛推广任务',
+    'name' => 'Quảng bá diễn đàn',
     'version' => '1.0',
   ),
   'gift' =>
   array (
-    'name' => '红包类任务',
+    'name' => 'Quà tặng thành viên',
     'version' => '1.0',
   ),
   'avatar' =>
   array (
-    'name' => '头像类任务',
+    'name' => 'Cập nhật avatar',
     'version' => '1.0',
   )
 );
