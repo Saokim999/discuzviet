@@ -36,7 +36,7 @@ $menulang = array
 	'menu_settings_mail' => 'Mail',
 	'menu_settings_sec' => 'Bảo mật',
 	'menu_settings_datetime' => 'Ngày giờ',
-	'menu_settings_attachments' => 'Attachments',
+	'menu_settings_attachments' => 'Đính kèm',
 	'menu_settings_dzfeed' => 'Thao tác hoàn tất',
 	'menu_settings_wap' => 'WAP',
 	'menu_settings_uc' => 'UCenter',
@@ -87,7 +87,7 @@ $menulang = array
 	'menu_styles_templates' => 'Templates',
 	'menu_posting_smilies' => 'Smilies',
 	'menu_thread_icon' => 'Icon chủ đề',
-	'menu_thread_stamp' => 'Tem định danh chủ đề',
+	'menu_thread_stamp' => 'Dán Tem bài viết',
 	'menu_posting_editor' => 'Editor/BBCode',
 	'menu_misc_onlinelist' => 'User Icons',
 	
