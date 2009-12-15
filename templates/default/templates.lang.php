@@ -1347,7 +1347,7 @@ $language = array
 	'payto_author' => 'Trả cho tác giả',
 	'payto_creditinfo' => 'Thông tin chi trả',
 	'attach_nopermission' => 'Bạn đang ở nhóm không thể tải tệp đính kèm. Mời bạn đăng nhập hoặc <a href="register.php">đăng ký</a>',
-	'attach_nopermission_login' => 'Bạn cần <a href="logging.php?action=login" onclick="showWindow(\'login\', this.href);return false;" class="lightlink">đăng nhập</a> để tải về hoặc xem file đính kèm. Chưa có tài khoản？ <a href="$regname" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Đăng ký ngay" class="lightlink">$reglinkname</a>',
+	'attach_nopermission_login' => 'Bạn cần <a href="logging.php?action=login" onclick="showWindow(\'login\', this.href);return false;" class="lightlink">đăng nhập</a> để tải về hoặc xem file đính kèm. Chưa có tài khoản <a href="$regname" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Đăng ký ngay" class="lightlink">$reglinkname</a>',
 	'attach_download_count' => 'đính kèm được tải',
 	'attach_img' => 'hình ảnh đính kèm ',
 	'attach_pay' => 'đính kèm có phí',
