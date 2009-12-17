@@ -16,8 +16,8 @@ $language = array
 <fieldset><ins>{$reason}</ins></fieldset></div>',
 
 	'reason_warn_post' => '<div class=\"f_manage\">Chủ đề <a href=\"{boardurl}viewthread.php?from=notice&tid={$thread[tid]}\">{$thread[subject]}</a> được <a href=\"{boardurl}space.php?from=notice&uid={$discuz_uid}\">{$discuz_userss}</a> {$modaction} {time}<br />
- tiếp tục $warningexpiration trong $warninglimit lần nhắc nhở，bạn sẽ bị cấm đăng bài $warningexpiration ngày.<br />
-Hiện nay, bạn đã bị nhắc nhở $authorwarnings lần，Hãy cẩn thận！
+ tiếp tục $warningexpiration trong $warninglimit lần nhắc nhở bạn sẽ bị cấm đăng bài $warningexpiration ngày.<br />
+Hiện nay, bạn đã bị nhắc nhở $authorwarnings lần. Hãy cẩn thận
 <fieldset><ins>{$reason}</ins></fieldset></div>',
 
 	'reason_move' => '<div class=\"f_manage\">Chủ đề <a href=\"{boardurl}viewthread.php?from=notice&tid={$thread[tid]}\">{$thread[subject]}</a> được <a href=\"{boardurl}space.php?from=notice&uid={$discuz_uid}\">{$discuz_userss}</a> chuyển đến <a href=\"{boardurl}forumdisplay.php?from=notice&fid={$toforum[fid]}\">{$toforum[name]}</a> {time}
@@ -32,7 +32,7 @@ Hiện nay, bạn đã bị nhắc nhở $authorwarnings lần，Hãy cẩn th�
 	'reason_stamp_delete' => '<div class=\"f_manage\">Chủ đề <a href=\"{boardurl}viewthread.php?from=notice&tid={$thread[tid]}\">{$thread[subject]}</a> do <a href=\"{boardurl}space.php?from=notice&uid={$discuz_uid}\">{$discuz_userss}</a> đã được thu hồi con dấu {time}
 <fieldset><ins>{$reason}</ins></fieldset></div>',
 
-	'modthreads_delete' => '<div class=\"f_manage\">Chủ đề {$threadsubject} đã bị kiểm duyệt，hiện đã được gỡ bỏ！ {time}
+	'modthreads_delete' => '<div class=\"f_manage\">Chủ đề {$threadsubject} đã bị kiểm duyệt hiện đã được gỡ bỏ {time}
 <fieldset><ins>{$reason}</ins></fieldset></div>',
 
 	'modthreads_validate' => '<div class=\"f_manage\">Chủ đề <a href=\"{boardurl}viewthread.php?from=notice&tid={$tid}\">{$threadsubject}</a> đã được chấp thuận！ {time}
@@ -66,7 +66,7 @@ Hiện nay, bạn đã bị nhắc nhở $authorwarnings lần，Hãy cẩn th�
 	'rate_removereason' => '<div class=\"f_rate\"><a href=\"{boardurl}space.php?from=notice&uid={$discuz_uid}\">{$discuz_userss}</a> bị thu hồi từ <a href=\"{boardurl}viewthread.php?from=notice&tid={$thread[tid]}\">{$thread[subject]}</a> số điểm: {$ratescore} {time}
 <fieldset><ins>{$reason}</ins></fieldset></div>',
 
-	'trade_seller_send' => '<div class=\"f_trade\"><a href=\"{boardurl}space.php?from=notice&uid={$userid}\">{$user}</a> mua sản phẩm <a href=\"{boardurl}trade.php?from=notice&orderid={$orderid}\">{$itemsubject}</a>，Bên kia đã trả tiền, chờ bạn gởi hàng {time}
+	'trade_seller_send' => '<div class=\"f_trade\"><a href=\"{boardurl}space.php?from=notice&uid={$userid}\">{$user}</a> mua sản phẩm <a href=\"{boardurl}trade.php?from=notice&orderid={$orderid}\">{$itemsubject}</a>Bên kia đã trả tiền, chờ bạn gởi hàng {time}
 <a href=\"{boardurl}trade.php?from=notice&orderid={$orderid}\" class=\"il to\"> Chi tiết </a></div>',
 
 	'trade_buyer_confirm' => '<div class=\"f_trade\">Bạn đã mua sản phẩm <a href=\"{boardurl}trade.php?from=notice&orderid={$orderid}\">{$itemsubject}</a>，<a href=\"{boardurl}space.php?from=notice&uid={$userid}\">{$user}</a> đã được gởi đi, chờ bạn xác nhận {time}
@@ -129,7 +129,7 @@ Hiện nay, bạn đã bị nhắc nhở $authorwarnings lần，Hãy cẩn th�
 <p><a href=\"{boardurl}my.php?from=notice&item=buddylist&newbuddyid={$discuz_uid}&buddysubmit=yes\" onclick=\"ajaxmenu(this, 3000);doane(event);\">Thêm {$discuz_userss} vào danh sách</a><i>|</i>
 <a href=\"{$uchomeurl}/space.php?from=notice&uid={$discuz_uid}\" class=\"to\"> Xem trang cá nhân {$discuz_userss}</a></p></div>',
 
-	'task_reward_credit' => '<div class=\"f_task\">Xin chúc mừng bạn hoàn thành nhiệm vụ: <a href=\"{boardurl}task.php?from=notice&action=view&id={$task[taskid]}\">{$task[name]}</a>，đã nhận {$extcredits[$task[prize]][title]} {$task[bonus]} {$extcredits[$task[prize]][unit]} {time}
+	'task_reward_credit' => '<div class=\"f_task\">Xin chúc mừng bạn hoàn thành nhiệm vụ: <a href=\"{boardurl}task.php?from=notice&action=view&id={$task[taskid]}\">{$task[name]}</a>đã nhận {$extcredits[$task[prize]][title]} {$task[bonus]} {$extcredits[$task[prize]][unit]} {time}
 <p><a href=\"{boardurl}memcp.php?from=notice&action=credits\">Xem điểm của tôi</a><i>|</i><a href=\"{boardurl}memcp.php?from=notice&action=creditslog&operation=creditslog\" class=\"il to\">Xem nhật ký điểm</a></p></div>',
 
 	'task_reward_magic' => '<div class=\"f_task\">Xin chúc mừng bạn hoàn thành nhiệm vụ: <a href=\"{boardurl}task.php?from=notice&action=view&id={$task[taskid]}\">{$task[name]}</a>, nhận được <a href=\"{boardurl}magic.php\">{$magicname}</a> {$task[bonus]} cái {time}</div>',
