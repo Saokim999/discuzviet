@@ -6,7 +6,7 @@
 		<item id="plugin">
 			<item id="available"><![CDATA[1]]></item>
 			<item id="adminid"><![CDATA[1]]></item>
-			<item id="name"><![CDATA[我的马甲]]></item>
+			<item id="name"><![CDATA[My repeats]]></item>
 			<item id="identifier"><![CDATA[myrepeats]]></item>
 			<item id="description"><![CDATA[]]></item>
 			<item id="datatables"><![CDATA[]]></item>
@@ -16,7 +16,7 @@
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[memcp]]></item>
-					<item id="menu"><![CDATA[我的马甲]]></item>
+					<item id="menu"><![CDATA[My repeat]]></item>
 					<item id="type"><![CDATA[8]]></item>
 					<item id="adminid"><![CDATA[0]]></item>
 					<item id="displayorder"><![CDATA[0]]></item>
@@ -29,7 +29,7 @@
 				</item>
 				<item id="2">
 					<item id="name"><![CDATA[admincp]]></item>
-					<item id="menu"><![CDATA[管理]]></item>
+					<item id="menu"><![CDATA[Management]]></item>
 					<item id="type"><![CDATA[3]]></item>
 					<item id="adminid"><![CDATA[1]]></item>
 					<item id="displayorder"><![CDATA[0]]></item>
@@ -40,55 +40,55 @@
 		<item id="vars">
 			<item id="0">
 				<item id="displayorder"><![CDATA[0]]></item>
-				<item id="title"><![CDATA[用户组]]></item>
-				<item id="description"><![CDATA[设置哪些用户组可以使用马甲切换功能]]></item>
+				<item id="title"><![CDATA[User group]]></item>
+				<item id="description"><![CDATA[Set which user groups can use repeat switching function]]></item>
 				<item id="variable"><![CDATA[usergroups]]></item>
 				<item id="type"><![CDATA[groups]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 		</item>
-		<item id="intro"><![CDATA[本插件方便用户快速的在自己的多个账户间自由切换]]></item>
+		<item id="intro"><![CDATA[This plug-in make user-friendly in their own quickly switch between multiple accounts]]></item>
 		<item id="installfile"><![CDATA[install.php]]></item>
 		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
 		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
 		<item id="language">
 			<item id="scriptlang">
-				<item id="login_strike"><![CDATA[密码错误次数过多，请重新设置马甲账户信息并在 15 分钟后再尝试切换。]]></item>
-				<item id="login_succeed"><![CDATA[您已切换到 $discuz_userss {$comment}帐号，现在将转入切换前页面。 $ucsynlogin ]]></item>
-				<item id="login_succeed_rsnonexistence"><![CDATA[您已切换到 $discuz_userss {$comment}帐号，但是此账号尚未设置 $olddiscuz_userss 为马甲。<br /><a href="plugin.php?id=myrepeats:memcp&username=$olddiscuz_userssenc" target="_blank">[ 设置 $olddiscuz_userss 为本账号的马甲 ]</a><br /><a href="$referer">[ 转入切换前页面 ]</a> $ucsynlogin ]]></item>
-				<item id="login_activation"><![CDATA[$username 账户未在本论坛激活，现在将转入帐号激活页面。]]></item>
-				<item id="login_invalid"><![CDATA[账户切换失败，请重新设置帐号信息，您还可以尝试 $loginperm 次。]]></item>
-				<item id="login_question_empty"><![CDATA[请重新设置账户的安全提问以及正确的答案。]]></item>
-				<item id="login_question_invalid"><![CDATA[安全提问选择错误，请重新设置。]]></item>
-				<item id="user_nonexistence"><![CDATA[无效的马甲账户信息，请重新设置。]]></item>
-				<item id="user_locked"><![CDATA[此马甲账户被管理员锁定，您无法切换到 {$usernamess}，请与管理员联系。]]></item>
-				<item id="switch"><![CDATA[切换]]></item>
-				<item id="memcp"><![CDATA[设置马甲]]></item>
-				<item id="usergroup_disabled"><![CDATA[您所在用户组无法使用本功能]]></item>
-				<item id="normal"><![CDATA[正常]]></item>
-				<item id="lock"><![CDATA[锁定]]></item>
-				<item id="username"><![CDATA[用户名]]></item>
-				<item id="repeat"><![CDATA[马甲]]></item>
-				<item id="lastswitch"><![CDATA[最后切换时间]]></item>
-				<item id="status"><![CDATA[状态]]></item>
-				<item id="search"><![CDATA[搜索]]></item>
-				<item id="repeats"><![CDATA[被哪些账号马甲]]></item>
-				<item id="repeatusers"><![CDATA[的马甲]]></item>
-				<item id="statuss"><![CDATA[状态的记录]]></item>
-				<item id="viewall"><![CDATA[查看全部]]></item>
-				<item id="deleted"><![CDATA[- 已删除 -]]></item>
-				<item id="adduser_succeed"><![CDATA[马甲账号 $usernamenew 已成功添加。]]></item>
-				<item id="updateuser_succeed"><![CDATA[马甲帐号信息已成功更新。]]></item>
+				<item id="login_strike"><![CDATA[Incorrect password too many times, please reset repeat account information, wait 15 minutes and then try switch]]></item>
+				<item id="login_succeed"><![CDATA[You want switch to $discuz_userss {$comment} account, before switch now will go into the page $ucsynlogin ]]></item>
+				<item id="login_succeed_rsnonexistence"><![CDATA[You have switch to $discuz_userss {$comment} account, but this account has not yet set $olddiscuz_userss to repeat.<br /><a href="plugin.php?id=myrepeats:memcp&username=$olddiscuz_userssenc" target="_blank">[ Set $olddiscuz_userss become repeat account ]</a><br /><a href="$referer">[ Turn page before switching ]</a> $ucsynlogin ]]></item>
+				<item id="login_activation"><![CDATA[$username account is not active in this forum, will now be transferred to account activation page.]]></item>
+				<item id="login_invalid"><![CDATA[[Account switch fails, please reset account information, you can also try $loginperm times.]]></item>
+				<item id="login_question_empty"><![CDATA[Please reset account security questions and correct answers.]]></item>
+				<item id="login_question_invalid"><![CDATA[Security question wrong, please reset]]></item>
+				<item id="user_nonexistence"><![CDATA[Invalid repeat account information, please reset.]]></item>
+				<item id="user_locked"><![CDATA[This repeat account locked, you can not switch to {$usernamess}, please contact your administrator. ]]></item>
+				<item id="switch"><![CDATA[Switch]]></item>
+				<item id="memcp"><![CDATA[Set Repeat]]></item>
+				<item id="usergroup_disabled"><![CDATA[Your user group can not use this feature]]></item>
+				<item id="normal"><![CDATA[ normal]]></item>
+				<item id="lock"><![CDATA[ lock]]></item>
+				<item id="username"><![CDATA[Username]]></item>
+				<item id="repeat"><![CDATA[Repeat]]></item>
+				<item id="lastswitch"><![CDATA[Last switching]]></item>
+				<item id="status"><![CDATA[Status]]></item>
+				<item id="search"><![CDATA[Search]]></item>
+				<item id="repeats"><![CDATA[Repeat accounts]]></item>
+				<item id="repeatusers"><![CDATA[Repeat user]]></item>
+				<item id="statuss"><![CDATA[Records]]></item>
+				<item id="viewall"><![CDATA[View All]]></item>
+				<item id="deleted"><![CDATA[- Deleted -]]></item>
+				<item id="adduser_succeed"><![CDATA[Add $usernamenew account has been successfully added.]]></item>
+				<item id="updateuser_succeed"><![CDATA[Repeat account information has been successfully updated.]]></item>
 			</item>
 			<item id="templatelang">
-				<item id="myrepeats"><![CDATA[我的马甲]]></item>
-				<item id="adduser"><![CDATA[添加马甲账号]]></item>
-				<item id="add"><![CDATA[添加]]></item>
-				<item id="lastswitch"><![CDATA[最后切换时间]]></item>
-				<item id="nouse"><![CDATA[尚未使用]]></item>
-				<item id="locked"><![CDATA[被管理员锁定]]></item>
-				<item id="comment"><![CDATA[备　注]]></item>
-				<item id="commentrow"><![CDATA[备注]]></item>
+				<item id="myrepeats"><![CDATA[My repeat]]></item>
+				<item id="adduser"><![CDATA[Add repeat user]]></item>
+				<item id="add"><![CDATA[Add]]></item>
+				<item id="lastswitch"><![CDATA[Last switching]]></item>
+				<item id="nouse"><![CDATA[ not used]]></item>
+				<item id="locked"><![CDATA[[has locked]]></item>
+				<item id="comment"><![CDATA[Notes]]></item>
+				<item id="commentrow"><![CDATA[Notes]]></item>
 			</item>
 		</item>
 	</item>
