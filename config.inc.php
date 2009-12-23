@@ -9,7 +9,7 @@
 	$Date: 2007/01/26 01:11:32 $
 */
 
-// [CH] Duoi day la cac muc dien tham so, tai khoan CSDL. Neu co cau hoi nao moi ban vao http://traitimyenbai.net
+// [CH] Neu co cau hoi nao moi ban vao http://traitimyenbai.net .Duoi day la cac muc dien tham so, tai khoan CSDL. 
 
 	$dbhost = 'localhost';		// Server Nam : Thuong dat la localhost
 	$dbuser = 'username';		// Database User Name
