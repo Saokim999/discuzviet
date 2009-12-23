@@ -176,7 +176,7 @@ include_once DISCUZ_ROOT.'./uc_client/client.php';
 showtableheader('home_sys_info', 'fixpadding');
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	lang('home_discuz_version'),
-	'Discuz! '.DISCUZ_VERSION.' Release '.DISCUZ_RELEASE.' <a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version='.DISCUZ_VERSION.'&release='.DISCUZ_RELEASE.'&charset='.$charset.'&dbcharset='.$dbcharset.'" class="lightlink smallfont" target="_blank">'.lang('home_check_newversion').'</a> <a href="http://www.comsenz.com/purchase/discuz/" class="lightlink smallfont" target="_blank">&#19987;&#19994;&#25903;&#25345;&#19982;&#26381;&#21153;</a> <a href="http://idc.comsenz.com" class="lightlink smallfont" target="_blank">&#68;&#105;&#115;&#99;&#117;&#122;&#33;&#19987;&#29992;&#20027;&#26426;</a>'
+	'Discuz! '.DISCUZ_VERSION.' Release '.DISCUZ_RELEASE.' <a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version='.DISCUZ_VERSION.'&release='.DISCUZ_RELEASE.'&charset='.$charset.'&dbcharset='.$dbcharset.'" class="lightlink smallfont" target="_blank">'.lang('home_check_newversion').'</a> <a href="http://code.google.com/p/discuzviet/" class="lightlink smallfont" target="_blank">H&#7895; tr&#7907; c&#224;i &#273;&#7863;t</a> <a href="http://www.nktshop.com" class="lightlink smallfont" target="_blank">H&#7895; tr&#7907; hosting</a>'
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	lang('home_ucclient_version'),

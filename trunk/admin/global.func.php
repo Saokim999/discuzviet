@@ -622,7 +622,7 @@ function cpfooter() {
 
 <script type="text/javascript">
 var newhtml = '';
-newhtml += '<table class="tb tb2"><tr><th class="partition edited">&#x60A8;&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x7684 Discuz! &#x7A0B;&#x5E8F;&#x7248;&#x672C;&#x6709;&#x91CD;&#x8981;&#x66F4;&#x65B0;&#xFF0C;&#x8BF7;&#x53C2;&#x7167;&#x4EE5;&#x4E0B;&#x63D0;&#x793A;&#x8FDB;&#x884C;&#x53CA;&#x65F6;&#x5347;&#x7EA7</th></tr>';
+newhtml += '<table class="tb tb2"><tr><th class="partition edited">B&#7841;n &#273;ang s&#7917; d&#7909;ng phi&#234;n b&#7843;n Discuz Vi&#7879;t! v&#224; hi&#7879;n c&#243; c&#7853;p nh&#7853;t quan tr&#7885;ng, h&#227;y tham kh&#7843;o th&#244;ng tin sau &#273;&#7875; th&#7921;c hi&#7879;n vi&#7879;c c&#7853;p nh&#7853;t k&#7883;p th&#7901;i</th></tr>';
 newhtml += '<tr><td class="tipsblock"><a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version=<?=DISCUZ_VERSION?>&release=<?=DISCUZ_RELEASE?>&charset=<?=$charset?>&dbcharset=<?=$dbcharset?>" target="_blank"><img src="<?=$newsurl?>" onload="shownews()" /></a></td></tr></table>';
 $('boardnews').style.display = 'none';
 $('boardnews').innerHTML = newhtml;
