@@ -1286,7 +1286,7 @@ $newbietask = array(
 		'name' => '回帖是一种美德',
 		'task' => "1, 0, '回帖是一种美德', '学习回帖，看帖回帖是一种美德，BS看帖不回帖的', '', 0, 0, 0, 'all', 'newbie_post_reply', 0, 0, 0, 'credit', '2', 10, -1, ''",
 		'vars' => array(
-			"'complete', '回复指定主题', '".addslashes('设置会员只有回复该主题才能完成任务，请填写主题的 tid(比如一个主题的地址是 http://localhost/viewthread.php?tid=8 那么该主题的 tid 就是 8)，留空为不限制')."', 'threadid', 'text', '0', ''",
+			"'complete', '回复指定主题', '".addslashes('设置会员只有回复该主题才能完成任务，请填写主题的 tid(比如一个主题的地址是 http://traitimyenbai.net/forum/thread-31038-1-1.html 那么该主题的 tid 就是 31038)，留空为不限制')."', 'threadid', 'text', '0', ''",
 			"'setting', '', '', 'entrance', 'text', 'viewthread', ''"
 		)
 	),
