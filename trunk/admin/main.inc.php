@@ -99,7 +99,7 @@ echo <<<EOT
 	<span onclick="menuScroll(2)"><img src="images/admincp/scrolld.gif" /></span>
 </div>
 <div class="copyright">
-	<p>Powered by <a href="http://www.discuz.net/" target="_blank">Discuz!</a> $version</p>
+	<p>Translate <a href="http://http://code.google.com/p/discuzviet" target="_blank">Discuz Viet!</a> $version</p>
 	<p>&copy; 2001-2009, <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
 </div>
 
