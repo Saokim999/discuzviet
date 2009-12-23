@@ -99,8 +99,8 @@ echo <<<EOT
 	<span onclick="menuScroll(2)"><img src="images/admincp/scrolld.gif" /></span>
 </div>
 <div class="copyright">
-	<p>Translated by <a href="http://code.google.com/p/discuzviet/" target="_blank">DiscuzViet</a> $version</p>
-	<p>&copy; 2001-2009, Comsenz Inc.</p>
+	<p>Powered by <a href="http://www.discuz.net/" target="_blank">Discuz!</a> $version</p>
+	<p>&copy; 2001-2009, <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
 </div>
 
 <div id="cpmap_menu" class="custom" style="display: none">
