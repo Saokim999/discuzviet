@@ -67,7 +67,7 @@
 			</item>
 			<item id="templatelang">
 				<item id="dps_postawards"><![CDATA[Awards System]]></item>
-				<item id="dps_postawards_nolink"><![CDATA[Rewards not found]]></item>
+				<item id="dps_postawards_nolink"><![CDATA[Rewards]]></item>
 				<item id="post_count"><![CDATA[This post a total $replycount level]]></item>
 				<item id="award"><![CDATA[Award]]></item>
 				<item id="number"><![CDATA[Article]]></item>
