@@ -454,12 +454,12 @@ INSERT INTO cdb_faqs VALUES ('18','5','8','discuzcode','BBcodes','Cách sử d�
     <td><div align="center">Chữ căn giữa</div></td>
   </tr>
   <tr>
-    <td>[url]http://traitimyenbai.net[/url]</td>
-    <td><a href="http://traitimyenbai.net" target="_blank">http://traitimyenbai.net</a>(Siêu liên kết)</td>
+    <td>[url]http://code.google.com/p/discuzviet/[/url]</td>
+    <td><a href="http://code.google.com/p/discuzviet/" target="_blank">http://code.google.com/p/discuzviet/</a>(Siêu liên kết)</td>
   </tr>
   <tr>
-    <td>[url=http://1traitimyenbai.net]Diễn đàn Trái Tim Yên Bái[/url]</td>
-    <td><a href="http://traitimyenbai.net" target="_blank">Diễn đàn Trái Tim Yên Bái</a>(Siêu liên kết)</td>
+    <td>[url=http://code.google.com/p/discuzviet/]Diễn đàn Discuz Việt[/url]</td>
+    <td><a href="http://code.google.com/p/discuzviet/" target="_blank">Diễn đàn Discuz Việt</a>(Siêu liên kết)</td>
   </tr>
   <tr>
     <td>[email]admin@traitimyenbai.net[/email]</td>
@@ -470,12 +470,12 @@ INSERT INTO cdb_faqs VALUES ('18','5','8','discuzcode','BBcodes','Cách sử d�
     <td><a href="admin@traitimyenbai.net">Hỗ trợ</a></td>
   </tr>
   <tr>
-    <td>[quote]Trái Tim Yên Bái.Net là Diễn đàn CNTT giải trí tổng hợp.[/quote] </td>
-    <td><div style="font-size: 12px"><br /><br /><div class="quote"><h5>Trích dẫn :</h5><blockquote>Trích dẫn bài viết của <i>admin</i> vào lúc 2006-12-26 08:45 được gửi<br />Trái Tim Yên Bái.Net là Diễn đàn CNTT giải trí tổng hợp.</blockquote></div></td>
+    <td>[quote]Discuz Việt.Net là Diễn đàn CNTT giải trí tổng hợp.[/quote] </td>
+    <td><div style="font-size: 12px"><br /><br /><div class="quote"><h5>Trích dẫn :</h5><blockquote>Trích dẫn bài viết của <i>admin</i> vào lúc 2006-12-26 08:45 được gửi<br />Discuz Việt.Net là Diễn đàn CNTT giải trí tổng hợp.</blockquote></div></td>
   </tr>
    <tr>
-    <td>[code]Trái Tim Yên Bái.Net là Diễn đàn CNTT giải trí tổng hợp.[/code] </td>
-    <td><div style="font-size: 12px"><br /><br /><div class="blockcode"><h5>CODE:</h5><code id="code0">Trái Tim Yên Bái.Net là Diễn đàn CNTT giải trí tổng hợp.</code></div></td>
+    <td>[code]Discuz Việt.Net là Diễn đàn CNTT giải trí tổng hợp.[/code] </td>
+    <td><div style="font-size: 12px"><br /><br /><div class="blockcode"><h5>CODE:</h5><code id="code0">Discuz Việt.Net là Diễn đàn CNTT giải trí tổng hợp.</code></div></td>
   </tr>
   <tr>
     <td>[hide]Nội dung ẩn Abc[/hide]</td>
@@ -2222,6 +2222,21 @@ CREATE TABLE cdb_typeoptions (
   KEY classid (classid)
 ) TYPE=MyISAM  AUTO_INCREMENT=3001 ;
 
+INSERT INTO cdb_typeoptions VALUES ('1','0','0','Thể loại chung','','','','','');
+INSERT INTO cdb_typeoptions VALUES ('2','0','0','Kiểu tài sản','','','','','');
+INSERT INTO cdb_typeoptions VALUES ('3','0','0','Kiểu cá nhân','','','','','');
+INSERT INTO cdb_typeoptions VALUES ('4','0','0','Kiểu việc làm','','','','','');
+INSERT INTO cdb_typeoptions VALUES ('5','0','0','Kiểu giao dịch','','','','','');
+INSERT INTO cdb_typeoptions VALUES ('6','0','0','Kiểu Network','','','','','');
+INSERT INTO cdb_typeoptions VALUES ('7','1','0','Tác giả','','name','text','','');
+INSERT INTO cdb_typeoptions VALUES ('8','1','0','Giới tính','','gender','radio','','a:1:{s:7:\"choices\";s:13:\"1=Nam\r\n2=Nữ\";}');
+INSERT INTO cdb_typeoptions VALUES ('9','1','0','Tuổi','','age','number','','');
+INSERT INTO cdb_typeoptions VALUES ('10','1','0','Địa chỉ','','address','text','','');
+INSERT INTO cdb_typeoptions VALUES ('11','1','0','Yahoo','','qq','text','','a:1:{s:9:\"maxlength\";s:0:\"\";}');
+INSERT INTO cdb_typeoptions VALUES ('12','1','0','Email','','mail','email','','');
+INSERT INTO cdb_typeoptions VALUES ('13','1','0','Phone','','phone','text','','');
+INSERT INTO cdb_typeoptions VALUES ('14','5','0','Phí đào tạo','','teach_pay','text','','');
+INSERT INTO cdb_typeoptions VALUES ('15','5','0','Thời gian học','','teach_time','text','','');
 INSERT INTO cdb_typeoptions VALUES ('30','3','0','Hôn nhân','','marrige','radio','','a:1:{s:7:\"choices\";s:37:\"1=đã kết hôn\r\n2=chưa kết hôn\";}');
 INSERT INTO cdb_typeoptions VALUES ('27','3','0','Sao tử vi','','Horoscope','select','','a:1:{s:7:\"choices\";s:170:\"1=Bạch dương\r\n2=Kim ngưu\r\n3=Song tử\r\n4=Cự giải\r\n5=Sư tử\r\n6=Xử nữ\r\n7=Thiên bình\r\n8=Thiên yết\r\n9=Nhân mã\r\n10=Ma kết\r\n11=Bảo bình\r\n12=Song ngư\";}');
 INSERT INTO cdb_typeoptions VALUES ('25','2','0','Người môi giới','','bool','radio','','a:1:{s:7:\"choices\";s:15:\"1=Có\r\n2=Không\";}');
@@ -2231,7 +2246,6 @@ INSERT INTO cdb_typeoptions VALUES ('18','2','0','Tình trạng nhà','','makes'
 INSERT INTO cdb_typeoptions VALUES ('17','2','0','Hướng nhà','','face','radio','','a:1:{s:7:\"choices\";s:32:\"1=Bắc\r\n2=Nam\r\n3=Tây\r\n4=Đông\";}');
 INSERT INTO cdb_typeoptions VALUES ('16','2','0','Diện tích','','property','select','','a:1:{s:7:\"choices\";s:64:\"1=Văn phòng\r\n2=Chung cư\r\n3=Đất trống\r\n4=\r\n5=Căn hộ\r\n6=Biệt thự\";}');
 INSERT INTO cdb_typeoptions VALUES ('68','1','0','Liên hệ','','now_place','text','','');
-INSERT INTO cdb_typeoptions VALUES ('8','1','0','Giới tính','','gender','radio','','a:1:{s:7:\"choices\";s:13:\"1=Nam\r\n2=Nữ\";}');
 INSERT INTO cdb_typeoptions VALUES ('65','2','0','Giá cho thuê','','money','text','','');
 INSERT INTO cdb_typeoptions VALUES ('66','2','0','Khu vực','','acreage','text','','');
 INSERT INTO cdb_typeoptions VALUES ('67','5','0','T.gian khởi hành','','time','calendar','','N;');
@@ -2262,22 +2276,8 @@ INSERT INTO cdb_typeoptions VALUES ('26','5','0','Tên môn học','','teach_nam
 INSERT INTO cdb_typeoptions VALUES ('28','3','0','Chiều cao','','heighth','number','','');
 INSERT INTO cdb_typeoptions VALUES ('29','3','0','Cận nặng','','weighth','number','','');
 INSERT INTO cdb_typeoptions VALUES ('22','2','0','Bản đồ','','images','image','','');
-INSERT INTO cdb_typeoptions VALUES ('15','5','0','Thời gian học','','teach_time','text','','');
 INSERT INTO cdb_typeoptions VALUES ('20','2','0','Tầng','','floor','number','','');
 INSERT INTO cdb_typeoptions VALUES ('21','2','0','Đ.kiện giao thông','','traf','textarea','','');
-INSERT INTO cdb_typeoptions VALUES ('12','1','0','Email','','mail','email','','');
-INSERT INTO cdb_typeoptions VALUES ('13','1','0','Phone','','phone','text','','');
-INSERT INTO cdb_typeoptions VALUES ('14','5','0','Phí đào tạo','','teach_pay','text','','');
-INSERT INTO cdb_typeoptions VALUES ('9','1','0','Tuổi','','age','number','','');
-INSERT INTO cdb_typeoptions VALUES ('10','1','0','Địa chỉ','','address','text','','');
-INSERT INTO cdb_typeoptions VALUES ('11','1','0','Yahoo','','qq','text','','a:1:{s:9:\"maxlength\";s:0:\"\";}');
-INSERT INTO cdb_typeoptions VALUES ('5','0','0','Kiểu giao dịch','','','','','');
-INSERT INTO cdb_typeoptions VALUES ('6','0','0','Kiểu Network','','','','','');
-INSERT INTO cdb_typeoptions VALUES ('7','1','0','Tác giả','','name','text','','');
-INSERT INTO cdb_typeoptions VALUES ('1','0','0','Thể loại chung','','','','','');
-INSERT INTO cdb_typeoptions VALUES ('2','0','0','Kiểu tài sản','','','','','');
-INSERT INTO cdb_typeoptions VALUES ('3','0','0','Kiểu cá nhân','','','','','');
-INSERT INTO cdb_typeoptions VALUES ('4','0','0','Kiểu việc làm','','','','','');
 INSERT INTO cdb_typeoptions VALUES ('31','3','0','Sở thích','','hobby','checkbox','','a:1:{s:7:\"choices\";s:357:\"1=Ẩm thực\r\n2=Ca hát\r\n3=Khiêu vũ\r\n4=Điện ảnh\r\n5=Nghe nhạc\r\n6=Xem Kịch\r\n7=Tán gẫu\r\n8=Trang điểm\r\n9=Computer\r\n10=Network\r\n11=Chơi game\r\n12=Hội họa\r\n13=Thư pháp\r\n14=Điêu khắc\r\n15=Tình cảm\r\n16=Đọc sách\r\n17=Hoạt động xã hội\r\n18=Du lịch\r\n19=Viết thơ\r\n20=Mua sắm\r\n21=Kiếm tiền\r\n22=Xe cộ\r\n23=Nhiếp ảnh\";}');
 INSERT INTO cdb_typeoptions VALUES ('32','3','0','Mức thu nhập','','salary','select','','a:1:{s:7:\"choices\";s:117:\"1=Bí mật\r\n2=Hơn 800.000\r\n3=Hơn 1.500.000\r\n4=Hơn 2.000.000\r\n5=Hơn 3.000.000\r\n6=Hơn 5.000.000\r\n7=Hơn 8.000.000\";}');
 INSERT INTO cdb_typeoptions VALUES ('34','1','0','Học vấn','','education','radio','','a:1:{s:7:\"choices\";s:146:\"1=Mù chữ\r\n2=Tiểu học\r\n3=T.H cơ sở\r\n4=Trung học\r\n5=Trung cấp\r\n6=Cao đẳng\r\n7=Chưa tốt nghiệp ĐH\r\n8=Đại học\r\n9=Tiến sĩ\";}');
