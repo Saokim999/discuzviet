@@ -24,7 +24,7 @@ function loadcalendar() {
 	s += '<th colspan="5" style="text-align: center"><a href="###" onclick="showdiv(\'year\');_cancelBubble(event)" title="Click choice year" id="year"></a>&nbsp; - &nbsp;<a id="month" title="Click choice month" href="###" onclick="showdiv(\'month\');_cancelBubble(event)"></a></th>';
 	s += '<th><A href="###" onclick="refreshcalendar(yy, mm+1)" title="Next month">》</A></th>';
 	s += '</tr>';
-	s += '<tr id="calendar_header"><td>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td></tr>';
+	s += '<tr id="calendar_header"><td>CN</td><td>T2</td><td>T3</td><td>T4</td><td>T5</td><td>T6</td><td>T7</td></tr>';
 	s += '</thead>';
 	s += '<tbody>';
 	for(var i = 0; i < 6; i++) {
@@ -33,7 +33,7 @@ function loadcalendar() {
 			s += "<td id=d" + (i * 7 + j) + " height=\"19\">0</td>";
 		s += "</tr>";
 	}
-	s += '<tr id="hourminute"><td colspan="7" align="center"><input type="text" size="2" value="" id="hour" onKeyUp=\'this.value=this.value > 23 ? 23 : zerofill(this.value);controlid.value=controlid.value.replace(/\\d+(\:\\d+)/ig, this.value+"$1")\'> 点 <input type="text" size="2" value="" id="minute" onKeyUp=\'this.value=this.value > 59 ? 59 : zerofill(this.value);controlid.value=controlid.value.replace(/(\\d+\:)\\d+/ig, "$1"+this.value)\'> 分</td></tr>';
+	s += '<tr id="hourminute"><td colspan="7" align="center"><input type="text" size="2" value="" id="hour" onKeyUp=\'this.value=this.value > 23 ? 23 : zerofill(this.value);controlid.value=controlid.value.replace(/\\d+(\:\\d+)/ig, this.value+"$1")\'> Point <input type="text" size="2" value="" id="minute" onKeyUp=\'this.value=this.value > 59 ? 59 : zerofill(this.value);controlid.value=controlid.value.replace(/(\\d+\:)\\d+/ig, "$1"+this.value)\'> 分</td></tr>';
 	s += '</tbody>';
 	s += '</table></div></div>';
 	s += '<div id="calendar_year" onclick="_cancelBubble(event)" style="display: none; z-index: 130;" class="calendarmenu"><div class="col" style="float: left; margin-right: 5px;">';
@@ -44,7 +44,7 @@ function loadcalendar() {
 	s += '</div></div>';
 	s += '<div id="calendar_month" onclick="_cancelBubble(event)" style="display: none; padding: 3px; z-index: 140" class="calendarmenu">';
 	for(var k = 1; k <= 12; k++) {
-		s += '<a href="###" onclick="refreshcalendar(yy, ' + (k - 1) + ');$(\'calendar_month\').style.display=\'none\'; "><span' + (today.getMonth()+1 == k ? ' class="bold"' : '') + ' id="calendar_month_' + k + '">' + k + ( k < 10 ? '&nbsp;' : '') + ' 月</span></a><br />';
+		s += '<a href="###" onclick="refreshcalendar(yy, ' + (k - 1) + ');$(\'calendar_month\').style.display=\'none\'; "><span' + (today.getMonth()+1 == k ? ' class="bold"' : '') + ' id="calendar_month_' + k + '">' + k + ( k < 10 ? '&nbsp;' : '') + ' Month</span></a><br />';
 	}
 
 	s += '</div>';
@@ -140,7 +140,7 @@ function refreshcalendar(y, m) {
 		}
 		if(x.getFullYear() == today.getFullYear() && x.getMonth() == today.getMonth() && x.getDate() == today.getDate()) {
 			dd.className = 'bold';
-			dd.firstChild.title = '今天';
+			dd.firstChild.title = 'Today';
 		}
 		if(x.getFullYear() == currday.getFullYear() && x.getMonth() == currday.getMonth() && x.getDate() == currday.getDate()) {
 			dd.className = 'error bold';
