@@ -35,13 +35,13 @@ if($requestrun) {
 
 
 	$request_version = '1.0';
-	$request_name = '模块调用脚本范例';
-	$request_description = '最新主题调用范例，您可以参照本脚本 ./include/request/sample.inc.php 中的说明编写模块脚本';
+	$request_name = 'Module is a script examples';
+	$request_description = 'Latest example of thread is called ./include/request/sample.inc.php described in the preparation of module scripts';
 	$request_copyright = '<a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a>';
 	$request_settings = array(
-		'limit' 	=> array('返回条目数', '设置返回的条目数', 'text'),
-		'fid' 		=> array('选择版块', '选择显示哪个版块的帖子', 'select', array()),
-		'sidestatus' 	=> array('主题列表页面(forumdisplay.php)专用', '设置此数据调用模块为主题列表页面(forumdisplay.php)的专用模块，只调用当前版块的内容', 'radio'),
+		'limit' 	=> array('Return number of entries', 'Set returns number of entries', 'text'),
+		'fid' 		=> array('Choices Forum', 'Choose to display which view posts', 'select', array()),
+		'sidestatus' 	=> array('A list page (forumdisplay.php) private', 'Set thread of this data module list page (forumdisplay.php) a dedicated module, just call contents of current Forum', 'radio'),
 	);
 
 	include DISCUZ_ROOT.'./forumdata/cache/cache_forums.php';
