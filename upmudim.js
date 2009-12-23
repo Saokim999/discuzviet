@@ -26,7 +26,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a
 Mudim.BeforeInit = function() {
 	//Mudim.COLOR='Black';
 	//Mudim.PANEL_BACKGROUND='lightYellow';
-	//Mudim.LANG=['Tắt','VNI','Telex','Viqr','Tổng hợp','Chính tả','Bỏ dấu kiểu mới','Bật/Tắt','Ẩn/Hiện bảng điều khiển'];
+	//Mudim.LANG=['Tắt','VNI','Telex','Viqr','Tổng hợp','Chính tả','Bỏ dấu kiểu mới','Bật/Tắt','Ẩn/Hiện'];
 	Mudim.IGNORE_ID = ['email'];
 };
 Mudim.AfterInit = function() {
