@@ -6,9 +6,9 @@
 		<item id="plugin">
 			<item id="available"><![CDATA[1]]></item>
 			<item id="adminid"><![CDATA[1]]></item>
-			<item id="name"><![CDATA[IE8 加速器]]></item>
+			<item id="name"><![CDATA[Gioi thieu trinh duyệt IE8]]></item>
 			<item id="identifier"><![CDATA[ie8]]></item>
-			<item id="description"><![CDATA[将 Discuz! 论坛与 Internet Explorer 8 的加速器功能进行结合, 让用户可以方便快捷地向论坛发布帖子]]></item>
+			<item id="description"><![CDATA[将 Discuz!  Internet Explorer 8 的加速器功能进行结合, 让用户可以方便快捷地向论坛发布帖子]]></item>
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[ie8/]]></item>
 			<item id="copyright"><![CDATA[Comsenz Inc. & mfboy]]></item>
