@@ -38,7 +38,7 @@ function ctlent(event) {
 
 function checklength(theform) {
 	var message = wysiwyg ? html2bbcode(getEditorContents()) : (!theform.parseurloff.checked ? parseurl(theform.message.value) : theform.message.value);
-	showDialog('Độ dài hiện có: ' + mb_strlen(message) + ' ký tự，' + (postmaxchars != 0 ? 'Diễn đàn giới hạn: ' + postminchars + ' tới ' + postmaxchars + ' ký tự' : ''), 'notice', 'Kiểm tra độ dài bài viết');
+	showDialog('Độ dài hiện có: ' + mb_strlen(message) + ' ký tự' + (postmaxchars != 0 ? 'Diễn đàn giới hạn: ' + postminchars + ' tới ' + postmaxchars + ' ký tự' : ''), 'notice', 'Kiểm tra độ dài bài viết');
 }
 
 if(!tradepost) {
