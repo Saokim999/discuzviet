@@ -211,11 +211,11 @@ showtablefooter();
 showtableheader('home_dev', 'fixpadding');
 showtablerow('', array('class="vtop td24 lineheight"'), array(
 	lang('home_dev_copyright'),
-	'<span class="bold"><a href="http://www.comsenz.com" class="lightlink2" target="_blank">&#x5eb7;&#x76db;&#x521b;&#x60f3;(&#x5317;&#x4eac;)&#x79d1;&#x6280;&#x6709;&#x9650;&#x516c;&#x53f8; (Comsenz Inc.)</a></span>'
+	'<span class="bold"><a href="http://www.comsenz.com" class="lightlink2" target="_blank">Comsenz (Bac Kinh) Technology Co, Ltd (Comsenz Inc.)</a></span>'
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	lang('home_dev_manager'),
-	'<a href="http://www.discuz.net/space.php?uid=1" class="lightlink smallfont" target="_blank">&#x6234;&#x5FD7;&#x5EB7; (Kevin \'Crossday\' Day)</a>'
+	'<a href="http://www.discuz.net/space.php?uid=1" class="lightlink smallfont" target="_blank">Zhikang (Kevin \'Crossday\' Day)</a>'
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	lang('home_dev_team'),
@@ -260,7 +260,7 @@ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), ar
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), array(
 	lang('home_dev_links'),
-	'<a href="http://www.comsenz.com" class="lightlink" target="_blank">&#x516C;&#x53F8;&#x7F51;&#x7AD9;</a>, <a href="http://idc.comsenz.com" class="lightlink" target="_blank">&#x865A;&#x62DF;&#x4E3B;&#x673A;</a>, <a href="http://www.comsenz.com/category-51" class="lightlink" target="_blank">&#x8D2D;&#x4E70;&#x6388;&#x6743;</a>, <a href="http://www.discuz.com/" class="lightlink" target="_blank">&#x44;&#x69;&#x73;&#x63;&#x75;&#x7A;&#x21;&#x20;&#x4EA7;&#x54C1;</a>, <a href="http://www.comsenz.com/downloads/styles/discuz" class="lightlink" target="_blank">&#x6A21;&#x677F;</a>, <a href="http://www.comsenz.com/downloads/plugins/discuz" class="lightlink" target="_blank">&#x63D2;&#x4EF6;</a>, <a href="http://faq.comsenz.com" class="lightlink" target="_blank">&#x6587;&#x6863;</a>, <a href="http://www.discuz.net/" class="lightlink" target="_blank">&#x8BA8;&#x8BBA;&#x533A;</a>'
+	'<a href="http://www.comsenz.com" class="lightlink" target="_blank">Comsenz</a>, <a href="http://idc.comsenz.com" class="lightlink" target="_blank">Hosting</a>, <a href="http://code.google.com/p/discuzviet/" class="lightlink" target="_blank">Discuz Viet Tranlate Team</a>, <a href="http://traitimyenbai.net" class="lightlink" target="_blank">Support Discuz Viet, Ucenter Home</a>, <a href="http://www.nktshop.com/vi/" class="lightlink" target="_blank">NKT Co.,Ltd</a>, <a href="http://www.comsenz.com/downloads/plugins/discuz" class="lightlink" target="_blank">Plugins</a>, <a href="http://faq.comsenz.com" class="lightlink" target="_blank">Documents</a>, <a href="http://www.discuz.net/" class="lightlink" target="_blank">Thao luan</a>'
 ));
 showtablefooter();
 
