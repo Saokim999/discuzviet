@@ -12,27 +12,27 @@ if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
 }
 
 $simplequeries = array(
-	array('comment' => '快速開啟論壇版塊功能', 'sql' => ''),
-	array('comment' => '開啟 所有版塊 主題回收站', 'sql' => 'UPDATE {tablepre}forums SET recyclebin=\'1\''),
-	array('comment' => '開啟 所有版塊 Discuz! 代碼」', 'sql' => 'UPDATE {tablepre}forums SET allowbbcode=\'1\''),
-	array('comment' => '開啟 所有版塊 [IMG] 代碼」', 'sql' => 'UPDATE {tablepre}forums SET allowimgcode=\'1\''),
-	array('comment' => '開啟 所有版塊 Smilies 代碼', 'sql' => 'UPDATE {tablepre}forums SET allowsmilies=\'1\''),
-	array('comment' => '開啟 所有版塊 內容干擾碼', 'sql' => 'UPDATE {tablepre}forums SET jammer=\'1\''),
-	array('comment' => '開啟 所有版塊 允許匿名發貼」', 'sql' => 'UPDATE {tablepre}forums SET allowanonymous=\'1\''),
+	array('comment' => 'Fast Opening Board function', 'sql' => ''),
+	array('comment' => 'Open RecycleBin for all Forum Topics', 'sql' => 'UPDATE {tablepre}forums SET recyclebin=\'1\''),
+	array('comment' => 'Open to all Forum Discuz! Code', 'sql' => 'UPDATE {tablepre}forums SET allowbbcode=\'1\''),
+	array('comment' => 'Open to all Forum [IMG] code', 'sql' => 'UPDATE {tablepre}forums SET allowimgcode=\'1\''),
+	array('comment' => 'Open to all Forum Smilies code', 'sql' => 'UPDATE {tablepre}forums SET allowsmilies=\'1\''),
+	array('comment' => 'Open to all Forum interference content', 'sql' => 'UPDATE {tablepre}forums SET jammer=\'1\''),
+	array('comment' => 'Open to all Forum allow anonymous post', 'sql' => 'UPDATE {tablepre}forums SET allowanonymous=\'1\''),
 
-	array('comment' => '快速關閉論壇版塊功能', 'sql' => ''),
-	array('comment' => '關閉 所有版塊 主題回收站', 'sql' => 'UPDATE {tablepre}forums SET recyclebin=\'0\''),
-	array('comment' => '關閉 所有版塊 HTML 代碼', 'sql' => 'UPDATE {tablepre}forums SET allowhtml=\'0\''),
-	array('comment' => '關閉 所有版塊 Discuz! 代碼', 'sql' => 'UPDATE {tablepre}forums SET allowbbcode=\'0\''),
-	array('comment' => '關閉 所有版塊 [IMG] 代碼', 'sql' => 'UPDATE {tablepre}forums SET allowimgcode=\'0\''),
-	array('comment' => '關閉 所有版塊 Smilies 代碼', 'sql' => 'UPDATE {tablepre}forums SET allowsmilies=\'0\''),
-	array('comment' => '關閉 所有版塊 內容干擾碼', 'sql' => 'UPDATE {tablepre}forums SET jammer=\'0\''),
-	array('comment' => '關閉 所有版塊 允許匿名發貼', 'sql' => 'UPDATE {tablepre}forums SET allowanonymous=\'0\''),
+	array('comment' => 'Fast Close Board function', 'sql' => ''),
+	array('comment' => 'Close all Forum topics RecycleBin', 'sql' => 'UPDATE {tablepre}forums SET recyclebin=\'0\''),
+	array('comment' => 'Close all Forum HTML code', 'sql' => 'UPDATE {tablepre}forums SET allowhtml=\'0\''),
+	array('comment' => 'Close all Forum Discuz! code', 'sql' => 'UPDATE {tablepre}forums SET allowbbcode=\'0\''),
+	array('comment' => 'Close all Forum [IMG] code', 'sql' => 'UPDATE {tablepre}forums SET allowimgcode=\'0\''),
+	array('comment' => 'Close all Forum Smilies code', 'sql' => 'UPDATE {tablepre}forums SET allowsmilies=\'0\''),
+	array('comment' => 'Close all Forum interference content', 'sql' => 'UPDATE {tablepre}forums SET jammer=\'0\''),
+	array('comment' => 'Close all Forum anonymous post', 'sql' => 'UPDATE {tablepre}forums SET allowanonymous=\'0\''),
 
-	array('comment' => '會員操作相關', 'sql' => ''),
-	array('comment' => '清除 所有會員 自定義風格', 'sql' => 'UPDATE {tablepre}members SET styleid=\'0\''),
-	array('comment' => '清空 所有會員 積分交易記錄', 'sql' => 'TRUNCATE {tablepre}creditslog;'),
-	array('comment' => '清空 所有會員 收藏夾', 'sql' => 'TRUNCATE {tablepre}favorites;'),
+	array('comment' => 'Members related operation', 'sql' => ''),
+	array('comment' => 'Clear all Member Custom Style', 'sql' => 'UPDATE {tablepre}members SET styleid=\'0\''),
+	array('comment' => 'Clear all Member Points transactions', 'sql' => 'TRUNCATE {tablepre}creditslog;'),
+	array('comment' => 'Clear all Member favorites', 'sql' => 'TRUNCATE {tablepre}favorites;'),
 );
 
 ?>
