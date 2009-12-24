@@ -4331,7 +4331,8 @@ $lang = array
 	'cplog_upgradeopenbbs' => 'Update',
 	'cplog_logout' => 'From the management',
 
-
+	'nav_posting_attachtype' => 'Loại file đính kèm',
+	'members_edit_medals_nonexistence' => 'Chưa có thành viên cần huy chương',
 );
 
 ?>
