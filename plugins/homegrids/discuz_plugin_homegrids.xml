@@ -26,34 +26,34 @@
 		<item id="vars">
 			<item id="0">
 				<item id="displayorder"><![CDATA[0]]></item>
-				<item id="title"><![CDATA[多格模块]]></item>
-				<item id="description"><![CDATA[一行一个模块数据，格式“类型,模块名称,模块标题,宽度,高度”
-类型：A、图片模块，B、页签模块，C、自定义模块
-模块名称：论坛数据调用中相应模块的名称
-模块标题：模块头部显示的标题
-宽度：模块的宽度(对A、C类型有效)
-高度：模块的高度(仅对A类型有效)]]></item>
+				<item id="title"><![CDATA[Toplist Module]]></item>
+				<item id="description"><![CDATA[A line of a module format: "type,module name,module title,width,height"
+Type: A,Image module,B,List module,C,Custom module
+Module name: Javascript module name
+Module title: Caption to display in the head module
+Width: Width of module (for A, C type)
+Height: Height of module (only on A type)]]></item>
 				<item id="variable"><![CDATA[modules]]></item>
 				<item id="type"><![CDATA[textarea]]></item>
-				<item id="value"><![CDATA[A,首页多格_图片,最新图片,300,200
-B,首页多格_热门主题,热门主题
-B,首页多格_最新主题,最新主题
-B,首页多格_最新回复,最新回复]]></item>
+				<item id="value"><![CDATA[A,Toplist_Picture,Newest Picture,300,200
+B,Toplist_HotTopics,Hot topics
+B,Toplist_LatestTopics,Latest Topics
+B,Toplist_NewestReply,Newest Reply]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 		</item>
-		<item id="intro"><![CDATA[以数据调用为核心的首页多格插件，包含图片模块、页签模块以及自定义模块，同时支持 IE8 的“网页快讯”功能。]]></item>
+		<item id="intro"><![CDATA[A JS for the home page, multi-toplist plug-ins, including images module, module tab list, and custom modules, while supporting IE8 [Web page Alert] feature]]></item>
 		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
 		<item id="importfile">
 			<item id="request"><![CDATA[discuz_request_homegrids.xml]]></item>
 		</item>
 		<item id="language">
 			<item id="installlang">
-				<item id="requestpre"><![CDATA[首页多格_]]></item>
+				<item id="requestpre"><![CDATA[Toplist_]]></item>
 			</item>
 			<item id="templatelang">
-				<item id="hslice_title"><![CDATA[{$GLOBALS[bbname]}动态]]></item>
-				<item id="hslice_entrylink"><![CDATA[进入{$GLOBALS[bbname]}]]></item>
+				<item id="hslice_title"><![CDATA[{$GLOBALS[bbname]} News]]></item>
+				<item id="hslice_entrylink"><![CDATA[Enter {$GLOBALS[bbname]}]]></item>
 			</item>
 		</item>
 	</item>
