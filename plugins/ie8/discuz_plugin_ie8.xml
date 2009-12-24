@@ -6,9 +6,9 @@
 		<item id="plugin">
 			<item id="available"><![CDATA[1]]></item>
 			<item id="adminid"><![CDATA[1]]></item>
-			<item id="name"><![CDATA[Gioi thieu trinh duyệt IE8]]></item>
+			<item id="name"><![CDATA[Tăng tốc IE8]]></item>
 			<item id="identifier"><![CDATA[ie8]]></item>
-			<item id="description"><![CDATA[将 Discuz!  Internet Explorer 8 的加速器功能进行结合, 让用户可以方便快捷地向论坛发布帖子]]></item>
+			<item id="description"><![CDATA[With Discuz! Internet Explorer 8 Accelerator combine functions, allowing users to easily and quickly posting to the forum]]></item>
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[ie8/]]></item>
 			<item id="copyright"><![CDATA[Comsenz Inc. & mfboy]]></item>
@@ -33,7 +33,7 @@
 		<item id="vars">
 			<item id="0">
 				<item id="displayorder"><![CDATA[2]]></item>
-				<item id="title"><![CDATA[加速器图标]]></item>
+				<item id="title"><![CDATA[Accelerator icon]]></item>
 				<item id="description"><![CDATA[请设置论坛提供的加速器菜单前显示的小图标地址, 这个地址为相对地址, 默认为论坛根目录的 'favicon.ico' 文件]]></item>
 				<item id="variable"><![CDATA[ie8_acc_icon]]></item>
 				<item id="type"><![CDATA[text]]></item>
