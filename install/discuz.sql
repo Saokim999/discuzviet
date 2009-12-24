@@ -470,12 +470,12 @@ INSERT INTO cdb_faqs VALUES ('18','5','8','discuzcode','BBcodes','Cách sử d�
     <td><a href="admin@traitimyenbai.net">Hỗ trợ</a></td>
   </tr>
   <tr>
-    <td>[quote]Discuz Việt.Net là Diễn đàn CNTT giải trí tổng hợp.[/quote] </td>
-    <td><div style="font-size: 12px"><br /><br /><div class="quote"><h5>Trích dẫn :</h5><blockquote>Trích dẫn bài viết của <i>admin</i> vào lúc 2006-12-26 08:45 được gửi<br />Discuz Việt.Net là Diễn đàn CNTT giải trí tổng hợp.</blockquote></div></td>
+    <td>[quote]Discuz Việt là Diễn đàn CNTT giải trí tổng hợp.[/quote] </td>
+    <td><div style="font-size: 12px"><br /><br /><div class="quote"><h5>Trích dẫn :</h5><blockquote>Trích dẫn bài viết của <i>admin</i> vào lúc 2006-12-26 08:45 được gửi<br />Discuz Việt là Diễn đàn CNTT giải trí tổng hợp.</blockquote></div></td>
   </tr>
    <tr>
-    <td>[code]Discuz Việt.Net là Diễn đàn CNTT giải trí tổng hợp.[/code] </td>
-    <td><div style="font-size: 12px"><br /><br /><div class="blockcode"><h5>CODE:</h5><code id="code0">Discuz Việt.Net là Diễn đàn CNTT giải trí tổng hợp.</code></div></td>
+    <td>[code]Discuz Việt là Diễn đàn CNTT giải trí tổng hợp.[/code] </td>
+    <td><div style="font-size: 12px"><br /><br /><div class="blockcode"><h5>CODE:</h5><code id="code0">Discuz Việt là Diễn đàn CNTT giải trí tổng hợp.</code></div></td>
   </tr>
   <tr>
     <td>[hide]Nội dung ẩn Abc[/hide]</td>
@@ -818,18 +818,18 @@ CREATE TABLE cdb_magics (
   KEY displayorder (available,displayorder)
 ) TYPE=MyISAM;
 
-INSERT INTO cdb_magics VALUES ('1','1','1','Thẻ đổi màu','CCK','Thẻ này có thể dùng đổi màu chủ đề trong vòng 24 tiếng.','0','10','999','0','0','0','20','magic_color.inc.php','');
-INSERT INTO cdb_magics VALUES ('2','1','3','Thẻ tiền tài','MOK','Có thể tuỳ hứng thưởng cho bạn một ít tiền','0','10','999','0','0','0','30','magic_money.inc.php','');
-INSERT INTO cdb_magics VALUES ('3','1','1','Thẻ IP','SEK','Có thể xem IP tác giả của bài viết','0','15','999','0','0','0','30','magic_see.inc.php','');
-INSERT INTO cdb_magics VALUES ('4','1','1','Thẻ thăng tiến','UPK','Có thể lên cấp chủ đề','0','10','999','0','0','0','30','magic_up.inc.php','');
-INSERT INTO cdb_magics VALUES ('5','1','1','Thẻ đỉnh cao','TOK','Có thể đặt chú ý chủ đề trong vòng 24 tiếng','0','20','999','0','0','0','40','magic_top.inc.php','');
-INSERT INTO cdb_magics VALUES ('6','1','1','Thẻ hối hận','REK','Dùng thẻ này bạn có tự xoá chủ đề của mình','0','10','999','0','0','0','30','magic_del.inc.php','');
-INSERT INTO cdb_magics VALUES ('7','1','2','Thẻ đánh hơi','RTK','Thẻ này có tác dùng tìm xem một người nào đó có trực tuyến hay không','0','15','999','0','0','0','30','magic_reporter.inc.php','');
-INSERT INTO cdb_magics VALUES ('8','1','1','Thẻ trầm mặc','CLK','Thẻ này kích hoạt vào chủ đề nào thì trong vòng 24 tiếng không thể trả lời trên chủ đề này.','0','15','999','0','0','0','30','magic_close.inc.php','');
-INSERT INTO cdb_magics VALUES ('9','1','1','Thẻ huyên náo','OPK','Có thể trả lời bất cứ nơi đâu','0','15','999','0','0','0','30','magic_open.inc.php','');
-INSERT INTO cdb_magics VALUES ('10','1','1','Thẻ ẩn thân','YSK','Có thể sử dụng tên nặc danh để viết bài','0','20','999','0','0','0','30','magic_hidden.inc.php','');
-INSERT INTO cdb_magics VALUES ('11','1','1','Thẻ hồi phục','CBK','Dùng thẻ này để khôi phục bài viết có dùng tên nặc danh lại thành bình thường','0','15','999','0','0','0','20','magic_renew.inc.php','');
-INSERT INTO cdb_magics VALUES ('12','1','1','Thẻ di động','MVK','Dùng thẻ này có thể chuyển bài viết từ mục này sang mục khác ( ngoại trừ mục ẩn hoặc là mục đặc biệt)','0','50','989','0','0','0','50','magic_move.inc.php','');
+INSERT INTO cdb_magics VALUES ('1','1','1','Thẻ đổi màu','CCK','Thẻ này có thể dùng đổi màu chủ đề trong vòng 24 tiếng.','0','10','999','0','0','0','20','0','magic_color.inc.php','');
+INSERT INTO cdb_magics VALUES ('2','1','3','Thẻ tiền tài','MOK','Có thể tuỳ hứng thưởng cho bạn một ít tiền','0','10','999','0','0','0','30','0','magic_money.inc.php','');
+INSERT INTO cdb_magics VALUES ('3','1','1','Thẻ IP','SEK','Có thể xem IP tác giả của bài viết','0','15','999','0','0','0','30','0','magic_see.inc.php','');
+INSERT INTO cdb_magics VALUES ('4','1','1','Thẻ thăng tiến','UPK','Có thể lên cấp chủ đề','0','10','999','0','0','0','30','0','magic_up.inc.php','');
+INSERT INTO cdb_magics VALUES ('5','1','1','Thẻ đỉnh cao','TOK','Có thể đặt chú ý chủ đề trong vòng 24 tiếng','0','20','999','0','0','0','40','0','magic_top.inc.php','');
+INSERT INTO cdb_magics VALUES ('6','1','1','Thẻ hối hận','REK','Dùng thẻ này bạn có tự xoá chủ đề của mình','0','10','999','0','0','0','30','0','magic_del.inc.php','');
+INSERT INTO cdb_magics VALUES ('7','1','2','Thẻ đánh hơi','RTK','Thẻ này có tác dùng tìm xem một người nào đó có trực tuyến hay không','0','15','999','0','0','0','30','0','magic_reporter.inc.php','');
+INSERT INTO cdb_magics VALUES ('8','1','1','Thẻ trầm mặc','CLK','Thẻ này kích hoạt vào chủ đề nào thì trong vòng 24 tiếng không thể trả lời trên chủ đề này.','0','15','999','0','0','0','30','0','magic_close.inc.php','');
+INSERT INTO cdb_magics VALUES ('9','1','1','Thẻ huyên náo','OPK','Có thể trả lời bất cứ nơi đâu','0','15','999','0','0','0','30','0','magic_open.inc.php','');
+INSERT INTO cdb_magics VALUES ('10','1','1','Thẻ ẩn thân','YSK','Có thể sử dụng tên nặc danh để viết bài','0','20','999','0','0','0','30','0','magic_hidden.inc.php','');
+INSERT INTO cdb_magics VALUES ('11','1','1','Thẻ hồi phục','CBK','Dùng thẻ này để khôi phục bài viết có dùng tên nặc danh lại thành bình thường','0','15','999','0','0','0','20','0','magic_renew.inc.php','');
+INSERT INTO cdb_magics VALUES ('12','1','1','Thẻ di động','MVK','Dùng thẻ này có thể chuyển bài viết từ mục này sang mục khác ( ngoại trừ mục ẩn hoặc là mục đặc biệt)','0','50','989','0','0','0','50','0','magic_move.inc.php','');
 
 DROP TABLE IF EXISTS cdb_medallog;
 CREATE TABLE cdb_medallog (
